@@ -1,8 +1,5 @@
 <script>
-Chart.defaults.global.defaultFontColor = 'black';
-Chart.defaults.global.defaultFontSize = 10;
-Chart.defaults.global.defaultFontFamily = 'helvetica';
-
+  // Home Chart
 // Pie Ticket
   var label = ['2018'];
   var data_presented = <?php echo $presented; ?>;
@@ -17,6 +14,12 @@ Chart.defaults.global.defaultFontFamily = 'helvetica';
               'rgba(255, 99, 132, 0.7)',
               'rgba(54, 162, 235, 0.7)',
               'rgba(255, 206, 86, 0.7)',
+          ],
+          borderColor:
+          [
+            'rgba(255, 99, 132, 1.0)',
+            'rgba(54, 162, 235, 1.0)',
+            'rgba(255, 206, 86, 1.0)',
           ]
       }],
 
@@ -40,12 +43,17 @@ Chart.defaults.global.defaultFontFamily = 'helvetica';
           data: data_category,
           backgroundColor:
           [
-              'rgba(255, 99, 132, 0.5)',
-              'rgba(255, 206, 86, 0.5)',
-              'rgba(75, 192, 192, 0.5)',
-              'rgba(153, 102, 255, 0.5)',
-              'rgba(255, 159, 64, 0.5)',
-          ]
+              'rgba(0,0,128, 0.5)',
+              'rgba(0,0,255, 0.5)',
+              'rgba(0,128,0, 0.5)',
+              'rgba(0,128,128, 0.5)',
+              'rgba(0,255,0, 0.5)	',
+              'rgba(0,255,255, 0.5)',
+              'rgba(128,128,0, 0.5)',
+              'rgba(128,128,128, 0.5)',
+              'rgba(255,0,255, 0.5)',
+              'rgba(255,255,0, 0.5)'
+          ],
       }],
 
   };
@@ -61,11 +69,16 @@ Chart.defaults.global.defaultFontFamily = 'helvetica';
           data: data_kanwil,
           backgroundColor:
           [
-              'rgba(255, 99, 132, 0.5)',
-              'rgba(255, 206, 86, 0.5)',
-              'rgba(75, 192, 192, 0.5)',
-              'rgba(153, 102, 255, 0.5)',
-              'rgba(255, 159, 64, 0.5)',
+            'rgba(0,0,128, 0.5)',
+            'rgba(0,0,255, 0.5)',
+            'rgba(0,128,0, 0.5)',
+            'rgba(0,128,128, 0.5)',
+            'rgba(0,255,0, 0.5)	',
+            'rgba(0,255,255, 0.5)',
+            'rgba(128,128,0, 0.5)',
+            'rgba(128,128,128, 0.5)',
+            'rgba(255,0,255, 0.5)',
+            'rgba(255,255,0, 0.5)'
           ]
       }],
   };
@@ -81,18 +94,26 @@ Chart.defaults.global.defaultFontFamily = 'helvetica';
           data: data_cabang,
           backgroundColor:
           [
-              'rgba(255, 99, 132, 0.5)',
-              'rgba(255, 206, 86, 0.5)',
-              'rgba(75, 192, 192, 0.5)',
-              'rgba(153, 102, 255, 0.5)',
-              'rgba(255, 159, 64, 0.5)',
+            'rgba(0,0,128, 0.5)',
+            'rgba(0,0,255, 0.5)',
+            'rgba(0,128,0, 0.5)',
+            'rgba(0,128,128, 0.5)',
+            'rgba(0,255,0, 0.5)	',
+            'rgba(0,255,255, 0.5)',
+            'rgba(128,128,0, 0.5)',
+            'rgba(128,128,128, 0.5)',
+            'rgba(255,0,255, 0.5)',
+            'rgba(255,255,0, 0.5)'
           ]
       }],
   };
 
- //
+  // Report Chart bulanan
+// jumlah ticket dari bulan ke bulan
+//
+
   window.onload = function() {
-      // Report Calls
+      // Report Calls Home
       var ctx = document.getElementById("reportCalls").getContext("2d");
       var callsBar = new Chart(ctx, {
           type: 'doughnut',
@@ -112,12 +133,25 @@ Chart.defaults.global.defaultFontFamily = 'helvetica';
           }
       });
 
-      // Report Question
+      // Report Question Home
       var cty = document.getElementById("reportQuestion").getContext("2d");
       var questionBar = new Chart(cty, {
           type: 'bar',
           data: questionChartData,
           options: {
+            scales: {
+               yAxes: [{
+                  ticks: {
+                    min: 0,
+                    stepSize: 2
+                  }
+               }],
+               xAxes: [{
+                       ticks: {
+                        fontSize: 10
+                       }
+                      }]
+              },
               elements: {
                   rectangle: {
                       borderColor: 'rgb(0, 255, 0)',
@@ -131,7 +165,7 @@ Chart.defaults.global.defaultFontFamily = 'helvetica';
               }
           }
       });
-      // Report Kanwil
+      // Report Kanwil Home
       var ctz = document.getElementById("reportKanwil").getContext("2d");
       var wilayahBar = new Chart(ctz, {
           type: 'horizontalBar',
@@ -151,12 +185,25 @@ Chart.defaults.global.defaultFontFamily = 'helvetica';
           }
       });
 
-      // Report Cabang
+      // Report Cabang Home
       var ctw = document.getElementById("reportCabang").getContext("2d");
       var cabangBar = new Chart(ctw, {
           type: 'bar',
           data: cabangChartData,
           options: {
+            scales: {
+               yAxes: [{
+                  ticks: {
+                    min: 0,
+                    stepSize: 2
+                  }
+               }],
+               xAxes: [{
+                       ticks: {
+                        fontSize: 10
+                       }
+                      }]
+              },
               elements: {
                   rectangle: {
                       borderColor: 'rgb(0, 255, 0)',
@@ -171,6 +218,6 @@ Chart.defaults.global.defaultFontFamily = 'helvetica';
           }
       });
 
-
+      
   };
 </script>
