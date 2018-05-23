@@ -1,0 +1,176 @@
+<script>
+Chart.defaults.global.defaultFontColor = 'black';
+Chart.defaults.global.defaultFontSize = 10;
+Chart.defaults.global.defaultFontFamily = 'helvetica';
+
+// Pie Ticket
+  var label = ['2018'];
+  var data_presented = <?php echo $presented; ?>;
+  var data_completed = <?php echo $completed; ?>;
+  var data_in_progress = <?php echo $in_progress; ?>;
+  var pieChartData = {
+      datasets:
+      [{
+          data: [data_presented, data_completed, data_in_progress],
+          backgroundColor:
+          [
+              'rgba(255, 99, 132, 0.7)',
+              'rgba(54, 162, 235, 0.7)',
+              'rgba(255, 206, 86, 0.7)',
+          ]
+      }],
+
+      labels:
+        [
+            'Presented',
+            'completed',
+            'in_progress'
+        ]
+
+
+  };
+
+// Bar Question
+  var cat = <?php echo $cat; ?>;
+  var data_category = <?php echo $question; ?>;
+  var questionChartData = {
+      labels: cat,
+      datasets:
+      [{
+          data: data_category,
+          backgroundColor:
+          [
+              'rgba(255, 99, 132, 0.5)',
+              'rgba(255, 206, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(255, 159, 64, 0.5)',
+          ]
+      }],
+
+  };
+
+
+// Kanwil
+  var kanwil =  <?php echo $labelKanwil; ?>;
+  var data_kanwil = <?php echo $kanwil; ?>;
+  var kanwilChartData = {
+      labels: kanwil,
+      datasets:
+      [{
+          data: data_kanwil,
+          backgroundColor:
+          [
+              'rgba(255, 99, 132, 0.5)',
+              'rgba(255, 206, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(255, 159, 64, 0.5)',
+          ]
+      }],
+  };
+
+
+// Cabang
+  var cabang = <?php echo $labelSite; ?>;
+  var data_cabang = <?php echo $cabang; ?>;
+  var cabangChartData = {
+      labels: cabang,
+      datasets:
+      [{
+          data: data_cabang,
+          backgroundColor:
+          [
+              'rgba(255, 99, 132, 0.5)',
+              'rgba(255, 206, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(255, 159, 64, 0.5)',
+          ]
+      }],
+  };
+
+ //
+  window.onload = function() {
+      // Report Calls
+      var ctx = document.getElementById("reportCalls").getContext("2d");
+      var callsBar = new Chart(ctx, {
+          type: 'doughnut',
+          data: pieChartData,
+          options: {
+              elements: {
+                  rectangle: {
+                      borderColor: 'rgb(0, 255, 0)',
+                      borderSkipped: 'bottom'
+                  }
+              },
+              responsive: true,
+              title: {
+                  display: true,
+                  text: 'Calls Report'
+              }
+          }
+      });
+
+      // Report Question
+      var cty = document.getElementById("reportQuestion").getContext("2d");
+      var questionBar = new Chart(cty, {
+          type: 'bar',
+          data: questionChartData,
+          options: {
+              elements: {
+                  rectangle: {
+                      borderColor: 'rgb(0, 255, 0)',
+                      borderSkipped: 'bottom'
+                  }
+              },
+              responsive: true,
+              title: {
+                  display: true,
+                  text: 'Question Report'
+              }
+          }
+      });
+      // Report Kanwil
+      var ctz = document.getElementById("reportKanwil").getContext("2d");
+      var wilayahBar = new Chart(ctz, {
+          type: 'horizontalBar',
+          data: kanwilChartData,
+          options: {
+              elements: {
+                  rectangle: {
+                      borderColor: 'rgb(0, 255, 0)',
+                      borderSkipped: 'bottom'
+                  }
+              },
+              responsive: true,
+              title: {
+                  display: true,
+                  text: 'Kanwil Report'
+              }
+          }
+      });
+
+      // Report Cabang
+      var ctw = document.getElementById("reportCabang").getContext("2d");
+      var cabangBar = new Chart(ctw, {
+          type: 'bar',
+          data: cabangChartData,
+          options: {
+              elements: {
+                  rectangle: {
+                      borderColor: 'rgb(0, 255, 0)',
+                      borderSkipped: 'bottom'
+                  }
+              },
+              responsive: true,
+              title: {
+                  display: true,
+                  text: 'Cabang Report'
+              }
+          }
+      });
+
+
+  };
+</script>
