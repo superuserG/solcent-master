@@ -3,6 +3,7 @@
 @include('Chart.ReportChart')
 
 test test test
+<h1>hello</h1>
 
   <div class="row">
       <div class="col-lg-12">
