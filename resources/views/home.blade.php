@@ -2,12 +2,6 @@
 @section('content')
 @include('Chart.ReportChart')
 
-<<<<<<< HEAD
-test test test
-<h1>hello</h1>
-
-=======
->>>>>>> 76a76d8f206edbd0fde3c0d82324dd09dad52857
   <div class="row">
       <div class="col-lg-12">
         @if (Auth::User()->hasRole('admin'))
