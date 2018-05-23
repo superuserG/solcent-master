@@ -2,6 +2,8 @@
 @section('content')
 @include('Chart.ReportChart')
 
+test atom
+
   <div class="row">
       <div class="col-lg-12">
         @if (Auth::User()->hasRole('admin'))
