@@ -26,7 +26,7 @@
         <!-- /.panel -->
     </div>
     <!-- Report-Calls-Pie-chart -->
-    <div class="col-lg-8">
+    <div class="col-lg-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Annual Question Chart
@@ -40,8 +40,7 @@
         <!-- /.panel -->
     </div>
     <!-- Report-Question-Bar-chart -->
-
-    <div class="col-lg-8">
+    <div class="col-lg-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Annual Kanwil Chart
@@ -55,8 +54,7 @@
         <!-- /.panel -->
     </div>
     <!-- Report-Kanwil-Bar-chart -->
-
-    <div class="col-lg-8">
+    <div class="col-lg-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Annual Cabang Chart
