@@ -47,7 +47,7 @@
               'rgba(0,0,255, 0.5)',
               'rgba(0,128,0, 0.5)',
               'rgba(0,128,128, 0.5)',
-              'rgba(0,255,0, 0.5)	',
+              'rgba(0,255,0, 0.5)',
               'rgba(0,255,255, 0.5)',
               'rgba(128,128,0, 0.5)',
               'rgba(128,128,128, 0.5)',
@@ -73,7 +73,7 @@
             'rgba(0,0,255, 0.5)',
             'rgba(0,128,0, 0.5)',
             'rgba(0,128,128, 0.5)',
-            'rgba(0,255,0, 0.5)	',
+            'rgba(0,255,0, 0.5)',
             'rgba(0,255,255, 0.5)',
             'rgba(128,128,0, 0.5)',
             'rgba(128,128,128, 0.5)',
@@ -108,7 +108,7 @@
       }],
   };
 
-  // Report Chart bulanan
+  // Report Chart per-tahun
 // jumlah ticket dari bulan ke bulan
 //
 
@@ -154,7 +154,6 @@
               },
               elements: {
                   rectangle: {
-                      borderColor: 'rgb(0, 255, 0)',
                       borderSkipped: 'bottom'
                   }
               },
@@ -218,6 +217,6 @@
           }
       });
 
-      
+
   };
 </script>
