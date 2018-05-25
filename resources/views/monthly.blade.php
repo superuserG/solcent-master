@@ -2,7 +2,7 @@
 
 @section('content')
 
-  @include('Chart.ReportChart')
+  @include('Chart.MonthlyChart')
 
   <div class="row">
       <div class="col-lg-12">
@@ -25,51 +25,5 @@
         </div>
         <!-- /.panel -->
     </div>
-    <!-- Report-Calls-Pie-chart -->
-    <div class="col-lg-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Monthly Question Chart
-            </div>
-            <!-- /.panel-heading -->
-            <div class="panel-body">
-              <canvas id="reportQuestion" height="400" width="600"></canvas>
-            </div>
-            <!-- /.panel-body -->
-        </div>
-        <!-- /.panel -->
-    </div>
-    <!-- Report-Question-Bar-chart -->
-    <div class="col-lg-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Monthly Kanwil Chart
-            </div>
-            <!-- /.panel-heading -->
-            <div class="panel-body">
-              <canvas id="reportKanwil" height="400" width="600"></canvas>
-            </div>
-            <!-- /.panel-body -->
-        </div>
-        <!-- /.panel -->
-    </div>
-    <!-- Report-Kanwil-Bar-chart -->
-    <div class="col-lg-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Monthly Cabang Chart
-            </div>
-            <!-- /.panel-heading -->
-            <div class="panel-body">
-              <canvas id="reportCabang" height="400" width="600"></canvas>
-            </div>
-            <!-- /.panel-body -->
-        </div>
-        <!-- /.panel -->
-    </div>
-    <!-- Report-Cabang-Bar-chart -->
-
-  </div>
-
 
 @endsection
