@@ -24,10 +24,10 @@
                   <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Reports <span class="fa arrow"></span></a>
                   <ul class="nav nav-second-level">
                       <li>
-                          <a href="#">Monthly Report</a>
+                          <a href="{!! route('monthlyReport') !!}">Monthly Report</a>
                       </li>
                       <li>
-                          <a href="{!! route('annualReport') !!}">Annual Report</a>
+                          <a href="#">Annual Report</a>
                       </li>
                   </ul>
                   <!-- /.nav-second-level -->

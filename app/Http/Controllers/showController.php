@@ -117,7 +117,7 @@ class showController extends Controller
     return view('tables',compact('post'));
   }
 
-  public function showAnnual()
+  public function showMonthly()
   {
     //Report Ticket
     $presented = DB::table('report_solcents')
@@ -181,7 +181,7 @@ class showController extends Controller
             ->get()->toArray();
     $labelSite = array_column($labelSite, 'lblCabang');
 
-    return view('annualy')
+    return view('monthly')
         ->with('presented',json_encode($presented,JSON_NUMERIC_CHECK))
         ->with('completed',json_encode($completed,JSON_NUMERIC_CHECK))
         ->with('in_progress',json_encode($in_progress,JSON_NUMERIC_CHECK))

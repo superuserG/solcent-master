@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function(){
   Route::get('/home','showController@showHome')->name('index');
   Route::get('/workpage','showController@showForm')->name('form');
   Route::get('/tables','showController@showTable')->name('table');
-  Route::get('/report/annual','showController@showAnnual')->name('annualReport');
+  Route::get('/report/monthly','showController@showMonthly')->name('monthlyReport');
   Route::post('/Post/Create','CRUDController@store')->name('create.post');
   Route::get('/Post/Detail/{post}','CRUDController@detail')->name('detail.post');
   Route::post('editPost','CRUDController@detailModal');
