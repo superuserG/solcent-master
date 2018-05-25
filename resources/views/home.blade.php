@@ -5,7 +5,7 @@
   <div class="row">
       <div class="col-lg-12">
         @if (Auth::User()->hasRole('admin'))
-          <h2 class="page-header">Home Admin</h2>
+          <h2 class="page-header">Dashboard</h2>
         @else
           <h2 class="page-header">Home Agent</h2>
         @endif

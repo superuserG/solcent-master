@@ -14,13 +14,12 @@
 
 	<!-- bootstrap css -->
 	<link rel="stylesheet" href="{!! asset('theme/vendor/bootstrap/css/bootstrap.min.css')!!}">
-
 	<!-- metis menu -->
 	<link rel="stylesheet" href="{!! asset('theme/vendor/metisMenu/metisMenu.min.css')!!}">
 
 	<!-- custom css -->
 	<link rel="stylesheet" href="{!!asset('theme/dist/css/sb-admin-2.css')!!}">
-
+	
 	<!-- Morris Charts CSS -->
 	<link href="{!! asset('theme/vendor/morrisjs/morris.css') !!}" rel="stylesheet">
 
