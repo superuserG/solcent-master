@@ -119,82 +119,25 @@ class showController extends Controller
 
   public function showMonthly()
   {
-    //Report Ticket
-    $presented = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as present'))
-        ->get()->toArray();
-    $presented = array_column($presented, 'present');
-
-    $completed = ReportSolcent::select(DB::raw("count(WO_ID) as completed"))->where('Status','=','Completed')
-        ->get()->toArray();
-    $completed = array_column($completed, 'completed');
-
-    $in_progress = ReportSolcent::select(DB::raw("count(WO_ID) as Abandon"))->where('Status','!=','Completed')
-        ->get()->toArray();
-    $in_progress = array_column($in_progress, 'Abandon');
-
     //Report Top Question
-    $question = DB::table('report_solcents')
+    $que = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
-    $question = array_column($question, 'Question');
+    $que = array_column($que, 'Question');
 
-    $cat = DB::table('report_solcents')
+    $cate = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
             ->get()->toArray();
-    $cat = array_column($cat, 'Cat');
-
-    //Report Top kanwil
-    $kanwil = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->groupBy('Wilayah')
-              ->orderBy('wilayah','desc')
-              ->get()->toArray();
-    $kanwil = array_column($kanwil, 'wilayah');
-
-    $labelKanwil = DB::table('report_solcents')
-            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->take(10)
-            ->groupBy('Wilayah')
-            ->orderBy('wilayah','desc')
-            ->get()->toArray();
-    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
-
-    //Report Top cabang
-    $cabang = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site) as topSite')))
-              ->groupBy('Site')
-              ->orderBy('topSite','desc')
-              ->get()->toArray();
-    $cabang = array_column($cabang, 'topSite');
-
-    $labelSite = DB::table('report_solcents')
-            ->select(array('Site as lblCabang', DB::raw('count(Site) as topSite')))
-            ->take(10)
-            ->groupBy('Site')
-            ->orderBy('topSite','desc')
-            ->get()->toArray();
-    $labelSite = array_column($labelSite, 'lblCabang');
+    $cate = array_column($cate, 'Cat');
 
     return view('monthly')
-        ->with('presented',json_encode($presented,JSON_NUMERIC_CHECK))
-        ->with('completed',json_encode($completed,JSON_NUMERIC_CHECK))
-        ->with('in_progress',json_encode($in_progress,JSON_NUMERIC_CHECK))
-        // ->with('label',json_encode($label,JSON_NUMERIC_CHECK))
-        ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
-        ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-        ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
-        ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
-        ->with('cabang',json_encode($cabang,JSON_NUMERIC_CHECK))
-        ->with('labelSite',json_encode($labelSite,JSON_NUMERIC_CHECK))
-        ;
-
-
+        ->with('que',json_encode($que,JSON_NUMERIC_CHECK))
+        ->with('cate',json_encode($cate,JSON_NUMERIC_CHECK));
   }
 
 

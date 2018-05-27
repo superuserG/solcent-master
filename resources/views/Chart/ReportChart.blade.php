@@ -108,9 +108,6 @@
       }],
   };
 
-  // Report Chart per-tahun
-// jumlah ticket dari bulan ke bulan
-//
 
   window.onload = function() {
       // Report Calls Home
@@ -142,8 +139,7 @@
             scales: {
                yAxes: [{
                   ticks: {
-                    min: 0,
-                    stepSize: 2
+                    beginAtZero: true
                   }
                }],
                xAxes: [{
@@ -164,12 +160,25 @@
               }
           }
       });
+      
       // Report Kanwil Home
       var ctz = document.getElementById("reportKanwil").getContext("2d");
       var wilayahBar = new Chart(ctz, {
           type: 'horizontalBar',
           data: kanwilChartData,
           options: {
+            scales: {
+             yAxes: [{
+                ticks: {
+                      fontSize: 10
+                }
+             }],
+             xAxes: [{
+                     ticks: {
+                      beginAtZero: true
+                     }
+                    }]
+            },
               elements: {
                   rectangle: {
                       borderColor: 'rgb(0, 255, 0)',
@@ -193,8 +202,7 @@
             scales: {
                yAxes: [{
                   ticks: {
-                    min: 0,
-                    stepSize: 2
+                    beginAtZero: true
                   }
                }],
                xAxes: [{
