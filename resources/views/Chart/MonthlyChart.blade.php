@@ -73,7 +73,7 @@
     var cta = document.getElementById("monthCalls").getContext("2d");
     var callBar = new Chart(cta, {
         type: 'bar',
-        data: call_data,
+        data: callChart,
         options: {
           scales: {
              yAxes: [{
@@ -104,7 +104,7 @@
     var ctb = document.getElementById("monthKanwil").getContext("2d");
     var kanwilBar = new Chart(ctb, {
         type: 'bar',
-        data: kanwil_data,
+        data: kanwilChart,
         options: {
           scales: {
              yAxes: [{
@@ -135,7 +135,7 @@
     var ctc = document.getElementById("monthCab").getContext("2d");
     var cabBar = new Chart(ctc, {
         type: 'bar',
-        data: cab_data,
+        data: cabChart,
         options: {
           scales: {
              yAxes: [{
@@ -166,7 +166,7 @@
     var ctd = document.getElementById("monthQuestion").getContext("2d");
     var questionBar = new Chart(ctd, {
         type: 'bar',
-        data: question_data,
+        data: questionChart,
         options: {
           scales: {
              yAxes: [{

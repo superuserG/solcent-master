@@ -72,7 +72,7 @@
     var aca = document.getElementById("annualCalls").getContext("2d");
     var callBar = new Chart(aca,{
       type: 'bar',
-      data: call_data,
+      data: callChart,
       options: {
         scales:{
           yAxes:[{
@@ -99,10 +99,10 @@
       }
     });
 
-    var acb = document.getElementById("reportQuestion").getContext("2d");
+    var acb = document.getElementById("annualQuestion").getContext("2d");
     var kanwilBar = new Chart(acb, {
         type: 'bar',
-        data: kanwil_data,
+        data: questionChart,
         options: {
           scales: {
              yAxes: [{
