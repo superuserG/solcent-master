@@ -23,7 +23,7 @@
             </div>
             <div class="col-xs-9 text-right">
               <div class="huge">
-                123
+                {{$comp}}
               </div>
               <div class="">
                 Completed
@@ -50,7 +50,7 @@
             </div>
             <div class="col-xs-9 text-right">
               <div class="huge">
-                45
+                {{$prog}}
               </div>
               <div class="">
                 In Progress

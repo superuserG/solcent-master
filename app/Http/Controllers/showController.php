@@ -19,13 +19,18 @@ class showController extends Controller
 {
   public function showHome()
   {
+     //Details
+     $comp = DB::table('report_solcents')->where('Status','=','Completed')->Count();
+     $prog = DB::table('report_solcents')->where('Status','!=','Completed')->Count();
+
      //Report Ticket
     $presented = DB::table('report_solcents')
         ->select(DB::raw('Count(WO_ID) as present'))
         ->get()->toArray();
     $presented = array_column($presented, 'present');
 
-    $completed = ReportSolcent::select(DB::raw("count(WO_ID) as completed"))->where('Status','=','Completed')
+    $completed = ReportSolcent::select(DB::raw("count(WO_ID) as completed"))
+        ->where('Status','=','Completed')
         ->get()->toArray();
     $completed = array_column($completed, 'completed');
 
@@ -81,7 +86,7 @@ class showController extends Controller
             ->get()->toArray();
     $labelSite = array_column($labelSite, 'lblCabang');
 
-    return view('home')
+    return view('home',compact('comp','prog'))
         ->with('presented',json_encode($presented,JSON_NUMERIC_CHECK))
         ->with('completed',json_encode($completed,JSON_NUMERIC_CHECK))
         ->with('in_progress',json_encode($in_progress,JSON_NUMERIC_CHECK))
@@ -120,24 +125,22 @@ class showController extends Controller
   public function showMonthly()
   {
     //Report Top Question
-    $que = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Category_1) as Question')))
-              ->groupBy('Category_1')
-              ->orderBy('Question','desc')
-              ->get()->toArray();
-    $que = array_column($que, 'Question');
 
-    $cate = DB::table('report_solcents')
-            ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
-            ->take(10)
-            ->groupBy('Category_1')
-            ->orderBy('Result','desc')
-            ->get()->toArray();
-    $cate = array_column($cate, 'Cat');
+    $callpres = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','Januari')
+          ->get()->toArray();
+    $callpres = array_column($callpres,'callpres');
+
+    $ticket_january = DB::table('report_solcents')
+          ->select('count(WO_ID) as ticket')
+          ->where(DB::raw('Month(Submit_Date) = 01'))
+          ->get()->toArray();
+    $ticket_january = array_column($ticket_january,'ticket_january');
 
     return view('monthly')
-        ->with('que',json_encode($que,JSON_NUMERIC_CHECK))
-        ->with('cate',json_encode($cate,JSON_NUMERIC_CHECK));
+        ->with('callpres',json_encode($callpres,JSON_NUMERIC_CHECK))
+        ->with('ticket_january',json_encode($ticket_january,JSON_NUMERIC_CHECK));
   }
 
 
