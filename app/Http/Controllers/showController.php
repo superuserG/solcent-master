@@ -126,23 +126,27 @@ class showController extends Controller
   {
     //Report Top Question
 
-    $callpres = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','Januari')
-          ->get()->toArray();
-    $callpres = array_column($callpres,'callpres');
-
-    $ticket_january = DB::table('report_solcents')
-          ->select('count(WO_ID) as ticket')
-          ->where(DB::raw('Month(Submit_Date) = 01'))
-          ->get()->toArray();
-    $ticket_january = array_column($ticket_january,'ticket_january');
-
-    return view('monthly')
-        ->with('callpres',json_encode($callpres,JSON_NUMERIC_CHECK))
-        ->with('ticket_january',json_encode($ticket_january,JSON_NUMERIC_CHECK));
+    // $callpres = DB::table('report_calls')
+    //       ->select('presentedCall as call')
+    //       ->where('months','=','Januari')
+    //       ->get()->toArray();
+    // $callpres = array_column($callpres,'callpres');
+    //
+    // $ticket_january = DB::table('report_solcents')
+    //       ->select('count(WO_ID) as ticket')
+    //       ->where(DB::raw('Month(Submit_Date) = 01'))
+    //       ->get()->toArray();
+    // $ticket_january = array_column($ticket_january,'ticket_january');
+    //
+     return view('monthly');
+    //   ->with('callpres',json_encode($callpres,JSON_NUMERIC_CHECK))
+    //     ->with('ticket_january',json_encode($ticket_january,JSON_NUMERIC_CHECK));
   }
 
+  public function showAnnualy ()
+  {
+    return view ('annualy');
+  }
 
   public function test()
   {

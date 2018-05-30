@@ -26,7 +26,7 @@
                           <a href="{!! route('monthlyReport') !!}">Monthly Report</a>
                       </li>
                       <li>
-                          <a href="#">Annual Report</a>
+                          <a href="{!! route('annualyReport') !!}">Annual Report</a>
                       </li>
                   </ul>
                   <!-- /.nav-second-level -->
