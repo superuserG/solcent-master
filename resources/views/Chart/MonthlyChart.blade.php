@@ -1,18 +1,55 @@
 <script>
-  var cat1 = ['January','February','March'];
-  var call_data = [1,2,3];
+  var cat1 = [
+    'January','February','Maret','April',
+    'Mei', 'Juni', 'July', 'Agustus',
+    'September','Oktober','November','Desember'
+  ];
+
+  var call_jan = <?php echo $calljan;?>;
+  var call_Feb = <?php echo $callFeb;?>;
+  var call_Mar = <?php echo $callMar;?>;
+  var call_Apr = <?php echo $callApr;?>;
+  var ticket_jan = <?php echo $ticket_jan;?>;
+  var ticket_feb = <?php echo $ticket_feb;?>;
+  var ticket_mar = <?php echo $ticket_mar;?>;
+  var ticket_apr = <?php echo $ticket_apr;?>;
+  var ticket_mei = <?php echo $ticket_mei;?>;
+  var ticket_jun = <?php echo $ticket_jun;?>;
+  var ticket_jul = <?php echo $ticket_jul;?>;
+  var ticket_aug = <?php echo $ticket_aug;?>;
+  var ticket_sep = <?php echo $ticket_sep;?>;
+  var ticket_okt = <?php echo $ticket_okt;?>;
+  var ticket_nov = <?php echo $ticket_nov;?>;
+  var ticket_des = <?php echo $ticket_des;?>;
+
+
   var callChart = {
       labels: cat1,
       datasets:
       [{
-          data: call_data,
+          data: [call_jan, call_Feb, call_Mar, call_Apr],
           backgroundColor:
           [
               'rgba(0,0,128, 0.5)',
               'rgba(0,0,255, 0.5)',
               'rgba(0,128,0, 0.5)'
           ],
-      }],
+
+      },
+      {
+          data: [
+            ticket_jan, ticket_feb, ticket_mar, ticket_apr,
+            ticket_mei, ticket_jun, ticket_jul, ticket_aug,
+            ticket_sep, ticket_okt, ticket_nov, ticket_des,
+          ],
+          backgroundColor:
+          [
+              'rgba(0,0,128, 0.5)',
+              'rgba(0,0,255, 0.5)',
+              'rgba(0,128,0, 0.5)'
+          ],
+      }
+    ],
 
   };
 

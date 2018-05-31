@@ -124,23 +124,131 @@ class showController extends Controller
 
   public function showMonthly()
   {
-    //Report Top Question
+    //compate data ticket dan call
+    $calljan = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','Januari')
+          ->get()->toArray();
+    $calljan = array_column($calljan,'call');
 
-    // $callpres = DB::table('report_calls')
-    //       ->select('presentedCall as call')
-    //       ->where('months','=','Januari')
-    //       ->get()->toArray();
-    // $callpres = array_column($callpres,'callpres');
-    //
-    // $ticket_january = DB::table('report_solcents')
-    //       ->select('count(WO_ID) as ticket')
-    //       ->where(DB::raw('Month(Submit_Date) = 01'))
-    //       ->get()->toArray();
-    // $ticket_january = array_column($ticket_january,'ticket_january');
-    //
-     return view('monthly');
-    //   ->with('callpres',json_encode($callpres,JSON_NUMERIC_CHECK))
-    //     ->with('ticket_january',json_encode($ticket_january,JSON_NUMERIC_CHECK));
+    $callFeb = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','February')
+          ->get()->toArray();
+    $callFeb = array_column($callFeb,'call');
+
+    $callMar = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','Maret')
+          ->get()->toArray();
+    $callMar = array_column($callMar,'call');
+
+    $callApr = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','April')
+          ->get()->toArray();
+    $callApr = array_column($callApr,'call');
+
+    /////////////////////////////////////////////////////////////////////
+
+    $ticket_jan = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('01'))
+          ->get()->toArray();
+    $ticket_jan = array_column($ticket_jan,'ticket');
+
+    $ticket_feb = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('02'))
+          ->get()->toArray();
+    $ticket_feb = array_column($ticket_feb,'ticket');
+
+    $ticket_mar = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('03'))
+          ->get()->toArray();
+    $ticket_mar = array_column($ticket_mar,'ticket');
+
+    $ticket_apr = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('04'))
+          ->get()->toArray();
+    $ticket_apr = array_column($ticket_apr,'ticket');
+
+    $ticket_mei = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('05'))
+          ->get()->toArray();
+    $ticket_mei = array_column($ticket_mei,'ticket');
+
+    $ticket_jun = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('06'))
+          ->get()->toArray();
+    $ticket_jun = array_column($ticket_jun,'ticket');
+
+    $ticket_jul = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('07'))
+          ->get()->toArray();
+    $ticket_jul = array_column($ticket_jul,'ticket');
+
+    $ticket_aug = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('08'))
+          ->get()->toArray();
+    $ticket_aug = array_column($ticket_aug,'ticket');
+
+    $ticket_sep = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('09'))
+          ->get()->toArray();
+    $ticket_sep = array_column($ticket_sep,'ticket');
+
+    $ticket_okt = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('10'))
+          ->get()->toArray();
+    $ticket_okt = array_column($ticket_okt,'ticket');
+
+    $ticket_nov = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('11'))
+          ->get()->toArray();
+    $ticket_nov = array_column($ticket_nov,'ticket');
+
+    $ticket_des = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('12'))
+          ->get()->toArray();
+    $ticket_des = array_column($ticket_des,'ticket');
+
+    return view('monthly')
+     ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
+     ->with('callFeb',json_encode($callFeb,JSON_NUMERIC_CHECK))
+     ->with('callMar',json_encode($callMar,JSON_NUMERIC_CHECK))
+     ->with('callApr',json_encode($callApr,JSON_NUMERIC_CHECK))
+     // ->with('calljan',json_encode($callMei,JSON_NUMERIC_CHECK))
+     // ->with('calljan',json_encode($callJun,JSON_NUMERIC_CHECK))
+     // ->with('calljan',json_encode($callJul,JSON_NUMERIC_CHECK))
+     // ->with('calljan',json_encode($callAug,JSON_NUMERIC_CHECK))
+     // ->with('calljan',json_encode($callSep,JSON_NUMERIC_CHECK))
+     // ->with('calljan',json_encode($callOkt,JSON_NUMERIC_CHECK))
+     // ->with('calljan',json_encode($callNov,JSON_NUMERIC_CHECK))
+     // ->with('calljan',json_encode($callDes,JSON_NUMERIC_CHECK))
+     ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
+     ->with('ticket_feb',json_encode($ticket_feb,JSON_NUMERIC_CHECK))
+     ->with('ticket_mar',json_encode($ticket_mar,JSON_NUMERIC_CHECK))
+     ->with('ticket_apr',json_encode($ticket_apr,JSON_NUMERIC_CHECK))
+     ->with('ticket_mei',json_encode($ticket_mei,JSON_NUMERIC_CHECK))
+     ->with('ticket_jun',json_encode($ticket_jun,JSON_NUMERIC_CHECK))
+     ->with('ticket_jul',json_encode($ticket_jul,JSON_NUMERIC_CHECK))
+     ->with('ticket_aug',json_encode($ticket_aug,JSON_NUMERIC_CHECK))
+     ->with('ticket_sep',json_encode($ticket_sep,JSON_NUMERIC_CHECK))
+     ->with('ticket_okt',json_encode($ticket_okt,JSON_NUMERIC_CHECK))
+     ->with('ticket_nov',json_encode($ticket_nov,JSON_NUMERIC_CHECK))
+     ->with('ticket_des',json_encode($ticket_des,JSON_NUMERIC_CHECK))
+     ;
   }
 
   public function showAnnualy ()
