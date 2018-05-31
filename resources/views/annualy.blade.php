@@ -33,7 +33,7 @@
           </div>
           <!-- /.panel-heading -->
           <div class="panel-body" id="calls">
-            <canvas id="annualQuestion" height="400" width="600"></canvas>
+            <canvas id="annualKanwil" height="400" width="600"></canvas>
           </div>
           <!-- /.panel-body -->
       </div>
@@ -47,7 +47,7 @@
           </div>
           <!-- /.panel-heading -->
           <div class="panel-body" id="calls">
-            <canvas id="annualKanwil" height="400" width="600"></canvas>
+            <canvas id="annualQuestion" height="400" width="600"></canvas>
           </div>
           <!-- /.panel-body -->
       </div>

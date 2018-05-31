@@ -33,7 +33,7 @@
     }]
   };
 
-  var year3 = ['2018'];
+  var year3 = ['2018','2019','2020'];
   var kanwil_data = [123,456,789];
   var kanwilChart =
   {
@@ -50,9 +50,9 @@
     }]
   };
 
-  var year4 = ['2018'];
+  var year4 = ['2018','2019','2020'];
   var cab_data = [123,456,789];
-  var cabBar =
+  var cabangChart =
   {
     labels: year4,
     datasets:
@@ -99,8 +99,38 @@
       }
     });
 
-    var acb = document.getElementById("annualQuestion").getContext("2d");
+    var acb = document.getElementById("annualKanwil").getContext("2d");
     var kanwilBar = new Chart(acb, {
+        type: 'bar',
+        data: kanwilChart,
+        options: {
+          scales: {
+             yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+             }],
+             xAxes: [{
+                     ticks: {
+                      fontSize: 10
+                     }
+                    }]
+            },
+            elements: {
+                rectangle: {
+                    borderSkipped: 'bottom'
+                }
+            },
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Kanwil Calls Report'
+            }
+        }
+    });
+
+    var acc = document.getElementById("annualQuestion").getContext("2d");
+    var questionBar = new Chart(acc, {
         type: 'bar',
         data: questionChart,
         options: {
@@ -124,7 +154,37 @@
             responsive: true,
             title: {
                 display: true,
-                text: 'Kanwil Calls Report'
+                text: 'FAQ Report'
+            }
+        }
+    });
+
+    var acd = document.getElementById("annualCabang").getContext("2d");
+    var cabangBar = new Chart(acd, {
+        type: 'bar',
+        data: cabangChart,
+        options: {
+          scales: {
+             yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+             }],
+             xAxes: [{
+                     ticks: {
+                      fontSize: 10
+                     }
+                    }]
+            },
+            elements: {
+                rectangle: {
+                    borderSkipped: 'bottom'
+                }
+            },
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Cabang Calls Report'
             }
         }
     });
