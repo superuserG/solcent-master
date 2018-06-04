@@ -1,5 +1,5 @@
 <script>
-  var cat1 = [
+  var month = [
     'January','February','Maret','April',
     'Mei', 'Juni', 'July', 'Agustus',
     'September','Oktober','November','Desember'
@@ -22,9 +22,8 @@
   var ticket_nov = <?php echo $ticket_nov;?>;
   var ticket_des = <?php echo $ticket_des;?>;
 
-
-  var callChart = {
-      labels: cat1,
+  var compareChart = {
+      labels: month,
       datasets:
       [{
           data: [call_jan, call_Feb, call_Mar, call_Apr],
@@ -52,14 +51,11 @@
     ],
 
   };
-
-  var cat2 = ['January','February','March'];
-  var kanwil_data = [1,2,3];
-  var kanwilChart = {
-      labels: cat2,
+  var callChart = {
+      labels: month,
       datasets:
       [{
-          data: kanwil_data,
+          data: [call_jan, call_Feb, call_Mar, call_Apr],
           backgroundColor:
           [
               'rgba(0,0,128, 0.5)',
@@ -70,10 +66,9 @@
 
   };
 
-  var cat3 = ['January','February','March'];
   var cab_data = [1,2,3];
   var cabChart = {
-      labels: cat3,
+      labels: month,
       datasets:
       [{
           data: cab_data,
@@ -87,10 +82,9 @@
 
   };
 
-  var cat4 = ['January','February','March'];
   var question_data = [1,2,3];
   var questionChart = {
-      labels: cat4,
+      labels: month,
       datasets:
       [{
           data: question_data,
@@ -106,11 +100,11 @@
 
 
   window.onload = function() {
-    //report call per-bulan
-    var cta = document.getElementById("monthCalls").getContext("2d");
+    //report call per-bulan compare dengan ticket
+    var cta = document.getElementById("compareCalls").getContext("2d");
     var callBar = new Chart(cta, {
         type: 'bar',
-        data: callChart,
+        data: compareChart,
         options: {
           scales: {
              yAxes: [{
@@ -138,10 +132,10 @@
     });
 
     //top kanwil
-    var ctb = document.getElementById("monthKanwil").getContext("2d");
+    var ctb = document.getElementById("callMonths").getContext("2d");
     var kanwilBar = new Chart(ctb, {
         type: 'bar',
-        data: kanwilChart,
+        data: callChart,
         options: {
           scales: {
              yAxes: [{
