@@ -26,6 +26,7 @@
       labels: month,
       datasets:
       [{
+          label: 'Call',
           data: [call_jan, call_Feb, call_Mar, call_Apr],
           backgroundColor:
           [
@@ -36,6 +37,7 @@
 
       },
       {
+          label: 'Ticket',
           data: [
             ticket_jan, ticket_feb, ticket_mar, ticket_apr,
             ticket_mei, ticket_jun, ticket_jul, ticket_aug,
@@ -51,10 +53,12 @@
     ],
 
   };
+
   var callChart = {
       labels: month,
       datasets:
       [{
+          label: 'Call',
           data: [call_jan, call_Feb, call_Mar, call_Apr],
           backgroundColor:
           [
@@ -66,12 +70,15 @@
 
   };
 
-  var cab_data = [1,2,3];
-  var cabChart = {
+  var ticketChart = {
       labels: month,
       datasets:
       [{
-          data: cab_data,
+          data: [
+            ticket_jan, ticket_feb, ticket_mar, ticket_apr,
+            ticket_mei, ticket_jun, ticket_jul, ticket_aug,
+            ticket_sep, ticket_okt, ticket_nov, ticket_des,
+          ],
           backgroundColor:
           [
               'rgba(0,0,128, 0.5)',
@@ -82,21 +89,6 @@
 
   };
 
-  var question_data = [1,2,3];
-  var questionChart = {
-      labels: month,
-      datasets:
-      [{
-          data: question_data,
-          backgroundColor:
-          [
-              'rgba(0,0,128, 0.5)',
-              'rgba(0,0,255, 0.5)',
-              'rgba(0,128,0, 0.5)'
-          ],
-      }],
-
-  };
 
 
   window.onload = function() {
@@ -126,7 +118,7 @@
             responsive: true,
             title: {
                 display: true,
-                text: 'Calls'
+                text: 'Calls and Tickets'
             }
         }
     });
@@ -157,16 +149,16 @@
             responsive: true,
             title: {
                 display: true,
-                text: 'Kanwil'
+                text: 'Call'
             }
         }
     });
 
     //top cabang
-    var ctc = document.getElementById("monthCab").getContext("2d");
+    var ctc = document.getElementById("ticketMonths").getContext("2d");
     var cabBar = new Chart(ctc, {
         type: 'bar',
-        data: cabChart,
+        data: ticketChart,
         options: {
           scales: {
              yAxes: [{
@@ -193,36 +185,6 @@
         }
     });
 
-    //FAQ
-    var ctd = document.getElementById("monthQuestion").getContext("2d");
-    var questionBar = new Chart(ctd, {
-        type: 'bar',
-        data: questionChart,
-        options: {
-          scales: {
-             yAxes: [{
-                ticks: {
-                  beginAtZero: true
-                }
-             }],
-             xAxes: [{
-                     ticks: {
-                      fontSize: 10
-                     }
-                    }]
-            },
-            elements: {
-                rectangle: {
-                    borderSkipped: 'bottom'
-                }
-            },
-            responsive: true,
-            title: {
-                display: true,
-                text: 'Question Report'
-            }
-        }
-    });
   }
 
 </script>

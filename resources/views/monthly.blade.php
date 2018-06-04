@@ -12,28 +12,14 @@
   </div>
   <div class="row">
 
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Compare Calls and Ticket
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body" id="calls">
-              <canvas id="compareCalls" height="400" width="600"></canvas>
-            </div>
-            <!-- /.panel-body -->
-        </div>
-    </div>
-    {{-- Monthly Calls Chart --}}
-
-     <div class="col-lg-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Monthly Calls Chart
-            </div>
-            <!-- /.panel-heading -->
-            <div class="panel-body" id="calls">
-              <canvas id="callMonths" height="400" width="600"></canvas>
+              <canvas id="compareCalls" height="200" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
@@ -43,30 +29,30 @@
      <div class="col-lg-6">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Monthly FAQ
+                Monthly Calls
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body" id="calls">
-              <canvas id="monthQuestion" height="400" width="600"></canvas>
+              <canvas id="callMonths" height="400" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
     </div>
-    {{-- top pertanyaan bulan ini --}}
+    {{-- Monthly Calls Chart --}}
+
 
      <div class="col-lg-6">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Monthly Cabang Calls
+                Monthly Tickets
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body" id="calls">
-              <canvas id="monthCab" height="400" width="600"></canvas>
+              <canvas id="ticketMonths" height="400" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
     </div>
-    {{-- report top pertanyaan dari category 2 --}}
-  </div>
+    {{-- Ticket --}}
 
 @endsection

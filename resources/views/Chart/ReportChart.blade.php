@@ -40,6 +40,7 @@
       labels: cat,
       datasets:
       [{
+          label: 'Top Category 1',
           data: data_category,
           backgroundColor:
           [
@@ -66,6 +67,7 @@
       labels: kanwil,
       datasets:
       [{
+          label: 'Top Calling',
           data: data_kanwil,
           backgroundColor:
           [
@@ -91,6 +93,7 @@
       labels: cabang,
       datasets:
       [{
+          label: 'Top Branch Calling',
           data: data_cabang,
           backgroundColor:
           [
@@ -160,7 +163,7 @@
               }
           }
       });
-      
+
       // Report Kanwil Home
       var ctz = document.getElementById("reportKanwil").getContext("2d");
       var wilayahBar = new Chart(ctz, {
