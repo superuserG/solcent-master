@@ -28,7 +28,9 @@
                       <li>
                           <a href="{!! route('annualyReport') !!}">Annual Report</a>
                       </li>
+
                   </ul>
+
                   <!-- /.nav-second-level -->
               </li>
               {{-- Report Menu --}}

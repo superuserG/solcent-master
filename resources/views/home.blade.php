@@ -10,7 +10,7 @@
           <h2 class="page-header">Home Agent</h2>
         @endif
       </div>
-  </div>
+
 
 <div class="col-sm-offset-3">
   <div class="row">
