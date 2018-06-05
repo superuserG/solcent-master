@@ -53,12 +53,18 @@
     ],
 
   };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 37a924090cd220b6b31bc6f533bc360a8747e1c3
   var callChart = {
       labels: month,
       datasets:
       [{
+<<<<<<< HEAD
           label: 'Call',
+=======
+>>>>>>> 37a924090cd220b6b31bc6f533bc360a8747e1c3
           data: [call_jan, call_Feb, call_Mar, call_Apr],
           backgroundColor:
           [
@@ -70,7 +76,12 @@
 
   };
 
+<<<<<<< HEAD
   var ticketChart = {
+=======
+  var cab_data = [1,2,3];
+  var cabChart = {
+>>>>>>> 37a924090cd220b6b31bc6f533bc360a8747e1c3
       labels: month,
       datasets:
       [{
@@ -79,6 +90,19 @@
             ticket_mei, ticket_jun, ticket_jul, ticket_aug,
             ticket_sep, ticket_okt, ticket_nov, ticket_des,
           ],
+<<<<<<< HEAD
+=======
+      }],
+
+  };
+
+  var question_data = [1,2,3];
+  var questionChart = {
+      labels: month,
+      datasets:
+      [{
+          data: question_data,
+>>>>>>> 37a924090cd220b6b31bc6f533bc360a8747e1c3
           backgroundColor:
           [
               'rgba(0,0,128, 0.5)',
