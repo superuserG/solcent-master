@@ -34,4 +34,18 @@ Route::middleware('auth')->group(function(){
   Route::post('editPost','CRUDController@detailModal');
   Route::get('/Post/{post}/Review','CRUDController@edit')->name('edit.post');
   Route::patch('/Post/{post}/Update','CRUDController@update')->name('update.post');
+
+  Route::get('/report/monthly/January','monthController@showJanuary')->name('month.January');
+  Route::get('/report/monthly/February','monthController@showFebruary')->name('month.February');
+  Route::get('/report/monthly/March','monthController@showMarch')->name('month.March');
+  Route::get('/report/monthly/April','monthController@showApril')->name('month.April');
+  Route::get('/report/monthly/May','monthController@showMay')->name('month.May');
+  Route::get('/report/monthly/June','monthController@showJune')->name('month.June');
+  Route::get('/report/monthly/July','monthController@showJuly')->name('month.July');
+  Route::get('/report/monthly/August','monthController@showAugust')->name('month.August');
+  Route::get('/report/monthly/September','monthController@showSeptember')->name('month.September');
+  Route::get('/report/monthly/October','monthController@showOctober')->name('month.October');
+  Route::get('/report/monthly/November','monthController@showNovember')->name('month.November');
+  Route::get('/report/monthly/December','monthController@showDecember')->name('month.December');
+
 });

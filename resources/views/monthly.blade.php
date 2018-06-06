@@ -12,26 +12,26 @@
                     Choose Month
                   </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#">January</a></li>
-                <li><a class="dropdown-item" href="#">February</a></li>
-                <li><a class="dropdown-item" href="#">March</a></li>
-                <li><a class="dropdown-item" href="#">April</a></li>
-                <li><a class="dropdown-item" href="#">May</a></li>
-                <li><a class="dropdown-item" href="#">Juni</a></li>
-                <li><a class="dropdown-item" href="#">July</a></li>
-                <li><a class="dropdown-item" href="#">August</a></li>
-                <li><a class="dropdown-item" href="#">September</a></li>
-                <li><a class="dropdown-item" href="#">October</a></li>
-                <li><a class="dropdown-item" href="#">November</a></li>
-                <li><a class="dropdown-item" href="#">Desember</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.January') !!}">January</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.February') !!}">February</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.March') !!}">March</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.April') !!}">April</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.May') !!}">May</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June') !!}">June</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.July') !!}">July</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.August') !!}">August</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.September') !!}">September</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.October') !!}">October</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.November') !!}">November</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.December') !!}">December</a></li>
               </div>
             </span>
           </h2>
       </div>
       <!-- /.col-lg-12 -->
   </div>
-  <div class="row">
 
+  <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
