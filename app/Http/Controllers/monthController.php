@@ -93,27 +93,369 @@ class monthController extends Controller
   }
 
   public function showJuly(){
-    return view('Page_Month.july');
+    $present = DB::table('report_calls')
+          ->select('presentedCall as presented')
+          ->where('months','=','July')
+          ->get()->toArray();
+    $present = array_column($present,'presented');
+
+    $handle = DB::table('report_calls')
+          ->select('handledCall as handled')
+          ->where('months','=','July')
+          ->get()->toArray();
+    $handle = array_column($handle,'handled');
+
+    $abandon = DB::table('report_calls')
+          ->select('abandonedCall as abandoned')
+          ->where('months','=','July')
+          ->get()->toArray();
+    $abandon = array_column($abandon,'abandoned');
+
+    // compare
+    $calljan = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','July')
+          ->get()->toArray();
+    $calljan = array_column($calljan,'call');
+
+    $ticket_jan = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('07'))
+          ->get()->toArray();
+    $ticket_jan = array_column($ticket_jan,'ticket');
+
+    // top question
+    $question = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Category_1) as Question')))
+              ->whereMonth('Submit_Date','=',date('07'))
+              ->groupBy('Category_1')
+              ->orderBy('Question','desc')
+              ->get()->toArray();
+    $question = array_column($question, 'Question');
+
+    $cat = DB::table('report_solcents')
+            ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->whereMonth('Submit_Date','=',date('07'))
+            ->take(10)
+            ->groupBy('Category_1')
+            ->orderBy('Result','desc')
+            ->get()->toArray();
+    $cat = array_column($cat, 'Cat');
+
+
+    return view('Page_Month.july')
+    ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
+    ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
+    ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
+    ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
+    ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
+    ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
+    ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showAugust(){
-    return view('Page_Month.august');
-  }
+    $present = DB::table('report_calls')
+          ->select('presentedCall as presented')
+          ->where('months','=','August')
+          ->get()->toArray();
+    $present = array_column($present,'presented');
+
+    $handle = DB::table('report_calls')
+          ->select('handledCall as handled')
+          ->where('months','=','August')
+          ->get()->toArray();
+    $handle = array_column($handle,'handled');
+
+    $abandon = DB::table('report_calls')
+          ->select('abandonedCall as abandoned')
+          ->where('months','=','August')
+          ->get()->toArray();
+    $abandon = array_column($abandon,'abandoned');
+
+    // compare
+    $calljan = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','August')
+          ->get()->toArray();
+    $calljan = array_column($calljan,'call');
+
+    $ticket_jan = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('08'))
+          ->get()->toArray();
+    $ticket_jan = array_column($ticket_jan,'ticket');
+
+    // top question
+    $question = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Category_1) as Question')))
+              ->whereMonth('Submit_Date','=',date('08'))
+              ->groupBy('Category_1')
+              ->orderBy('Question','desc')
+              ->get()->toArray();
+    $question = array_column($question, 'Question');
+
+    $cat = DB::table('report_solcents')
+            ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->whereMonth('Submit_Date','=',date('08'))
+            ->take(10)
+            ->groupBy('Category_1')
+            ->orderBy('Result','desc')
+            ->get()->toArray();
+    $cat = array_column($cat, 'Cat');
+
+    return view('Page_Month.august')
+    ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
+    ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
+    ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
+    ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
+    ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
+    ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
+    ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ;  }
 
   public function showSeptember(){
-    return view('Page_Month.september');
+    $present = DB::table('report_calls')
+          ->select('presentedCall as presented')
+          ->where('months','=','September')
+          ->get()->toArray();
+    $present = array_column($present,'presented');
+
+    $handle = DB::table('report_calls')
+          ->select('handledCall as handled')
+          ->where('months','=','September')
+          ->get()->toArray();
+    $handle = array_column($handle,'handled');
+
+    $abandon = DB::table('report_calls')
+          ->select('abandonedCall as abandoned')
+          ->where('months','=','September')
+          ->get()->toArray();
+    $abandon = array_column($abandon,'abandoned');
+
+    // compare
+    $calljan = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','September')
+          ->get()->toArray();
+    $calljan = array_column($calljan,'call');
+
+    $ticket_jan = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('09'))
+          ->get()->toArray();
+    $ticket_jan = array_column($ticket_jan,'ticket');
+
+    // top question
+    $question = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Category_1) as Question')))
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Category_1')
+              ->orderBy('Question','desc')
+              ->get()->toArray();
+    $question = array_column($question, 'Question');
+
+    $cat = DB::table('report_solcents')
+            ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Category_1')
+            ->orderBy('Result','desc')
+            ->get()->toArray();
+    $cat = array_column($cat, 'Cat');
+
+    return view('Page_Month.september')
+    ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
+    ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
+    ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
+    ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
+    ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
+    ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
+    ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showOctober(){
-    return view('Page_Month.october');
+    $present = DB::table('report_calls')
+          ->select('presentedCall as presented')
+          ->where('months','=','October')
+          ->get()->toArray();
+    $present = array_column($present,'presented');
+
+    $handle = DB::table('report_calls')
+          ->select('handledCall as handled')
+          ->where('months','=','October')
+          ->get()->toArray();
+    $handle = array_column($handle,'handled');
+
+    $abandon = DB::table('report_calls')
+          ->select('abandonedCall as abandoned')
+          ->where('months','=','October')
+          ->get()->toArray();
+    $abandon = array_column($abandon,'abandoned');
+
+    // compare
+    $calljan = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','October')
+          ->get()->toArray();
+    $calljan = array_column($calljan,'call');
+
+    $ticket_jan = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('10'))
+          ->get()->toArray();
+    $ticket_jan = array_column($ticket_jan,'ticket');
+
+    // top question
+    $question = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Category_1) as Question')))
+              ->whereMonth('Submit_Date','=',date('10'))
+              ->groupBy('Category_1')
+              ->orderBy('Question','desc')
+              ->get()->toArray();
+    $question = array_column($question, 'Question');
+
+    $cat = DB::table('report_solcents')
+            ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->whereMonth('Submit_Date','=',date('10'))
+            ->take(10)
+            ->groupBy('Category_1')
+            ->orderBy('Result','desc')
+            ->get()->toArray();
+    $cat = array_column($cat, 'Cat');
+
+    return view('Page_Month.october')
+    ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
+    ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
+    ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
+    ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
+    ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
+    ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
+    ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showNovember(){
-    return view('Page_Month.november');
+    $present = DB::table('report_calls')
+          ->select('presentedCall as presented')
+          ->where('months','=','November')
+          ->get()->toArray();
+    $present = array_column($present,'presented');
+
+    $handle = DB::table('report_calls')
+          ->select('handledCall as handled')
+          ->where('months','=','November')
+          ->get()->toArray();
+    $handle = array_column($handle,'handled');
+
+    $abandon = DB::table('report_calls')
+          ->select('abandonedCall as abandoned')
+          ->where('months','=','November')
+          ->get()->toArray();
+    $abandon = array_column($abandon,'abandoned');
+
+    // compare
+    $calljan = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','November')
+          ->get()->toArray();
+    $calljan = array_column($calljan,'call');
+
+    $ticket_jan = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('11'))
+          ->get()->toArray();
+    $ticket_jan = array_column($ticket_jan,'ticket');
+
+    // top question
+    $question = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Category_1) as Question')))
+              ->whereMonth('Submit_Date','=',date('11'))
+              ->groupBy('Category_1')
+              ->orderBy('Question','desc')
+              ->get()->toArray();
+    $question = array_column($question, 'Question');
+
+    $cat = DB::table('report_solcents')
+            ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->whereMonth('Submit_Date','=',date('11'))
+            ->take(10)
+            ->groupBy('Category_1')
+            ->orderBy('Result','desc')
+            ->get()->toArray();
+    $cat = array_column($cat, 'Cat');
+
+    return view('Page_Month.november')
+    ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
+    ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
+    ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
+    ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
+    ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
+    ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
+    ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showDecember(){
-    return view('Page_Month.december');
+    $present = DB::table('report_calls')
+          ->select('presentedCall as presented')
+          ->where('months','=','December')
+          ->get()->toArray();
+    $present = array_column($present,'presented');
+
+    $handle = DB::table('report_calls')
+          ->select('handledCall as handled')
+          ->where('months','=','December')
+          ->get()->toArray();
+    $handle = array_column($handle,'handled');
+
+    $abandon = DB::table('report_calls')
+          ->select('abandonedCall as abandoned')
+          ->where('months','=','December')
+          ->get()->toArray();
+    $abandon = array_column($abandon,'abandoned');
+
+    // compare
+    $calljan = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','December')
+          ->get()->toArray();
+    $calljan = array_column($calljan,'call');
+
+    $ticket_jan = DB::table('report_solcents')
+          ->select(DB::raw('Count(WO_ID) as ticket'))
+          ->whereMonth('Submit_Date','=',date('12'))
+          ->get()->toArray();
+    $ticket_jan = array_column($ticket_jan,'ticket');
+
+    // top question
+    $question = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Category_1) as Question')))
+              ->whereMonth('Submit_Date','=',date('12'))
+              ->groupBy('Category_1')
+              ->orderBy('Question','desc')
+              ->get()->toArray();
+    $question = array_column($question, 'Question');
+
+    $cat = DB::table('report_solcents')
+            ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->whereMonth('Submit_Date','=',date('12'))
+            ->take(10)
+            ->groupBy('Category_1')
+            ->orderBy('Result','desc')
+            ->get()->toArray();
+    $cat = array_column($cat, 'Cat');
+
+    return view('Page_Month.december')
+    ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
+    ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
+    ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
+    ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
+    ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
+    ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
+    ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ;
   }
 
 }
