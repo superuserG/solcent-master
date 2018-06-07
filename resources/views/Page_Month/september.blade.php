@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-lg-12">
         <h2 class="page-header">September Page
-          <span class="dropdown col-lg-offset-1">
+          <span class="dropdown col-lg-offset-7">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Choose Month
                 </button>
@@ -29,64 +29,65 @@
         </h2>
     </div>
 
+  </div>
+
+  <div class="row">
+
     {{-- Calls Chart --}}
-    <div class="row">
-      <div class="col-lg-6">
-          <div class="panel panel-default">
-              <div class="panel-heading">
-                  Calls
-              </div>
-              <!-- /.panel-heading -->
-              <div class="panel-body" id="calls">
-                <canvas id="callSpt" height="400" width="600"></canvas>
-              </div>
-              <!-- /.panel-body -->
-          </div>
-      </div>
-
-      {{-- compare Calls Chart --}}
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Compare Calls and Ticket
-                </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body" id="calls">
-                  <canvas id="compareCallSpt" height="400" width="600"></canvas>
-                </div>
-                <!-- /.panel-body -->
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Calls
             </div>
-        </div>
-      </div>
-
-        {{-- top question Chart --}}
-        <div class="row">
-          <div class="col-lg-6">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      Top Question September
-                  </div>
-                  <!-- /.panel-heading -->
-                  <div class="panel-body" id="calls">
-                    <canvas id="topQuestionSpt" height="400" width="600"></canvas>
-                  </div>
-                  <!-- /.panel-body -->
-              </div>
-          </div>
-
-          {{-- topic Chart --}}
-            <div class="col-lg-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Top Topic September
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body" id="calls">
-                      <canvas id="topicSpt" height="400" width="600"></canvas>
-                    </div>
-                    <!-- /.panel-body -->
-                </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body" id="calls">
+              <canvas id="callSpt" height="400" width="600"></canvas>
             </div>
+            <!-- /.panel-body -->
         </div>
+    </div>
+
+    {{-- compare Calls Chart --}}
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Compare Calls and Ticket
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body" id="calls">
+              <canvas id="compareCallSpt" height="400" width="600"></canvas>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+
+    {{-- top question Chart --}}
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Top Question September
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body" id="calls">
+              <canvas id="topQuestionSpt" height="400" width="600"></canvas>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+
+    {{-- topic Chart --}}
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Top Topic September
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body" id="calls">
+              <canvas id="topicSpt" height="400" width="600"></canvas>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+
   </div>
 @endsection
