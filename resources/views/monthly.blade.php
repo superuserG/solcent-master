@@ -39,7 +39,7 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body" id="calls">
-              <canvas id="compareCalls" height="400" width="600"></canvas>
+              <canvas id="compareCalls" height="200" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
