@@ -1,8 +1,8 @@
 <script>
   var label_A = ['Present','Handle','abandon'];
-  var data_prensent = [1000];
-  var data_handle = [575];
-  var data_abandon = [425];
+  var data_prensent = <?php echo $present;?>;
+  var data_handle = <?php echo $handle;?>;
+  var data_abandon = <?php echo $abandon;?>;
 
   var a = {
       labels: label_A,
@@ -22,8 +22,8 @@
   // Call
 
   var label_B = ['Present'];
-  var data_call_present = [500];
-  var data_ticket = [250];
+  var data_call_present = <?php echo $callMay;?>;
+  var data_ticket = <?php echo $ticket_may;?>;
 
 
   var b = {

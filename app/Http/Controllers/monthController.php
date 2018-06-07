@@ -258,31 +258,31 @@ class monthController extends Controller
   }
 
   public function showMay(){
-    // //call
-    // $present = DB::table('report_calls')
-    //       ->select('presentedCall as presented')
-    //       ->where('months','=','May')
-    //       ->get()->toArray();
-    // $present = array_column($present,'presented');
-    //
-    // $handle = DB::table('report_calls')
-    //       ->select('handledCall as handled')
-    //       ->where('months','=','May')
-    //       ->get()->toArray();
-    // $handle = array_column($handle,'handled');
-    //
-    // $abandon = DB::table('report_calls')
-    //       ->select('abandonedCall as abandoned')
-    //       ->where('months','=','May')
-    //       ->get()->toArray();
-    // $abandon = array_column($abandon,'abandoned');
+    //call
+    $present = DB::table('report_calls')
+          ->select('presentedCall as presented')
+          ->where('months','=','May')
+          ->get()->toArray();
+    $present = array_column($present,'presented');
 
-    // compare
-    // $callMay = DB::table('report_calls')
-    //       ->select('presentedCall as call')
-    //       ->where('months','=','May')
-    //       ->get()->toArray();
-    // $callMay = array_column($callMay,'call');
+    $handle = DB::table('report_calls')
+          ->select('handledCall as handled')
+          ->where('months','=','May')
+          ->get()->toArray();
+    $handle = array_column($handle,'handled');
+
+    $abandon = DB::table('report_calls')
+          ->select('abandonedCall as abandoned')
+          ->where('months','=','May')
+          ->get()->toArray();
+    $abandon = array_column($abandon,'abandoned');
+
+    //compare
+    $callMay = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','May')
+          ->get()->toArray();
+    $callMay = array_column($callMay,'call');
 
     $ticket_may = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
@@ -308,10 +308,10 @@ class monthController extends Controller
     $cat = array_column($cat, 'Cat');
 
     return view('Page_Month.may')
-    // ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
-    // ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
-    // ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
-    // ->with('callMay',json_encode($callMay,JSON_NUMERIC_CHECK))
+    ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
+    ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
+    ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
+    ->with('callMay',json_encode($callMay,JSON_NUMERIC_CHECK))
     ->with('ticket_may',json_encode($ticket_may,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
@@ -319,31 +319,31 @@ class monthController extends Controller
   }
 
   public function showJune(){
-    // //call
-    // $present = DB::table('report_calls')
-    //       ->select('presentedCall as presented')
-    //       ->where('months','=','June')
-    //       ->get()->toArray();
-    // $present = array_column($present,'presented');
-    //
-    // $handle = DB::table('report_calls')
-    //       ->select('handledCall as handled')
-    //       ->where('months','=','June')
-    //       ->get()->toArray();
-    // $handle = array_column($handle,'handled');
-    //
-    // $abandon = DB::table('report_calls')
-    //       ->select('abandonedCall as abandoned')
-    //       ->where('months','=','June')
-    //       ->get()->toArray();
-    // $abandon = array_column($abandon,'abandoned');
+    //call
+    $present = DB::table('report_calls')
+          ->select('presentedCall as presented')
+          ->where('months','=','June')
+          ->get()->toArray();
+    $present = array_column($present,'presented');
 
-    // compare
-    // $callJune = DB::table('report_calls')
-    //       ->select('presentedCall as call')
-    //       ->where('months','=','June')
-    //       ->get()->toArray();
-    // $callJune = array_column($callJune,'call');
+    $handle = DB::table('report_calls')
+          ->select('handledCall as handled')
+          ->where('months','=','June')
+          ->get()->toArray();
+    $handle = array_column($handle,'handled');
+
+    $abandon = DB::table('report_calls')
+          ->select('abandonedCall as abandoned')
+          ->where('months','=','June')
+          ->get()->toArray();
+    $abandon = array_column($abandon,'abandoned');
+
+    //compare
+    $callJune = DB::table('report_calls')
+          ->select('presentedCall as call')
+          ->where('months','=','June')
+          ->get()->toArray();
+    $callJune = array_column($callJune,'call');
 
     $ticket_june = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
@@ -369,10 +369,10 @@ class monthController extends Controller
     $cat = array_column($cat, 'Cat');
 
     return view('Page_Month.june')
-    // ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
-    // ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
-    // ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
-    // ->with('callJune',json_encode($callJune,JSON_NUMERIC_CHECK))
+    ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
+    ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
+    ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
+    ->with('callJune',json_encode($callJune,JSON_NUMERIC_CHECK))
     ->with('ticket_june',json_encode($ticket_june,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
@@ -399,17 +399,17 @@ class monthController extends Controller
     $abandon = array_column($abandon,'abandoned');
 
     // compare
-    $calljan = DB::table('report_calls')
+    $callJuly = DB::table('report_calls')
           ->select('presentedCall as call')
           ->where('months','=','July')
           ->get()->toArray();
-    $calljan = array_column($calljan,'call');
+    $callJuly = array_column($callJuly,'call');
 
-    $ticket_jan = DB::table('report_solcents')
+    $ticket_july = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
           ->whereMonth('Submit_Date','=',date('07'))
           ->get()->toArray();
-    $ticket_jan = array_column($ticket_jan,'ticket');
+    $ticket_july = array_column($ticket_july,'ticket');
 
     // top question
     $question = DB::table('report_solcents')
@@ -434,8 +434,8 @@ class monthController extends Controller
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
     ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
-    ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
-    ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
+    ->with('callJuly',json_encode($callJuly,JSON_NUMERIC_CHECK))
+    ->with('ticket_july',json_encode($ticket_july,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
     ;
@@ -461,17 +461,17 @@ class monthController extends Controller
     $abandon = array_column($abandon,'abandoned');
 
     // compare
-    $calljan = DB::table('report_calls')
+    $callAug = DB::table('report_calls')
           ->select('presentedCall as call')
           ->where('months','=','August')
           ->get()->toArray();
-    $calljan = array_column($calljan,'call');
+    $callAug = array_column($callAug,'call');
 
-    $ticket_jan = DB::table('report_solcents')
+    $ticket_aug = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
           ->whereMonth('Submit_Date','=',date('08'))
           ->get()->toArray();
-    $ticket_jan = array_column($ticket_jan,'ticket');
+    $ticket_aug = array_column($ticket_aug,'ticket');
 
     // top question
     $question = DB::table('report_solcents')
@@ -495,8 +495,8 @@ class monthController extends Controller
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
     ->with('abandon',json_encode($abandon,JSON_NUMERIC_CHECK))
-    ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
-    ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
+    ->with('callAug',json_encode($callAug,JSON_NUMERIC_CHECK))
+    ->with('ticket_aug',json_encode($ticket_aug,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
     ;  }
