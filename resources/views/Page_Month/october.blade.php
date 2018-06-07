@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-lg-12">
         <h2 class="page-header">October Page
-          <span class="dropdown col-lg-offset-1">
+          <span class="dropdown col-lg-offset-8">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Choose Month
                 </button>
