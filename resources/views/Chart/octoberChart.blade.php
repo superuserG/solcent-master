@@ -22,8 +22,8 @@ var a = {
 
 //compare
 var label_B = ['Present'];
-var data_call_present = <?php echo $calljan;?>;
-var data_ticket = <?php echo $ticket_jan;?>;
+var data_call_present = <?php echo $callOct;?>;
+var data_ticket = <?php echo $ticket_oct;?>;
 var b = {
     labels: label_B,
     datasets:
