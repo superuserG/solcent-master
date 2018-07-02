@@ -31,12 +31,11 @@
                       <tbody>
                         @foreach ($post as $key => $value)
                           <tr>
-                            <td><a href="{!! route('detail.post', $value) !!}">{{$value->title}}</a></td>
-                            <td>{{$value->question}}</td>
-                            <td>{{$value->res}}</td>
-                            <td>{{$value->ref}}</td>
-                            <td>{{$value->created_at}}</td>
-                            <td>{{$value->updated_at}}</td>
+                            <td><a href="{!! route('detail.post', $value) !!}">{{$value->Summary}}</a></td>
+                            <td>{{$value->Notes}}</td>
+                            <td>{{$value->Resolution}}</td>
+                            <td>{{$value->Submit_Date}}</td>
+                            <td>{{$value->Completed_Date}}</td>
                             <td>
                               <a href="{!! route('edit.post', $value) !!}"class="show-modal btn btn-warning btn-sm" data-id="{{$value->id}}" data-title="{{$value->title}}"
                               > <i class="glyphicon glyphicon-pencil"> </i></a>
