@@ -15,7 +15,9 @@ var a = {
               data_abandon],
         backgroundColor:
         [
-            'rgba(0,128,0, 0.5)'
+          'rgba(227,123,64, 0.5)',
+          'rgba(227,123,64, 0.5)',
+          'rgba(227,123,64, 0.5)',
         ],
     }],
 };
@@ -32,9 +34,7 @@ var b = {
         data: data_call_present,
         backgroundColor:
         [
-            'rgba(0,0,128, 0.5)',
-            'rgba(0,0,255, 0.5)',
-            'rgba(0,128,0, 0.5)'
+            'rgba(50,77,92, 0.5)'
         ],
 
     },
@@ -43,9 +43,7 @@ var b = {
         data: data_ticket,
         backgroundColor:
         [
-            'rgba(0,0,128, 0.5)',
-            'rgba(0,0,255, 0.5)',
-            'rgba(0,128,0, 0.5)'
+            'rgba(50,77,92, 0.5)'
         ],
     }
   ],
@@ -63,7 +61,9 @@ var c = {
       data: data_top,
       backgroundColor:
       [
-          'rgba(0,128,0, 0.5)'
+        'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
+        'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
+        'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)'
       ],
   }],
 };
@@ -80,7 +80,7 @@ var d = {
       data: data_top,
       backgroundColor:
       [
-          'rgba(0,128,0, 0.5)'
+        'rgba(227,123,64, 0.5)','rgba(227,123,64, 0.5)','rgba(227,123,64, 0.5)',
       ],
   }],
 };
