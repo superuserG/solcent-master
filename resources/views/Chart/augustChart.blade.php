@@ -15,9 +15,9 @@ var a = {
               data_abandon],
         backgroundColor:
         [
-          'rgba(227,123,64, 0.5)',
-          'rgba(227,123,64, 0.5)',
-          'rgba(227,123,64, 0.5)',
+          'rgba(255, 99, 132, 0.9)',
+          'rgba(89, 158, 207, 0.9)',
+          'rgba(255, 206, 86, 0.9)',
         ],
     }],
 };
@@ -34,7 +34,7 @@ var b = {
         data: data_call_present,
         backgroundColor:
         [
-            'rgba(50,77,92, 0.5)'
+          'rgba(227,123,64, 0.5)'
         ],
 
     },
@@ -88,30 +88,19 @@ var d = {
 window.onload = function(){
   var aua = document.getElementById("callAug").getContext("2d");
   var callA = new Chart(aua, {
-      type: 'bar',
+      type: 'doughnut',
       data: a,
       options: {
-        scales: {
-           yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-           }],
-           xAxes: [{
-                   ticks: {
-                    fontSize: 10
-                   }
-                  }]
-          },
           elements: {
               rectangle: {
+                  borderColor: 'rgb(0, 255, 0)',
                   borderSkipped: 'bottom'
               }
           },
           responsive: true,
           title: {
               display: true,
-              text: 'Call'
+              text: 'Calls Report'
           }
       }
   });

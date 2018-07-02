@@ -91,27 +91,16 @@ window.onload = function(){
       type: 'doughnut',
       data: a,
       options: {
-        scales: {
-           yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-           }],
-           xAxes: [{
-                   ticks: {
-                    fontSize: 10
-                   }
-                  }]
-          },
           elements: {
               rectangle: {
+                  borderColor: 'rgb(0, 255, 0)',
                   borderSkipped: 'bottom'
               }
           },
           responsive: true,
           title: {
               display: true,
-              text: 'Call'
+              text: 'Calls Report'
           }
       }
   });
