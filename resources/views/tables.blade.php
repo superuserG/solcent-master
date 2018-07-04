@@ -23,9 +23,8 @@
                               <th>Question</th>
                               <th>Answer</th>
                               <th>Reference</th>
+                              <th>Submit Date</th>
                               <th>Completed Date</th>
-                              <th>Edit Date</th>
-                              <th>Menu</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -47,6 +46,10 @@
                       </tbody>
                   </table>
                   <!-- /.table-responsive -->
+                  <!--Bottom Table UI-->
+                    <div class="d-flex justify-content-center">
+                    </div>
+                    <!--Bottom Table UI-->
               </div>
               <!-- /.panel-body -->
           </div>
@@ -113,4 +116,7 @@
       </div>
     </div>
   </div>
+
+
+
 @endsection

@@ -19,7 +19,7 @@
 
 	<!-- custom css -->
 	<link rel="stylesheet" href="{!!asset('theme/dist/css/sb-admin-2.css')!!}">
-	
+
 	<!-- Morris Charts CSS -->
 	<link href="{!! asset('theme/vendor/morrisjs/morris.css') !!}" rel="stylesheet">
 
@@ -35,6 +35,10 @@
 	<script src="{!! asset('https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js') !!}"></script>
 	<script src="{!! asset('http://code.jquery.com/jquery-latest.min.js') !!}"></script>
 	<script src="{!! asset('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js') !!}" charset=utf-8></script>
+
+	<script src="{!! asset('theme/vendor/datatables/js/jquery.dataTables.min.js') !!}"></script>
+	<script src="{!! asset('theme/vendor/datatables-plugins/dataTables.bootstrap.min.js') !!}"></script>
+	<script src="{!! asset('theme/vendor/datatables-responsive/dataTables.responsive.js') !!}"></script>
 
 
 </head>
