@@ -22,13 +22,13 @@
                 Compare Calls and Ticket
             </div>
             <!-- /.panel-heading -->
-            <div class="panel-body" id="calls">
+            <div class="panel-body">
               <canvas id="compareCalls" height="200" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
     </div>
-    {{-- Monthly Calls Chart --}}
+    {{-- Compare Calls Chart --}}
 
      <div class="col-lg-6">
         <div class="panel panel-default">
@@ -36,7 +36,7 @@
                 Monthly Calls
             </div>
             <!-- /.panel-heading -->
-            <div class="panel-body" id="calls">
+            <div class="panel-body">
               <canvas id="callMonths" height="400" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
@@ -51,12 +51,41 @@
                 Monthly Tickets
             </div>
             <!-- /.panel-heading -->
-            <div class="panel-body" id="calls">
+            <div class="panel-body">
               <canvas id="ticketMonths" height="400" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
     </div>
     {{-- Ticket --}}
+
+
+   <div class="col-lg-6">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              Kanwil
+          </div>
+          <!-- /.panel-heading -->
+          <div class="panel-body">
+            <canvas id="ticketKanwils" height="400" width="600"></canvas>
+          </div>
+          <!-- /.panel-body -->
+      </div>
+  </div>
+  {{-- Kanwil --}}
+
+  <div class="col-lg-6">
+     <div class="panel panel-default">
+         <div class="panel-heading">
+             Cabang
+         </div>
+         <!-- /.panel-heading -->
+         <div class="panel-body">
+           <canvas id="ticketCabang" height="400" width="600"></canvas>
+         </div>
+         <!-- /.panel-body -->
+     </div>
+ </div>
+ {{-- Site --}}
 
 @endsection

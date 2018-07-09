@@ -48,4 +48,6 @@ Route::middleware('auth')->group(function(){
   Route::get('/report/monthly/November','monthController@showNovember')->name('month.November');
   Route::get('/report/monthly/December','monthController@showDecember')->name('month.December');
 
+  Route::get('/report/monthly/kanwil_XII','featKanwilController@Kanwil_XII')->name('kanwil.XII');
+
 });

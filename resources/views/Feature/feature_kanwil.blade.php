@@ -17,6 +17,6 @@
     <li><a class="dropdown-item" href="#">Kanwil IX</a></li>
     <li><a class="dropdown-item" href="#">Kanwil X</a></li>
     <li><a class="dropdown-item" href="#">Kanwil XI</a></li>
-    <li><a class="dropdown-item" href="#">Kanwil XII</a></li>
+    <li><a class="dropdown-item" href="{!! route('kanwil.XII') !!}">Kanwil XII</a></li>
   </div>
 </span>
