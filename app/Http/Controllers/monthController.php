@@ -87,7 +87,7 @@ class monthController extends Controller
     ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
@@ -169,7 +169,7 @@ class monthController extends Controller
     ->with('ticket_feb',json_encode($ticket_feb,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
@@ -332,7 +332,7 @@ class monthController extends Controller
     ->with('ticket_apr',json_encode($ticket_apr,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
@@ -413,7 +413,7 @@ class monthController extends Controller
     ->with('ticket_may',json_encode($ticket_may,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
@@ -494,7 +494,7 @@ class monthController extends Controller
     ->with('ticket_june',json_encode($ticket_june,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
@@ -576,7 +576,7 @@ class monthController extends Controller
     ->with('ticket_july',json_encode($ticket_july,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
@@ -657,7 +657,7 @@ class monthController extends Controller
     ->with('ticket_aug',json_encode($ticket_aug,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
@@ -738,7 +738,7 @@ class monthController extends Controller
     ->with('ticket_sep',json_encode($ticket_sep,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
@@ -819,7 +819,7 @@ class monthController extends Controller
     ->with('ticket_oct',json_encode($ticket_oct,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
@@ -900,7 +900,7 @@ class monthController extends Controller
     ->with('ticket_nov',json_encode($ticket_nov,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
@@ -981,7 +981,7 @@ class monthController extends Controller
     ->with('ticket_des',json_encode($ticket_des,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
-    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
