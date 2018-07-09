@@ -79,11 +79,20 @@
     labels: label_D,
     datasets:
     [{
-        label: 'Top Topic',
+        label: 'Top Kanwil',
         data: data_top,
         backgroundColor:
         [
           'rgba(227,123,64, 0.5)','rgba(227,123,64, 0.5)','rgba(227,123,64, 0.5)',
+          'rgba(227,123,64, 0.5)',
+          'rgba(227,123,64, 0.5)',
+          'rgba(227,123,64, 0.5)',
+          'rgba(227,123,64, 0.5)',
+          'rgba(227,123,64, 0.5)',
+          'rgba(227,123,64, 0.5)',
+          'rgba(227,123,64, 0.5)',
+          'rgba(227,123,64, 0.5)',
+          'rgba(227,123,64, 0.5)',
         ],
     }],
   };
@@ -194,7 +203,7 @@
             responsive: true,
             title: {
                 display: true,
-                text: 'Top Topic'
+                text: 'Top Kanwil'
             }
         }
     });
