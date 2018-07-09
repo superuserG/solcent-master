@@ -80,7 +80,7 @@
     datasets:
     [{
         label: 'Top Kanwil',
-        data: data_top,
+        data: data_topic,
         backgroundColor:
         [
             'rgba(227,123,64, 0.5)','rgba(227,123,64, 0.5)','rgba(227,123,64, 0.5)',

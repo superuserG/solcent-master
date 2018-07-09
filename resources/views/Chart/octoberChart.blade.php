@@ -68,16 +68,16 @@ var c = {
   }],
 };
 
-//top topic
+//top kanwil
 
-var label_D = ['Present'];
-var data_topic = [200];
+var label_D = <?php echo $labelKanwil;?>;
+var data_topic = <?php echo $kanwil;?>;
 var d = {
   labels: label_D,
   datasets:
   [{
       label: 'Top Kanwil',
-      data: data_top,
+      data: data_topic,
       backgroundColor:
       [
         'rgba(227,123,64, 0.5)',
