@@ -72,8 +72,8 @@
   };
   // Top question
 
-  var label_D = ['Present'];
-  var data_topic = [200];
+  var label_D = <?php echo $labelKanwil;?>;
+  var data_topic = <?php echo $kanwil;?>;
 
   var d = {
     labels: label_D,
