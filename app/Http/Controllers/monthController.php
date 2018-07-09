@@ -29,6 +29,24 @@ class monthController extends Controller
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
 
+    //kanwil
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->whereMonth('Submit_Date','=',date('01'))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
+
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('01'))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
+
     // compare
     $calljan = DB::table('report_calls')
           ->select('presentedCall as call')
@@ -69,6 +87,8 @@ class monthController extends Controller
     ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -92,6 +112,24 @@ class monthController extends Controller
           ->where('months','=','February')
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
+
+    //kanwil
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->whereMonth('Submit_Date','=',date('02'))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
+
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('02'))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
     // compare
     $callFeb = DB::table('report_calls')
@@ -131,6 +169,8 @@ class monthController extends Controller
     ->with('ticket_feb',json_encode($ticket_feb,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -157,7 +197,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('01'))
+              ->whereMonth('Submit_Date','=',date('03'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -165,6 +205,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('03'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -235,6 +276,24 @@ class monthController extends Controller
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
 
+    //kanwil
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->whereMonth('Submit_Date','=',date('04'))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
+
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('04'))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
+
     // compare
     $callApr = DB::table('report_calls')
           ->select('presentedCall as call')
@@ -273,6 +332,8 @@ class monthController extends Controller
     ->with('ticket_apr',json_encode($ticket_apr,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -295,6 +356,24 @@ class monthController extends Controller
           ->where('months','=','May')
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
+
+    //kanwil
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->whereMonth('Submit_Date','=',date('05'))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
+
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('05'))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
     //compare
     $callMay = DB::table('report_calls')
@@ -334,6 +413,8 @@ class monthController extends Controller
     ->with('ticket_may',json_encode($ticket_may,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -356,6 +437,24 @@ class monthController extends Controller
           ->where('months','=','June')
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
+
+    //kanwil
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->whereMonth('Submit_Date','=',date('06'))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
+
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('06'))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
     //compare
     $callJune = DB::table('report_calls')
@@ -395,6 +494,8 @@ class monthController extends Controller
     ->with('ticket_june',json_encode($ticket_june,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -416,6 +517,24 @@ class monthController extends Controller
           ->where('months','=','July')
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
+
+    //kanwil
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->whereMonth('Submit_Date','=',date('07'))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
+
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('07'))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
     // compare
     $callJuly = DB::table('report_calls')
@@ -457,6 +576,8 @@ class monthController extends Controller
     ->with('ticket_july',json_encode($ticket_july,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -478,6 +599,24 @@ class monthController extends Controller
           ->where('months','=','August')
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
+
+    //kanwil
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->whereMonth('Submit_Date','=',date('08'))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
+
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('08'))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
     // compare
     $callAug = DB::table('report_calls')
@@ -518,6 +657,8 @@ class monthController extends Controller
     ->with('ticket_aug',json_encode($ticket_aug,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -539,6 +680,24 @@ class monthController extends Controller
           ->where('months','=','September')
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
+
+    //kanwil
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
+
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
     // compare
     $callsep = DB::table('report_calls')
@@ -579,6 +738,8 @@ class monthController extends Controller
     ->with('ticket_sep',json_encode($ticket_sep,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -600,6 +761,24 @@ class monthController extends Controller
           ->where('months','=','October')
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
+
+    //kanwil
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->whereMonth('Submit_Date','=',date('10'))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
+
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('10'))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
     // compare
     $callOct = DB::table('report_calls')
@@ -640,6 +819,8 @@ class monthController extends Controller
     ->with('ticket_oct',json_encode($ticket_oct,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -661,6 +842,24 @@ class monthController extends Controller
           ->where('months','=','November')
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
+
+    //kanwil
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->whereMonth('Submit_Date','=',date('11'))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
+
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('11'))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
     // compare
     $callNov = DB::table('report_calls')
@@ -701,6 +900,8 @@ class monthController extends Controller
     ->with('ticket_nov',json_encode($ticket_nov,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -722,6 +923,24 @@ class monthController extends Controller
           ->where('months','=','December')
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
+
+    //kanwil
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->whereMonth('Submit_Date','=',date('12'))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
+
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->whereMonth('Submit_Date','=',date('12'))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
     // compare
     $callDes = DB::table('report_calls')
@@ -762,6 +981,8 @@ class monthController extends Controller
     ->with('ticket_des',json_encode($ticket_des,JSON_NUMERIC_CHECK))
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
+    ->with('Kanwil',json_encode($Kanwil,JSON_NUMERIC_CHECK))
+    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ;
   }
 

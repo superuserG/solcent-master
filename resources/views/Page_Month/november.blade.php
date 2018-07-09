@@ -76,7 +76,7 @@
             <div class="col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Top Topic November
+                        Top Kanwil
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body" id="calls">
