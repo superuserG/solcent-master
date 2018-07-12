@@ -273,83 +273,20 @@ class showController extends Controller
 
     /////////////////////////////////////////////////////////////////////
 
-    $Kantor_Pusat = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANTOR PUSAT')
-        ->get()->toArray();
-    $Kantor_Pusat = array_column($Kantor_Pusat, 'ticket');
+    $kanwil = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Wilayah) as wilayah')))
+              ->groupBy('Wilayah')
+              ->orderBy('wilayah','desc')
+              ->get()->toArray();
+    $kanwil = array_column($kanwil, 'wilayah');
 
-    $Kanwil_I = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL I')
-        ->get()->toArray();
-    $Kanwil_I = array_column($Kanwil_I, 'ticket');
-
-    $Kanwil_II = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL II')
-        ->get()->toArray();
-    $Kanwil_II = array_column($Kanwil_II, 'ticket');
-
-    $Kanwil_III = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL III')
-        ->get()->toArray();
-    $Kanwil_III = array_column($Kanwil_III, 'ticket');
-
-    $Kanwil_IV = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL IV')
-        ->get()->toArray();
-    $Kanwil_IV = array_column($Kanwil_IV, 'ticket');
-
-    $Kanwil_V = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL V')
-        ->get()->toArray();
-    $Kanwil_V = array_column($Kanwil_V, 'ticket');
-
-    $Kanwil_VI = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL VI')
-        ->get()->toArray();
-    $Kanwil_VI = array_column($Kanwil_VI, 'ticket');
-
-    $Kanwil_VII = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL VII')
-        ->get()->toArray();
-    $Kanwil_VII = array_column($Kanwil_VII, 'ticket');
-
-    $Kanwil_VIII = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL VIII')
-        ->get()->toArray();
-    $Kanwil_VIII = array_column($Kanwil_VIII, 'ticket');
-
-    $Kanwil_IX = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL IX')
-        ->get()->toArray();
-    $Kanwil_IX = array_column($Kanwil_IX, 'ticket');
-
-    $Kanwil_X = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL X')
-        ->get()->toArray();
-    $Kanwil_X = array_column($Kanwil_X, 'ticket');
-
-    $Kanwil_XI = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL XI')
-        ->get()->toArray();
-    $Kanwil_XI = array_column($Kanwil_XI, 'ticket');
-
-    $Kanwil_XII = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as ticket'))
-        ->where('Wilayah','=','KANWIL XII')
-        ->get()->toArray();
-    $Kanwil_XII = array_column($Kanwil_XII, 'ticket');
+    $labelKanwil = DB::table('report_solcents')
+            ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
+            ->take(10)
+            ->groupBy('Wilayah')
+            ->orderBy('wilayah','desc')
+            ->get()->toArray();
+    $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
     return view('monthly')
      ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
@@ -376,19 +313,9 @@ class showController extends Controller
      ->with('ticket_okt',json_encode($ticket_okt,JSON_NUMERIC_CHECK))
      ->with('ticket_nov',json_encode($ticket_nov,JSON_NUMERIC_CHECK))
      ->with('ticket_des',json_encode($ticket_des,JSON_NUMERIC_CHECK))
-     ->with('Kantor_Pusat',json_encode($Kantor_Pusat,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_I',json_encode($Kanwil_I,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_II',json_encode($Kanwil_II,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_III',json_encode($Kanwil_III,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_IV',json_encode($Kanwil_IV,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_V',json_encode($Kanwil_V,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_VI',json_encode($Kanwil_VI,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_VII',json_encode($Kanwil_VII,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_VIII',json_encode($Kanwil_VIII,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_IX',json_encode($Kanwil_IX,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_X',json_encode($Kanwil_X,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_XI',json_encode($Kanwil_XI,JSON_NUMERIC_CHECK))
-     ->with('Kanwil_XII',json_encode($Kanwil_XII,JSON_NUMERIC_CHECK))
+     ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
+     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
+
      ;
   }
 

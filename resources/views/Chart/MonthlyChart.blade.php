@@ -5,10 +5,22 @@
     'September','Oktober','November','Desember'
   ];
 
-  var kanwil = [
-    'Kantor Pusat','Kanwil I','Kanwil II','Kanwil III','Kanwil IV','Kanwil V','Kanwil VI',
-    'Kanwil VII','Kanwil VIII','Kanwil IX','Kanwil X','Kanwil XI','Kanwil XII'
-  ]
+  var kanwil =  <?php echo $labelKanwil; ?>;
+  var data_kanwil = <?php echo $kanwil; ?>;
+  var ticketKanwil = {
+  labels: kanwil,
+  datasets:
+  [{
+      label: 'Kanwil',
+      data: data_kanwil,
+      backgroundColor:
+        [
+          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
+          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
+          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
+        ],
+    }],
+  };
 
   var call_jan = <?php echo $calljan;?>;
   var call_Feb = <?php echo $callFeb;?>;
@@ -28,19 +40,7 @@
   var ticket_nov = <?php echo $ticket_nov;?>;
   var ticket_des = <?php echo $ticket_des;?>;
 
-  var Kantor_Pusat = <?php echo $Kantor_Pusat; ?>;
-  var Kanwil_I = <?php echo $Kanwil_I; ?>;
-  var Kanwil_II = <?php echo $Kanwil_II; ?>;
-  var Kanwil_III = <?php echo $Kanwil_III; ?>;
-  var Kanwil_IV = <?php echo $Kanwil_IV; ?>;
-  var Kanwil_V = <?php echo $Kanwil_V; ?>;
-  var Kanwil_VI = <?php echo $Kanwil_VI; ?>;
-  var Kanwil_VII = <?php echo $Kanwil_VII; ?>;
-  var Kanwil_VIII = <?php echo $Kanwil_VIII; ?>;
-  var Kanwil_IX = <?php echo $Kanwil_IX; ?>;
-  var Kanwil_X = <?php echo $Kanwil_X; ?>;
-  var Kanwil_XI = <?php echo $Kanwil_XI; ?>;
-  var Kanwil_XII = <?php echo $Kanwil_XII; ?>;
+
 
 
   var compareChart = {
@@ -134,29 +134,12 @@
 
   };
 
-  var ticketKanwil = {
-    labels: kanwil,
-    datasets:
-    [{
-        label: 'Kanwil',
-        data: [
-          Kantor_Pusat, Kanwil_I, Kanwil_II, Kanwil_III,
-          Kanwil_IV, Kanwil_V, Kanwil_VI, Kanwil_VII,
-          Kanwil_VIII, Kanwil_IX, Kanwil_X, Kanwil_XI, Kanwil_XII
-        ],
-        backgroundColor:
-        [
-          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
-          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
-          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
-        ],
-    }],
-  };
+
 
   window.onload = function() {
     //report call per-bulan compare dengan ticket
     var cta = document.getElementById("compareCalls").getContext("2d");
-    var callBar = new Chart(cta, {
+    var compareBar = new Chart(cta, {
         type: 'bar',
         data: compareChart,
         options: {
@@ -187,7 +170,7 @@
 
     //call
     var ctb = document.getElementById("callMonths").getContext("2d");
-    var kanwilBar = new Chart(ctb, {
+    var callBar = new Chart(ctb, {
         type: 'bar',
         data: callChart,
         options: {
@@ -250,7 +233,7 @@
     //kanwil
     var ctd = document.getElementById("ticketKanwils").getContext("2d");
     var kanwilBar = new Chart(ctd, {
-        type: 'horizontalBar',
+        type: 'bar',
         data: ticketKanwil,
         options: {
           scales: {
