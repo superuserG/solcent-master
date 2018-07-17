@@ -68,19 +68,19 @@ Route::middleware('auth')->group(function(){
 
 
   Route::get('/report/monthly/March','monthController@showMarch')->name('month.March');
-  // Route::get('/report/monthly/March/KantorPusat','')->name('month.March.kp');
-  // Route::get('/report/monthly/March/Kanwil-1','')->name('month.March.kan1');
-  // Route::get('/report/monthly/March/Kanwil-2','')->name('month.March.kan2');
-  // Route::get('/report/monthly/March/Kanwil-3','')->name('month.March.kan3');
-  // Route::get('/report/monthly/March/Kanwil-4','')->name('month.March.kan4');
-  // Route::get('/report/monthly/March/Kanwil-5','')->name('month.March.kan5');
-  // Route::get('/report/monthly/March/Kanwil-6','')->name('month.March.kan6');
-  // Route::get('/report/monthly/March/Kanwil-7','')->name('month.March.kan7');
-  // Route::get('/report/monthly/March/Kanwil-8','')->name('month.March.kan8');
-  // Route::get('/report/monthly/March/Kanwil-9','')->name('month.March.kan9');
-  // Route::get('/report/monthly/March/Kanwil-10','')->name('month.March.kan10');
-  // Route::get('/report/monthly/March/Kanwil-11','')->name('month.March.kan11');
-  // Route::get('/report/monthly/March/Kanwil-12','')->name('month.March.kan12');
+  Route::get('/report/monthly/March/KantorPusat','kanwilMarchController@showMarchKp')->name('month.March.kp');
+  Route::get('/report/monthly/March/Kanwil-1','kanwilMarchController@showMarchKanwil1')->name('month.March.kan1');
+  Route::get('/report/monthly/March/Kanwil-2','kanwilMarchController@showMarchKanwil2')->name('month.March.kan2');
+  Route::get('/report/monthly/March/Kanwil-3','kanwilMarchController@showMarchKanwil3')->name('month.March.kan3');
+  Route::get('/report/monthly/March/Kanwil-4','kanwilMarchController@showMarchKanwil4')->name('month.March.kan4');
+  Route::get('/report/monthly/March/Kanwil-5','kanwilMarchController@showMarchKanwil5')->name('month.March.kan5');
+  Route::get('/report/monthly/March/Kanwil-6','kanwilMarchController@showMarchKanwil6')->name('month.March.kan6');
+  Route::get('/report/monthly/March/Kanwil-7','kanwilMarchController@showMarchKanwil7')->name('month.March.kan7');
+  Route::get('/report/monthly/March/Kanwil-8','kanwilMarchController@showMarchKanwil8')->name('month.March.kan8');
+  Route::get('/report/monthly/March/Kanwil-9','kanwilMarchController@showMarchKanwil9')->name('month.March.kan9');
+  Route::get('/report/monthly/March/Kanwil-10','kanwilMarchController@showMarchKanwil10')->name('month.March.kan10');
+  Route::get('/report/monthly/March/Kanwil-11','kanwilMarchController@showMarchKanwil11')->name('month.March.kan11');
+  Route::get('/report/monthly/March/Kanwil-12','kanwilMarchController@showMarchKanwil12')->name('month.March.kan12');
 
 
   Route::get('/report/monthly/April','monthController@showApril')->name('month.April');
@@ -131,34 +131,34 @@ Route::middleware('auth')->group(function(){
   // Route::get('/report/monthly/June/Kanwil-12','')->name('month.June.kan12');
 
   Route::get('/report/monthly/July','monthController@showJuly')->name('month.July');
-  // Route::get('/report/monthly/July/KantorPusat','')->name('month.July.kp');
-  // Route::get('/report/monthly/July/Kanwil-1','')->name('month.July.kan1');
-  // Route::get('/report/monthly/July/Kanwil-2','')->name('month.July.kan2');
-  // Route::get('/report/monthly/July/Kanwil-3','')->name('month.July.kan3');
-  // Route::get('/report/monthly/July/Kanwil-4','')->name('month.July.kan4');
-  // Route::get('/report/monthly/July/Kanwil-5','')->name('month.July.kan5');
-  // Route::get('/report/monthly/July/Kanwil-6','')->name('month.July.kan6');
-  // Route::get('/report/monthly/July/Kanwil-7','')->name('month.July.kan7');
-  // Route::get('/report/monthly/July/Kanwil-8','')->name('month.July.kan8');
-  // Route::get('/report/monthly/July/Kanwil-9','')->name('month.July.kan9');
-  // Route::get('/report/monthly/July/Kanwil-10','')->name('month.July.kan10');
-  // Route::get('/report/monthly/July/Kanwil-11','')->name('month.July.kan11');
-  // Route::get('/report/monthly/July/Kanwil-12','')->name('month.July.kan12');
+  Route::get('/report/monthly/July/KantorPusat','kanwilJulyController@showJulyKp')->name('month.July.kp');
+  Route::get('/report/monthly/July/Kanwil-1','kanwilJulyController@showJulyKanwil1')->name('month.July.kan1');
+  Route::get('/report/monthly/July/Kanwil-2','kanwilJulyController@showJulyKanwil2')->name('month.July.kan2');
+  Route::get('/report/monthly/July/Kanwil-3','kanwilJulyController@showJulyKanwil3')->name('month.July.kan3');
+  Route::get('/report/monthly/July/Kanwil-4','kanwilJulyController@showJulyKanwil4')->name('month.July.kan4');
+  Route::get('/report/monthly/July/Kanwil-5','kanwilJulyController@showJulyKanwil5')->name('month.July.kan5');
+  Route::get('/report/monthly/July/Kanwil-6','kanwilJulyController@showJulyKanwil6')->name('month.July.kan6');
+  Route::get('/report/monthly/July/Kanwil-7','kanwilJulyController@showJulyKanwil7')->name('month.July.kan7');
+  Route::get('/report/monthly/July/Kanwil-8','kanwilJulyController@showJulyKanwil8')->name('month.July.kan8');
+  Route::get('/report/monthly/July/Kanwil-9','kanwilJulyController@showJulyKanwil9')->name('month.July.kan9');
+  Route::get('/report/monthly/July/Kanwil-10','kanwilJulyController@showJulyKanwil10')->name('month.July.kan10');
+  Route::get('/report/monthly/July/Kanwil-11','kanwilJulyController@showJulyKanwil11')->name('month.July.kan11');
+  Route::get('/report/monthly/July/Kanwil-12','kanwilJulyController@showJulyKanwil12')->name('month.July.kan12');
 
   Route::get('/report/monthly/August','monthController@showAugust')->name('month.August');
-  // Route::get('/report/monthly/August/KantorPusat','')->name('month.August.kp');
-  // Route::get('/report/monthly/August/Kanwil-1','')->name('month.August.kan1');
-  // Route::get('/report/monthly/August/Kanwil-2','')->name('month.August.kan2');
-  // Route::get('/report/monthly/August/Kanwil-3','')->name('month.August.kan3');
-  // Route::get('/report/monthly/August/Kanwil-4','')->name('month.August.kan4');
-  // Route::get('/report/monthly/August/Kanwil-5','')->name('month.August.kan5');
-  // Route::get('/report/monthly/August/Kanwil-6','')->name('month.August.kan6');
-  // Route::get('/report/monthly/August/Kanwil-7','')->name('month.August.kan7');
-  // Route::get('/report/monthly/August/Kanwil-8','')->name('month.August.kan8');
-  // Route::get('/report/monthly/August/Kanwil-9','')->name('month.August.kan9');
-  // Route::get('/report/monthly/August/Kanwil-10','')->name('month.August.kan10');
-  // Route::get('/report/monthly/August/Kanwil-11','')->name('month.August.kan11');
-  // Route::get('/report/monthly/August/Kanwil-12','')->name('month.August.kan12');
+  Route::get('/report/monthly/August/KantorPusat','kanwilAugustController@showAugustKp')->name('month.August.kp');
+  Route::get('/report/monthly/August/Kanwil-1','kanwilAugustController@showAugustKanwil1')->name('month.August.kan1');
+  Route::get('/report/monthly/August/Kanwil-2','kanwilAugustController@showAugustKanwil2')->name('month.August.kan2');
+  Route::get('/report/monthly/August/Kanwil-3','kanwilAugustController@showAugustKanwil3')->name('month.August.kan3');
+  Route::get('/report/monthly/August/Kanwil-4','kanwilAugustController@showAugustKanwil4')->name('month.August.kan4');
+  Route::get('/report/monthly/August/Kanwil-5','kanwilAugustController@showAugustKanwil5')->name('month.August.kan5');
+  Route::get('/report/monthly/August/Kanwil-6','kanwilAugustController@showAugustKanwil6')->name('month.August.kan6');
+  Route::get('/report/monthly/August/Kanwil-7','kanwilAugustController@showAugustKanwil7')->name('month.August.kan7');
+  Route::get('/report/monthly/August/Kanwil-8','kanwilAugustController@showAugustKanwil8')->name('month.August.kan8');
+  Route::get('/report/monthly/August/Kanwil-9','kanwilAugustController@showAugustKanwil9')->name('month.August.kan9');
+  Route::get('/report/monthly/August/Kanwil-10','kanwilAugustController@showAugustKanwil10')->name('month.August.kan10');
+  Route::get('/report/monthly/August/Kanwil-11','kanwilAugustController@showAugustKanwil11')->name('month.August.kan11');
+  Route::get('/report/monthly/August/Kanwil-12','kanwilAugustController@showAugustKanwil12')->name('month.August.kan12');
 
   Route::get('/report/monthly/September','monthController@showSeptember')->name('month.September');
   // Route::get('/report/monthly/September/KantorPusat','')->name('month.September.kp');
