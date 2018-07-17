@@ -25,19 +25,19 @@
                   </button>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#">Kantor Pusat</a></li>
-                <li><a class="dropdown-item" href="#">Kanwil I</a></li>
-                <li><a class="dropdown-item" href="#">Kanwil II</a></li>
-                <li><a class="dropdown-item" href="#">Kanwil III</a></li>
-                <li><a class="dropdown-item" href="#">Kanwil IV</a></li>
-                <li><a class="dropdown-item" href="#">Kanwil V</a></li>
-                <li><a class="dropdown-item" href="#">Kanwil VI</a></li>
-                <li><a class="dropdown-item" href="#">Kanwil VII</a></li>
-                <li><a class="dropdown-item" href="#">Kanwil VIII</a></li>
-                <li><a class="dropdown-item" href="#">Kanwil IX</a></li>
-                <li><a class="dropdown-item" href="#">Kanwil X</a></li>
-                <li><a class="dropdown-item" href="#">Kanwil XI</a></li>
-                <li><a class="dropdown-item" href="{!! route('kanwil.XII') !!}">Kanwil XII</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kp') !!}">Kantor Pusat</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan1') !!}">Kanwil I</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan2') !!}">Kanwil II</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan3') !!}">Kanwil III</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan4') !!}">Kanwil IV</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan5') !!}">Kanwil V</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan6') !!}">Kanwil VI</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan7') !!}">Kanwil VII</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan8') !!}">Kanwil VIII</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan9') !!}">Kanwil IX</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan10') !!}">Kanwil X</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan11') !!}">Kanwil XI</a></li>
+                <li><a class="dropdown-item" href="{!! route('month.June.kan12') !!}">Kanwil XII</a></li>
               </div>
             </span>
           </div>
