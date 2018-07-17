@@ -98,7 +98,10 @@
   };
   //Top Topic
 
+
+
   window.onload = function(){
+
     var ma = document.getElementById("callMarch").getContext("2d");
     var callA = new Chart(ma, {
         type: 'doughnut',
@@ -207,6 +210,9 @@
             }
         }
     });
+
+
+
   }
 
 </script>
