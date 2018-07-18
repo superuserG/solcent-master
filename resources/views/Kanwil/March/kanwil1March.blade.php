@@ -58,7 +58,7 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-              <canvas id="kcu12" height="100"></canvas>
+              <canvas id="kcu1" height="100"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
@@ -72,7 +72,7 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-              <canvas id="kcp12" height="100" ></canvas>
+              <canvas id="kcp1" height="100" ></canvas>
             </div>
             <!-- /.panel-body -->
         </div>

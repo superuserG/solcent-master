@@ -1,13 +1,13 @@
 @extends('master.default')
 
 @section('content')
-  @include('Chart.kanwilChart.March.chartKanwil1')
+  @include('Chart.kanwilChart.March.chartKanwil7')
 
   <div class="row">
     <div class="row">
       <div class="col-lg-6">
           <h2 class="page-header">
-              March Kanwil 1 Page
+              March Kanwil 7 Page
           </h2>
       </div>
 
@@ -58,7 +58,7 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-              <canvas id="kcu12" height="100"></canvas>
+              <canvas id="kcu7" height="100"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
@@ -72,7 +72,7 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-              <canvas id="kcp12" height="100" ></canvas>
+              <canvas id="kcp7" height="100" ></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
