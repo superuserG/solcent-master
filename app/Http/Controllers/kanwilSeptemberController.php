@@ -3,71 +3,659 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class kanwilSeptemberController extends Controller
 {
   public function showSeptemberKp()
   {
-    return view('Kanwil.September.kpSeptember');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANTOR PUSAT')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANTOR PUSAT')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANTOR PUSAT')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANTOR PUSAT')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+    return view('Kanwil.September.kpSeptember')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showSeptemberKanwil1()
   {
-    return view('Kanwil.September.kanwil1September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL I')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL I')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL I')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL I')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+    return view('Kanwil.September.kanwil1September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showSeptemberKanwil2()
   {
-    return view('Kanwil.September.kanwil2September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL II')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL II')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL II')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL II')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+    return view('Kanwil.September.kanwil2September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showSeptemberKanwil3()
   {
-    return view('Kanwil.September.kanwil3September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL III')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL III')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL III')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL III')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+    return view('Kanwil.September.kanwil3September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showSeptemberKanwil4()
   {
-    return view('Kanwil.September.kanwil4September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL IV')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL IV')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL IV')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL IV')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+    return view('Kanwil.September.kanwil4September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showSeptemberKanwil5()
   {
-    return view('Kanwil.September.kanwil5September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL V')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL V')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL V')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL V')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+    return view('Kanwil.September.kanwil5September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showSeptemberKanwil6()
   {
-    return view('Kanwil.September.kanwil6September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL VI')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL VI')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL VI')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL VI')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+    return view('Kanwil.September.kanwil6September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showSeptemberKanwil7()
   {
-    return view('Kanwil.September.kanwil7September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL VII')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL VII')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL VII')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL VII')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+
+    return view('Kanwil.September.kanwil7September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showSeptemberKanwil8()
   {
-    return view('Kanwil.September.kanwil8September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL VIII')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL VIII')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL VIII')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL VIII')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+    return view('Kanwil.September.kanwil8September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showSeptemberKanwil9()
   {
-    return view('Kanwil.September.kanwil9September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL IX')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL IX')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL IX')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL IX')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+    return view('Kanwil.September.kanwil9September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK));
   }
 
   public function showSeptemberKanwil10()
   {
-    return view('Kanwil.September.kanwil10September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL X')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL X')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL X')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL X')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+    return view('Kanwil.September.kanwil10September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showSeptemberKanwil11()
   {
-    return view('Kanwil.September.kanwil11September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL XI')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL XI')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL X')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL XI')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+
+    return view('Kanwil.September.kanwil11September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 
   public function showSeptemberKanwil12()
   {
-    return view('Kanwil.September.kanwil12September');
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->where('Wilayah','=','KANWIL XII')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->where('Wilayah','=','KANWIL XII')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+              ->where('Wilayah','=','KANWIL XII')
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Wilayah','=','KANWIL XII')
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
+
+    return view('Kanwil.September.kanwil12September')
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
+    ;
   }
 }
