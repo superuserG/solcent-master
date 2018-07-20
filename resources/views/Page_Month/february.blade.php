@@ -78,28 +78,28 @@
     </div>
     {{-- Compare Call February --}}
 
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Top Question in February
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-              <canvas id="topQuestionFeb" height="400" width="600"></canvas>
+              <canvas id="topQuestionFeb" height="200" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
     </div>
     {{-- Top Pertanyaan --}}
 
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Top Kanwil
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-              <canvas id="topicFeb" height="400" width="600"></canvas>
+              <canvas id="topicFeb" height="200" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>

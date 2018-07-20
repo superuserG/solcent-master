@@ -78,28 +78,28 @@
     </div>
 
     {{-- top question Chart --}}
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Top Question September
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body" id="calls">
-              <canvas id="topQuestionSpt" height="400" width="600"></canvas>
+              <canvas id="topQuestionSpt" height="200" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
     </div>
 
     {{-- topic Chart --}}
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Top Kanwil
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body" id="calls">
-              <canvas id="topicSpt" height="400" width="600"></canvas>
+              <canvas id="topicSpt" height="200" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
