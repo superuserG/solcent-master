@@ -86,11 +86,7 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-<<<<<<< HEAD
               <canvas id="topQuestionJune" height="100" width="300"></canvas>
-=======
-              <canvas id="topQuestionJune" height="200" width="600"></canvas>
->>>>>>> 10863aacad8eceaa7befa34831a86898514dcd47
             </div>
             <!-- /.panel-body -->
         </div>
@@ -104,11 +100,7 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-<<<<<<< HEAD
               <canvas id="topicJune" height="100" width="300"></canvas>
-=======
-              <canvas id="topicJune" height="200" width="600"></canvas>
->>>>>>> 10863aacad8eceaa7befa34831a86898514dcd47
             </div>
             <!-- /.panel-body -->
         </div>
