@@ -599,7 +599,7 @@ class kanwilJuneController extends Controller
   {
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->where('Wilayah','=','KANWIL II')
+              ->where('Wilayah','=','KANWIL XII')
               ->whereMonth('Submit_Date','=',date('06'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')

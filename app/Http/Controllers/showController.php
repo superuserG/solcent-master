@@ -288,6 +288,24 @@ class showController extends Controller
             ->get()->toArray();
     $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
+    /////////////////////////////////////////////////////////////////////
+    ///cabang///
+    /////////////////////////////////////////////////////////////////////
+    $cabang = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as cabang')))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('cabang','desc')
+              ->get()->toArray();
+    $cabang = array_column($cabang, 'cabang');
+
+    $labelCabang = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelCabang = array_column($labelCabang, 'lblKcu');
+
     return view('monthly')
      ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
      ->with('callFeb',json_encode($callFeb,JSON_NUMERIC_CHECK))
@@ -315,8 +333,8 @@ class showController extends Controller
      ->with('ticket_des',json_encode($ticket_des,JSON_NUMERIC_CHECK))
      ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
      ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
-
-     ;
+     ->with('cabang',json_encode($cabang,JSON_NUMERIC_CHECK))
+     ->with('labelCabang',json_encode($labelCabang,JSON_NUMERIC_CHECK));
   }
 
   public function showAnnualy ()

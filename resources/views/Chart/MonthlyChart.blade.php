@@ -8,18 +8,18 @@
   var kanwil =  <?php echo $labelKanwil; ?>;
   var data_kanwil = <?php echo $kanwil; ?>;
   var ticketKanwil = {
-  labels: kanwil,
-  datasets:
-  [{
-      label: 'Kanwil',
-      data: data_kanwil,
-      backgroundColor:
-        [
-          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
-          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
-          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
-        ],
-    }],
+    labels: kanwil,
+    datasets:
+    [{
+        label: 'Kanwil',
+        data: data_kanwil,
+        backgroundColor:
+          [
+            'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
+            'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
+            'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
+          ],
+      }],
   };
 
   var call_jan = <?php echo $calljan;?>;
@@ -39,9 +39,6 @@
   var ticket_okt = <?php echo $ticket_okt;?>;
   var ticket_nov = <?php echo $ticket_nov;?>;
   var ticket_des = <?php echo $ticket_des;?>;
-
-
-
 
   var compareChart = {
       labels: month,
@@ -134,6 +131,22 @@
 
   };
 
+  var ticket_cabang = <?php echo $cabang;?>;
+  var label_cabang = <?php echo $labelCabang;?>;
+  var data_cabang = {
+    labels: label_cabang,
+    datasets:
+    [{
+      label: 'Cabang',
+      data: ticket_cabang,
+      backgroundColor:
+        [
+          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
+          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
+          'rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)','rgba(50,77,92, 0.5)',
+        ],
+    }],
+  }
 
 
   window.onload = function() {
@@ -225,7 +238,7 @@
             responsive: true,
             title: {
                 display: true,
-                text: 'Cabang'
+                text: 'Tickets'
             }
         }
     });
@@ -257,6 +270,37 @@
             title: {
                 display: true,
                 text: 'Kanwil'
+            }
+        }
+    });
+
+    //Cabang
+    var ctd = document.getElementById("ticketCabang").getContext("2d");
+    var kanwilBar = new Chart(ctd, {
+        type: 'bar',
+        data: data_cabang,
+        options: {
+          scales: {
+             yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+             }],
+             xAxes: [{
+                     ticks: {
+                      fontSize: 10
+                     }
+                    }]
+            },
+            elements: {
+                rectangle: {
+                    borderSkipped: 'bottom'
+                }
+            },
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Cabang'
             }
         }
     });
