@@ -79,28 +79,28 @@
     </div>
     {{-- Compare Call June --}}
 
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Top Question in June
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-              <canvas id="topQuestionJune" height="400" width="600"></canvas>
+              <canvas id="topQuestionJune" height="200" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
     </div>
     {{-- Top Pertanyaan --}}
 
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Top Kanwil
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-              <canvas id="topicJune" height="400" width="600"></canvas>
+              <canvas id="topicJune" height="200" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
