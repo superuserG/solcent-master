@@ -97,7 +97,7 @@ class kanwilJanuaryController extends Controller
             ->get()->toArray();
     $labelKcp = array_column($labelKcp, 'lblKcp');
 
-    return view('Kanwil.March.kanwil1March')
+    return view('Kanwil.January.kanwil1January')
     ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
     ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
     ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
