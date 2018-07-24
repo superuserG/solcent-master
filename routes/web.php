@@ -96,7 +96,7 @@ Route::middleware('auth')->group(function(){
   Route::get('/report/monthly/April/Kanwil-9','kanwilAprilController@showAprilKanwil9')->name('month.April.kan9');
   Route::get('/report/monthly/April/Kanwil-10','kanwilAprilController@showAprilKanwil10')->name('month.April.kan10');
   Route::get('/report/monthly/April/Kanwil-11','kanwilAprilController@showAprilKanwil11')->name('month.April.kan11');
-  Route::get('/report/monthly/April/Kanwil-12','kanwilAprilController@showAprilKanwil1')->name('month.April.kan12');
+  Route::get('/report/monthly/April/Kanwil-12','kanwilAprilController@showAprilKanwil12')->name('month.April.kan12');
 
 
   Route::get('/report/monthly/May','monthController@showMay')->name('month.May');
