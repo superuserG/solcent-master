@@ -126,19 +126,48 @@
   window.onload = function(){
     var jna = document.getElementById("callJune").getContext("2d");
     var callA = new Chart(jna, {
-        type: 'doughnut',
+        type: 'bar',
         data: a,
         options: {
+          scales: {
+             yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+             }],
+             xAxes: [{
+                     ticks: {
+                      fontSize: 10
+                     }
+                    }]
+            },
             elements: {
                 rectangle: {
-                    borderColor: 'rgb(0, 255, 0)',
                     borderSkipped: 'bottom'
                 }
             },
             responsive: true,
             title: {
                 display: true,
-                text: 'Calls Report'
+                text: 'Calls'
+            },
+            animation: {
+                duration: 3,
+                onComplete: function () {
+                    var chartInstance = this.chart,
+                        ctx = chartInstance.ctx;
+                    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+
+                    this.data.datasets.forEach(function (dataset, i) {
+                        var meta = chartInstance.controller.getDatasetMeta(i);
+                        meta.data.forEach(function (bar, index) {
+                            var data = dataset.data[index];
+                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                        });
+                    });
+                }
             }
         }
     });
