@@ -227,6 +227,7 @@ class monthController extends Controller
 
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','[BPO1] - Operator')
               ->whereMonth('Submit_Date','=',date('03'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -235,6 +236,7 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','[BPO1] - Operator')
             ->whereMonth('Submit_Date','=',date('03'))
             ->take(10)
             ->groupBy('Category_1')
@@ -330,6 +332,7 @@ class monthController extends Controller
 
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','[BPO1] - Operator')
               ->whereMonth('Submit_Date','=',date('04'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -338,6 +341,7 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','[BPO1] - Operator')
             ->whereMonth('Submit_Date','=',date('04'))
             ->take(10)
             ->groupBy('Category_1')
@@ -431,6 +435,7 @@ class monthController extends Controller
 
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','[BPO1] - Operator')
               ->whereMonth('Submit_Date','=',date('05'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -439,6 +444,7 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','[BPO1] - Operator')
             ->whereMonth('Submit_Date','=',date('05'))
             ->take(10)
             ->groupBy('Category_1')

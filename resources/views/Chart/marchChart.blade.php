@@ -71,50 +71,103 @@
   // Top question
 
   var label_D = <?php echo $labelKanwil;?>;
-  var data_topic = <?php echo $kanwil;?>;
+  var data_kanwil = <?php echo $kanwil;?>;
 
   var d = {
     labels: label_D,
     datasets:
     [{
         label: 'Top Kanwil',
-        data: data_topic,
+        data: data_kanwil,
         backgroundColor:
         [
-            'rgba(227,123,64, 1)','rgba(227,123,64, 1)','rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)','rgba(227,123,64, 1)','rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
         ],
     }],
   };
-  //Top Topic
+  //Top Kanwil
 
+  var label_E = <?php echo $cat2;?>;
+  var data_topic = <?php echo $subQuestion;?>;
 
+  var e = {
+    labels: label_E,
+    datasets:
+    [{
+        label: 'Top Sub Question',
+        data: data_topic,
+        backgroundColor:
+        [
+          'rgba(227,123,64, 1)','rgba(227,123,64, 1)','rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+        ],
+    }],
+  };
+  //Top Sub Question
 
   window.onload = function(){
 
     var ma = document.getElementById("callMarch").getContext("2d");
     var callA = new Chart(ma, {
-        type: 'doughnut',
+        type: 'bar',
         data: a,
         options: {
+          scales: {
+             yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+             }],
+             xAxes: [{
+                     ticks: {
+                      fontSize: 10
+                     }
+                    }]
+            },
             elements: {
                 rectangle: {
-                    borderColor: 'rgb(0, 255, 0)',
                     borderSkipped: 'bottom'
                 }
             },
             responsive: true,
             title: {
                 display: true,
-                text: 'Calls Report'
+                text: 'Calls'
+            },
+            animation: {
+                duration: 3,
+                onComplete: function () {
+                    var chartInstance = this.chart,
+                        ctx = chartInstance.ctx;
+                    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+
+                    this.data.datasets.forEach(function (dataset, i) {
+                        var meta = chartInstance.controller.getDatasetMeta(i);
+                        meta.data.forEach(function (bar, index) {
+                            var data = dataset.data[index];
+                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                        });
+                    });
+                }
             }
         }
     });
@@ -245,7 +298,53 @@
         }
     });
 
+    var me = document.getElementById("topSubQuestionMar").getContext("2d");
+    var compareD = new Chart(me, {
+        type: 'bar',
+        data: e,
+        options: {
+          scales: {
+             yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+             }],
+             xAxes: [{
+                     ticks: {
+                      fontSize: 10
+                     }
+                    }]
+            },
+            elements: {
+                rectangle: {
+                    borderSkipped: 'bottom'
+                }
+            },
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Top Sub Question'
+            },
+            animation: {
+                duration: 3,
+                onComplete: function () {
+                    var chartInstance = this.chart,
+                        ctx = chartInstance.ctx;
+                    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
 
+                    this.data.datasets.forEach(function (dataset, i) {
+                        var meta = chartInstance.controller.getDatasetMeta(i);
+                        meta.data.forEach(function (bar, index) {
+                            var data = dataset.data[index];
+                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                        });
+                    });
+                }
+            }
+        }
+    });
 
   }
 
