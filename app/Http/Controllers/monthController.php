@@ -242,6 +242,25 @@ class monthController extends Controller
             ->get()->toArray();
     $cat = array_column($cat, 'Cat');
 
+    $subQuestion = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Category_2) as Question')))
+              ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
+              ->whereMonth('Submit_Date','=',date('03'))
+              ->groupBy('Category_1','Category_2')
+              ->orderBy('Question','desc')
+              ->get()->toArray();
+    $subQuestion = array_column($subQuestion, 'Question');
+
+    $cat2 = DB::table('report_solcents')
+            ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
+            ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
+            ->whereMonth('Submit_Date','=',date('03'))
+            ->take(10)
+            ->groupBy('Category_1','Category_2')
+            ->orderBy('Result','desc')
+            ->get()->toArray();
+    $cat2 = array_column($cat2, 'Cat');
+
 
     return view('Page_Month.march')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
@@ -253,6 +272,8 @@ class monthController extends Controller
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
     ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
+    ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
+    ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -324,6 +345,25 @@ class monthController extends Controller
             ->get()->toArray();
     $cat = array_column($cat, 'Cat');
 
+    $subQuestion = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Category_2) as Question')))
+              ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
+              ->whereMonth('Submit_Date','=',date('04'))
+              ->groupBy('Category_1','Category_2')
+              ->orderBy('Question','desc')
+              ->get()->toArray();
+    $subQuestion = array_column($subQuestion, 'Question');
+
+    $cat2 = DB::table('report_solcents')
+            ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
+            ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
+            ->whereMonth('Submit_Date','=',date('04'))
+            ->take(10)
+            ->groupBy('Category_1','Category_2')
+            ->orderBy('Result','desc')
+            ->get()->toArray();
+    $cat2 = array_column($cat2, 'Cat');
+
     return view('Page_Month.april')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -333,7 +373,8 @@ class monthController extends Controller
     ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
     ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
-    ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
+    ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
+    ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -405,6 +446,25 @@ class monthController extends Controller
             ->get()->toArray();
     $cat = array_column($cat, 'Cat');
 
+    $subQuestion = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Category_2) as Question')))
+              ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
+              ->whereMonth('Submit_Date','=',date('05'))
+              ->groupBy('Category_1','Category_2')
+              ->orderBy('Question','desc')
+              ->get()->toArray();
+    $subQuestion = array_column($subQuestion, 'Question');
+
+    $cat2 = DB::table('report_solcents')
+            ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
+            ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
+            ->whereMonth('Submit_Date','=',date('05'))
+            ->take(10)
+            ->groupBy('Category_1','Category_2')
+            ->orderBy('Result','desc')
+            ->get()->toArray();
+    $cat2 = array_column($cat2, 'Cat');
+
     return view('Page_Month.may')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -415,6 +475,8 @@ class monthController extends Controller
     ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
     ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
+    ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
+    ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
     ;
   }
 
