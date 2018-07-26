@@ -1,6 +1,6 @@
 <script>
-  var label_A = ['Present','Handle','abandon'];
-  var data_prensent = <?php echo $present;?>;
+  var label_A = ['Handle','abandon'];
+
   var data_handle = <?php echo $handle;?>;
   var data_abandon = <?php echo $abandon;?>;
 
@@ -9,12 +9,10 @@
       datasets:
       [{
           label: 'Call',
-          data: [data_prensent,
-                data_handle,
+          data: [data_handle,
                 data_abandon],
           backgroundColor:
           [
-            'rgba(255, 99, 132, 0.9)',
             'rgba(89, 158, 207, 0.9)',
             'rgba(255, 206, 86, 0.9)',
           ],
