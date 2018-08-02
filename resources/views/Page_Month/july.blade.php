@@ -95,6 +95,20 @@
               </div>
           </div>
 
+          <div class="col-lg-12">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      Top Sub Question in July
+                  </div>
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                    <canvas id="topSubQuestionJul" height="100" width="300"></canvas>
+                  </div>
+                  <!-- /.panel-body -->
+              </div>
+          </div>
+          {{-- Top Sub Pertanyaan --}}
+
           {{-- topic Chart --}}
             <div class="col-lg-12">
                 <div class="panel panel-default">

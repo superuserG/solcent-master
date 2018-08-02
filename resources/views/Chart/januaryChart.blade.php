@@ -100,6 +100,31 @@
   };
   //Top Topic
 
+  var label_E = <?php echo $cat2;?>;
+  var data_topic = <?php echo $subQuestion;?>;
+
+  var e = {
+    labels: label_E,
+    datasets:
+    [{
+        label: 'Top Sub Question',
+        data: data_topic,
+        backgroundColor:
+        [
+          'rgba(227,123,64, 1)','rgba(227,123,64, 1)','rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(227,123,64, 1)',
+        ],
+    }],
+  };
+
   window.onload = function(){
     var ja = document.getElementById("callJanuary").getContext("2d");
     var callA = new Chart(ja, {
@@ -206,6 +231,54 @@
             title: {
                 display: true,
                 text: 'Top Kanwil'
+            }
+        }
+    });
+
+    var me = document.getElementById("topSubQuestionJan").getContext("2d");
+    var compareD = new Chart(me, {
+        type: 'bar',
+        data: e,
+        options: {
+          scales: {
+             yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+             }],
+             xAxes: [{
+                     ticks: {
+                      fontSize: 10
+                     }
+                    }]
+            },
+            elements: {
+                rectangle: {
+                    borderSkipped: 'bottom'
+                }
+            },
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Top Sub Question'
+            },
+            animation: {
+                duration: 3,
+                onComplete: function () {
+                    var chartInstance = this.chart,
+                        ctx = chartInstance.ctx;
+                    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+
+                    this.data.datasets.forEach(function (dataset, i) {
+                        var meta = chartInstance.controller.getDatasetMeta(i);
+                        meta.data.forEach(function (bar, index) {
+                            var data = dataset.data[index];
+                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                        });
+                    });
+                }
             }
         }
     });
