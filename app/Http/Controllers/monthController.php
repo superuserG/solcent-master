@@ -82,7 +82,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('01'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -92,7 +92,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('01'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
@@ -185,7 +185,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('02'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -195,7 +195,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('02'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
@@ -289,7 +289,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('03'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -299,7 +299,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('03'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
@@ -394,7 +394,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('04'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -404,7 +404,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('04'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
@@ -498,7 +498,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('05'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -508,7 +508,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('05'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
@@ -602,7 +602,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('06'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -612,7 +612,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('06'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
@@ -704,7 +704,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('07'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -714,7 +714,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('07'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
@@ -807,7 +807,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('08'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -817,7 +817,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('08'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
@@ -909,7 +909,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('09'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -919,7 +919,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('09'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
@@ -1011,7 +1011,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('10'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -1021,7 +1021,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('10'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
@@ -1113,7 +1113,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('11'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -1123,7 +1123,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('11'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
@@ -1215,7 +1215,7 @@ class monthController extends Controller
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
               ->whereMonth('Submit_Date','=',date('12'))
-              ->groupBy('Category_1','Category_2')
+              ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
     $subQuestion = array_column($subQuestion, 'Question');
@@ -1225,7 +1225,7 @@ class monthController extends Controller
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
             ->whereMonth('Submit_Date','=',date('12'))
             ->take(10)
-            ->groupBy('Category_1','Category_2')
+            ->groupBy('Category_2')
             ->orderBy('Result','desc')
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
