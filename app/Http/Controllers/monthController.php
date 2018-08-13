@@ -669,6 +669,43 @@ class monthController extends Controller
             ->get()->toArray();
     $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+
+              ->whereMonth('Submit_Date','=',date('07'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('07'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('07'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('07'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
     // compare
     $callJuly = DB::table('report_calls')
           ->select('presentedCall as call')
@@ -732,6 +769,10 @@ class monthController extends Controller
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 

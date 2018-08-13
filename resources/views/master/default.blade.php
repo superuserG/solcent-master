@@ -54,71 +54,73 @@
 	<div id="page-wrapper">
 		@yield('content')
 	</div>
-		<!-- jQuery -->
-    <script src="{!! asset('theme/vendor/jquery/jquery.min.js') !!}"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{!! asset('theme/vendor/bootstrap/js/bootstrap.min.js') !!}"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="{!! asset('theme/vendor/metisMenu/metisMenu.min.js') !!}"></script>
+	<!-- jQuery -->
+  <script src="{!! asset('theme/vendor/jquery/jquery.min.js') !!}"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="{!! asset('theme/vendor/raphael/raphael.min.js') !!}"></script>
-    <script src="{!! asset('theme/vendor/morrisjs/morris.min.js') !!}"></script>
-    <script src="{!! asset('theme/data/morris-data.js') !!}"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{!! asset('theme/vendor/bootstrap/js/bootstrap.min.js') !!}"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="{!! asset('theme/dist/js/sb-admin-2.js') !!}"></script>
+  <!-- Metis Menu Plugin JavaScript -->
+  <script src="{!! asset('theme/vendor/metisMenu/metisMenu.min.js') !!}"></script>
 
-		<!-- DataTables JavaScript -->
-    <script src="{!! asset('theme/vendor/datatables/js/jquery.dataTables.min.js') !!}"></script>
-    <script src="{!! asset('theme/vendor/datatables-plugins/dataTables.bootstrap.min.js') !!}"></script>
-    <script src="{!! asset('theme/vendor/datatables-responsive/dataTables.responsive.js') !!}"></script>
+  <!-- Morris Charts JavaScript -->
+  <script src="{!! asset('theme/vendor/raphael/raphael.min.js') !!}"></script>
+  <script src="{!! asset('theme/vendor/morrisjs/morris.min.js') !!}"></script>
+  <script src="{!! asset('theme/data/morris-data.js') !!}"></script>
 
-		<script type="{!! asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js') !!}"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="{!! asset('theme/dist/js/sb-admin-2.js') !!}"></script>
 
-		<script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
+	<!-- DataTables JavaScript -->
+  <script src="{!! asset('theme/vendor/datatables/js/jquery.dataTables.min.js') !!}"></script>
+  <script src="{!! asset('theme/vendor/datatables-plugins/dataTables.bootstrap.min.js') !!}"></script>
+  <script src="{!! asset('theme/vendor/datatables-responsive/dataTables.responsive.js') !!}"></script>
 
-		{{-- Ajax edit-modal  --}}
-		$(document).on('click','.edit-modal', function(){
-			$('.footer_action_button').text("Update Post");
-			$('.footer_action_button').addClass('glyphicon-check');
-			$('.footer_action_button').removeClass('glyphicon-trash');
-			$('.actionBtn').addClass('btn-success');
-			$('.actionBtn').removeClass('btn-danger');
-			$('.actionBtn').addClass('Edit');
-			$('.modal-title').text('Post Edit');
-			$('.deleteContent').hide();
-			$('.form-horizontal').show();
-			$('#fid').val($(this).data('id'));
-			$('#question').val($(this).data('question'));
-			$('#r').val($(this).data('res'));
-			$('#f').val($(this).data('ref'));
-			$('#myModal').modal('show');
+	<script type="{!! asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js') !!}"></script>
+
+	<script>
+  $(document).ready(function() {
+      $('#dataTables-example').DataTable({
+          responsive: true
+      });
+  });
+
+	{{-- Ajax edit-modal  --}}
+	$(document).on('click','.edit-modal', function(){
+		$('.footer_action_button').text("Update Post");
+		$('.footer_action_button').addClass('glyphicon-check');
+		$('.footer_action_button').removeClass('glyphicon-trash');
+		$('.actionBtn').addClass('btn-success');
+		$('.actionBtn').removeClass('btn-danger');
+		$('.actionBtn').addClass('Edit');
+		$('.modal-title').text('Post Edit');
+		$('.deleteContent').hide();
+		$('.form-horizontal').show();
+		$('#fid').val($(this).data('id'));
+		$('#question').val($(this).data('question'));
+		$('#r').val($(this).data('res'));
+		$('#f').val($(this).data('ref'));
+		$('#myModal').modal('show');
+	});
+
+
+	$('.modal-footer').on('click','.edit',function(){
+		$.ajax({
+			type: 'POST',
+			url: 'editPost',
+			data: {
+				'_token' : $('input[name=_token]').val(),
+				'id' : $('#fid').val(),
+				'question' : $('#question').val(),
+				'res' : $('#r').val(),
+				'ref' : $('#f').val()
+			},
 		});
+	});
 
 
-		$('.modal-footer').on('click','.edit',function(){
-			$.ajax({
-				type: 'POST',
-				url: 'editPost',
-				data: {
-					'_token' : $('input[name=_token]').val(),
-					'id' : $('#fid').val(),
-					'question' : $('#question').val(),
-					'res' : $('#r').val(),
-					'ref' : $('#f').val()
-				},
-			});
-		});
-
-
-    </script>
+  </script>
 </body>
 </html>
