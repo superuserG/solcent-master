@@ -99,6 +99,43 @@ class monthController extends Controller
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
 
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->whereMonth('Submit_Date','=',date('01'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('01'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('01'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('01'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
     return view('Page_Month.january')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -111,6 +148,10 @@ class monthController extends Controller
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -204,6 +245,43 @@ class monthController extends Controller
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
 
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->whereMonth('Submit_Date','=',date('02'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('02'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('02'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('02'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
     return view('Page_Month.february')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -216,6 +294,10 @@ class monthController extends Controller
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -308,6 +390,42 @@ class monthController extends Controller
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
 
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->whereMonth('Submit_Date','=',date('03'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('03'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('03'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('03'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
 
     return view('Page_Month.march')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
@@ -321,6 +439,10 @@ class monthController extends Controller
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -413,6 +535,42 @@ class monthController extends Controller
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
 
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->whereMonth('Submit_Date','=',date('04'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('04'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('04'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('04'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
     return view('Page_Month.april')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -425,6 +583,10 @@ class monthController extends Controller
     ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -517,6 +679,43 @@ class monthController extends Controller
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
 
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->whereMonth('Submit_Date','=',date('05'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('05'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('05'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('05'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
     return view('Page_Month.may')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -529,6 +728,10 @@ class monthController extends Controller
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -621,6 +824,43 @@ class monthController extends Controller
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
 
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->whereMonth('Submit_Date','=',date('06'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('06'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('06'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('06'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
     return view('Page_Month.june')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -633,6 +873,10 @@ class monthController extends Controller
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -673,9 +917,9 @@ class monthController extends Controller
             ->get()->toArray();
     $labelKanwil = array_column($labelKanwil, 'lblKanwil');
 
+    //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-
               ->whereMonth('Submit_Date','=',date('07'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
@@ -871,6 +1115,43 @@ class monthController extends Controller
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
 
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->whereMonth('Submit_Date','=',date('08'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('08'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('08'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('08'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
     return view('Page_Month.august')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -883,6 +1164,10 @@ class monthController extends Controller
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -975,6 +1260,43 @@ class monthController extends Controller
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
 
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('09'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('09'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
     return view('Page_Month.september')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -987,6 +1309,10 @@ class monthController extends Controller
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -1079,6 +1405,43 @@ class monthController extends Controller
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
 
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->whereMonth('Submit_Date','=',date('10'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('10'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('10'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('10'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
     return view('Page_Month.october')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -1091,6 +1454,10 @@ class monthController extends Controller
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -1183,6 +1550,43 @@ class monthController extends Controller
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
 
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->whereMonth('Submit_Date','=',date('11'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('11'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('11'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('11'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
     return view('Page_Month.november')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -1195,6 +1599,10 @@ class monthController extends Controller
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 
@@ -1287,6 +1695,43 @@ class monthController extends Controller
             ->get()->toArray();
     $cat2 = array_column($cat2, 'Cat');
 
+    //KCU
+    $kcu = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->whereMonth('Submit_Date','=',date('12'))
+              ->groupBy('Site_Group','Wilayah')
+              ->orderBy('kcu','desc')
+              ->get()->toArray();
+    $kcu = array_column($kcu, 'kcu');
+
+    $labelKcu = DB::table('report_solcents')
+            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->whereMonth('Submit_Date','=',date('12'))
+            ->take(10)
+            ->groupBy('Site_Group','Wilayah')
+            ->orderBy('kcu','desc')
+            ->get()->toArray();
+    $labelKcu = array_column($labelKcu, 'lblKcu');
+
+    //KCP
+    $kcp = DB::table('report_solcents')
+              ->select(array(DB::raw('count(Site) as kcp')))
+
+              ->whereMonth('Submit_Date','=',date('12'))
+              ->groupBy('Site','Wilayah')
+              ->orderBy('kcp','desc')
+              ->get()->toArray();
+    $kcp = array_column($kcp, 'kcp');
+
+    $labelKcp = DB::table('report_solcents')
+            ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->whereMonth('Submit_Date','=',date('12'))
+            ->take(10)
+            ->groupBy('Site','Wilayah')
+            ->orderBy('kcp','desc')
+            ->get()->toArray();
+    $labelKcp = array_column($labelKcp, 'lblKcp');
+
     return view('Page_Month.december')
     ->with('present',json_encode($present,JSON_NUMERIC_CHECK))
     ->with('handle',json_encode($handle,JSON_NUMERIC_CHECK))
@@ -1299,6 +1744,10 @@ class monthController extends Controller
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
     ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
+    ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
+    ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
+    ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))
+    ->with('labelKcp',json_encode($labelKcp,JSON_NUMERIC_CHECK))
     ;
   }
 

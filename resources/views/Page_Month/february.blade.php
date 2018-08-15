@@ -118,6 +118,33 @@
             <!-- /.panel-body -->
         </div>
     </div>
-    {{-- Top Topik Pertanyaan --}}
+    {{-- Top Kanwil --}}
+
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Top KCU
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body" id="calls">
+              <canvas id="topKcuAll" height="200" width="600"></canvas>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Top KCP
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body" id="calls">
+              <canvas id="topKcpAll" height="200" width="600"></canvas>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    
   </div>
 @endsection
