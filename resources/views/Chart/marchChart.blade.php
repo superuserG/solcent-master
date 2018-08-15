@@ -1,24 +1,26 @@
 <script>
-  var label_A = ['Handle','abandon'];
+var label_A = ['Handle','Present','abandon'];
+var data_present = <?php echo $present;?>;
+var data_handle = <?php echo $handle;?>;
+var data_abandon = <?php echo $abandon;?>;
 
-  var data_handle = <?php echo $handle;?>;
-  var data_abandon = <?php echo $abandon;?>;
-
-  var a = {
-      labels: label_A,
-      datasets:
-      [{
-          label: 'Call',
-          data: [data_handle,
-                data_abandon],
-          backgroundColor:
-          [
-            'rgba(7,204,204, 1)',
-            'rgba(119,45,127, 1)',
-          ],
-      }],
-
-  };
+var a = {
+    labels: label_A,
+    datasets:
+    [{
+        label: 'Call',
+        data: [
+              data_handle,
+              data_present,
+              data_abandon],
+        backgroundColor:
+        [
+          'rgba(7,204,204, 1)',
+          'rgba(119,45,127, 1)',
+          'rgba(255,203,0, 1)'
+        ],
+    }],
+};
   // Call
 
   var label_B = ['Present'];

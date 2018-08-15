@@ -1,26 +1,24 @@
 <script>
-  var label_A = ['Present','Handle','abandon'];
-  var data_prensent = <?php echo $present;?>;
-  var data_handle = <?php echo $handle;?>;
-  var data_abandon = <?php echo $abandon;?>;
+var label_A = ['Handle','Present','abandon'];
+var data_present = <?php echo $present;?>;
+var data_handle = <?php echo $handle;?>;
+var data_abandon = <?php echo $abandon;?>;
 
-  var a = {
-      labels: label_A,
-      datasets:
-      [{
-          label: 'Call',
-          data: [data_prensent,
-                data_handle,
-                data_abandon],
-          backgroundColor:
-          [
-            'rgba(255, 99, 132, 0.9)',
-            'rgba(89, 158, 207, 0.9)',
-            'rgba(255, 206, 86, 0.9)',
-          ],
-      }],
-
-  };
+var a = {
+    labels: label_A,
+    datasets:
+    [{
+        label: 'Call',
+        data: [
+              data_handle,
+              data_present,
+              data_abandon],
+        backgroundColor:
+        [
+          'rgba(51,77,92, 1)','rgba(239,201,76, 1)','rgba(69,178,157, 1)',
+        ],
+    }],
+};
   // Call
 
   var label_B = ['Present'];
@@ -36,7 +34,7 @@
           data: data_call_present,
           backgroundColor:
           [
-              'rgba(227,123,64, 1)'
+              'rgba(51,77,92, 1)',
           ],
 
       },
@@ -45,7 +43,7 @@
           data: data_ticket,
           backgroundColor:
           [
-              'rgba(50,77,92, 1)'
+            'rgba(69,178,157, 1)'
           ],
       }
     ],
@@ -64,39 +62,30 @@
         data: data_top,
         backgroundColor:
         [
-          'rgba(50,77,92, 1)','rgba(50,77,92, 1)','rgba(50,77,92, 1)','rgba(50,77,92, 1)',
-          'rgba(50,77,92, 1)','rgba(50,77,92, 1)','rgba(50,77,92, 1)','rgba(50,77,92, 1)',
-          'rgba(50,77,92, 1)','rgba(50,77,92, 1)'
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
         ],
     }],
   };
   // Top question
 
   var label_D = <?php echo $labelKanwil;?>;
-  var data_kanwil = <?php echo $kanwil;?>;
+  var data_topic = <?php echo $kanwil;?>;
 
   var d = {
     labels: label_D,
     datasets:
     [{
         label: 'Top Kanwil',
-        data: data_kanwil,
+        data: data_topic,
         backgroundColor:
         [
-          'rgba(227,123,64, 1)','rgba(227,123,64, 1)','rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
         ],
     }],
   };
-  //Top Kanwil
+  //Top Topic
 
   var label_E = <?php echo $cat2;?>;
   var data_topic = <?php echo $subQuestion;?>;
@@ -109,19 +98,45 @@
         data: data_topic,
         backgroundColor:
         [
-          'rgba(227,123,64, 1)','rgba(227,123,64, 1)','rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
         ],
     }],
   };
+
+  var label_F = <?php echo $labelKcu;?>;
+  var data_kcu = <?php echo $kcu;?>;
+
+  var f = {
+    labels: label_F,
+    datasets:
+    [{
+        label: 'Top All KCU',
+        data: data_kcu,
+        backgroundColor:
+        [
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
+        ],
+    }],
+  }
+
+  var label_G = <?php echo $labelKcp;?>;
+  var data_kcp = <?php echo $kcp;?>;
+
+  var g = {
+    labels: label_G,
+    datasets:
+    [{
+        label: 'Top All KCP',
+        data: data_kcp,
+        backgroundColor:
+        [
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
+        ],
+    }],
+  }
   //Top Sub Question
 
   window.onload = function(){

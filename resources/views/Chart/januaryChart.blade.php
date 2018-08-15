@@ -1,6 +1,6 @@
 <script>
-var label_A = ['Present','Handle','abandon'];
-var data_prensent = <?php echo $present;?>;
+var label_A = ['Handle','Present','abandon'];
+var data_present = <?php echo $present;?>;
 var data_handle = <?php echo $handle;?>;
 var data_abandon = <?php echo $abandon;?>;
 
@@ -11,7 +11,7 @@ var a = {
         label: 'Call',
         data: [
               data_handle,
-              data_prensent,
+              data_present,
               data_abandon],
         backgroundColor:
         [
@@ -36,7 +36,7 @@ var a = {
           data: data_call_present,
           backgroundColor:
           [
-              'rgba(227,123,64, 1)'
+              'rgba(7,204,204, 1)'
           ],
 
       },
@@ -45,7 +45,7 @@ var a = {
           data: data_ticket,
           backgroundColor:
           [
-              'rgba(50,77,92, 1)'
+              'rgba(255,203,0, 1)'
           ],
       }
     ],
@@ -64,9 +64,8 @@ var a = {
         data: data_top,
         backgroundColor:
         [
-          'rgba(50,77,92, 1)','rgba(50,77,92, 1)','rgba(50,77,92, 1)','rgba(50,77,92, 1)',
-          'rgba(50,77,92, 1)','rgba(50,77,92, 1)','rgba(50,77,92, 1)','rgba(50,77,92, 1)',
-          'rgba(50,77,92, 1)','rgba(50,77,92, 1)'
+          'rgba(127,45,91, 1)','rgba(	46, 0, 79, 1)','rgba(93, 96, 173, 1)','rgba(0, 0, 255, 1)','rgba(98,211,255, 1)',
+          'rgba(0, 255, 0, 1)','rgba(174,225,0, 1)','rgba(255, 255, 0, 1)','rgba(255, 127, 0, 1)','rgba(255, 0 , 0, 1)',
         ],
     }],
   };
@@ -83,18 +82,8 @@ var a = {
         data: data_topic,
         backgroundColor:
         [
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
-            'rgba(227,123,64, 1)',
+          'rgba(127,45,91, 1)','rgba(	46, 0, 79, 1)','rgba(93, 96, 173, 1)','rgba(0, 0, 255, 1)','rgba(98,211,255, 1)',
+          'rgba(0, 255, 0, 1)','rgba(174,225,0, 1)','rgba(255, 255, 0, 1)','rgba(255, 127, 0, 1)','rgba(255, 0 , 0, 1)',
         ],
     }],
   };
@@ -111,16 +100,8 @@ var a = {
         data: data_topic,
         backgroundColor:
         [
-          'rgba(227,123,64, 1)','rgba(227,123,64, 1)','rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(227,123,64, 1)',
+          'rgba(127,45,91, 1)','rgba(	46, 0, 79, 1)','rgba(93, 96, 173, 1)','rgba(0, 0, 255, 1)','rgba(98,211,255, 1)',
+          'rgba(0, 255, 0, 1)','rgba(174,225,0, 1)','rgba(255, 255, 0, 1)','rgba(255, 127, 0, 1)','rgba(255, 0 , 0, 1)',
         ],
     }],
   };
@@ -136,16 +117,8 @@ var a = {
         data: data_kcu,
         backgroundColor:
         [
-          'rgba(0,201,167, 1)',
-          'rgba(251,234,255, 1)',
-          'rgba(179,156,208, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(214,93,177, 1)',
-          'rgba(132,94,194, 1)',
-          'rgba(255,111,145, 1)',
-          'rgba(255,150,113, 1)',
-          'rgba(255,199,95, 1)',
-          'rgba(249,248,113, 1)',
+          'rgba(127,45,91, 1)','rgba(	46, 0, 79, 1)','rgba(93, 96, 173, 1)','rgba(0, 0, 255, 1)','rgba(98,211,255, 1)',
+          'rgba(0, 255, 0, 1)','rgba(174,225,0, 1)','rgba(255, 255, 0, 1)','rgba(255, 127, 0, 1)','rgba(255, 0 , 0, 1)',
         ],
     }],
   }
@@ -161,19 +134,11 @@ var a = {
         data: data_kcp,
         backgroundColor:
         [
-          'rgba(0,201,167, 1)',
-          'rgba(251,234,255, 1)',
-          'rgba(179,156,208, 1)',
-          'rgba(227,123,64, 1)',
-          'rgba(214,93,177, 1)',
-          'rgba(132,94,194, 1)',
-          'rgba(255,111,145, 1)',
-          'rgba(255,150,113, 1)',
-          'rgba(255,199,95, 1)',
-          'rgba(249,248,113, 1)',
+          'rgba(127,45,91, 1)','rgba(	46, 0, 79, 1)','rgba(93, 96, 173, 1)','rgba(0, 0, 255, 1)','rgba(98,211,255, 1)',
+          'rgba(0, 255, 0, 1)','rgba(174,225,0, 1)','rgba(255, 255, 0, 1)','rgba(255, 127, 0, 1)','rgba(255, 0 , 0, 1)',
         ],
     }],
-  }
+  };
 
   window.onload = function(){
     var ja = document.getElementById("callJanuary").getContext("2d");
