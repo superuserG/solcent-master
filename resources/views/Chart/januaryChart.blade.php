@@ -128,19 +128,30 @@
   window.onload = function(){
     var ja = document.getElementById("callJanuary").getContext("2d");
     var callA = new Chart(ja, {
-        type: 'doughnut',
+        type: 'bar',
         data: a,
         options: {
+          scales: {
+             yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+             }],
+             xAxes: [{
+                     ticks: {
+                      fontSize: 10
+                     }
+                    }]
+            },
             elements: {
                 rectangle: {
-                    borderColor: 'rgb(0, 255, 0)',
                     borderSkipped: 'bottom'
                 }
             },
             responsive: true,
             title: {
                 display: true,
-                text: 'Calls Report'
+                text: 'Calls and Tickets'
             }
         }
     });
