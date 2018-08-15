@@ -63,6 +63,7 @@ class monthController extends Controller
     // top question
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','[BPO1] - Operator')
               ->whereMonth('Submit_Date','=',date('01'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -71,6 +72,7 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','[BPO1] - Operator')
             ->whereMonth('Submit_Date','=',date('01'))
             ->take(10)
             ->groupBy('Category_1')
@@ -166,6 +168,7 @@ class monthController extends Controller
 
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','[BPO1] - Operator')
               ->whereMonth('Submit_Date','=',date('02'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -174,6 +177,7 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','[BPO1] - Operator')
             ->whereMonth('Submit_Date','=',date('02'))
             ->take(10)
             ->groupBy('Category_1')
@@ -722,6 +726,7 @@ class monthController extends Controller
     // top question
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','[BPO1] - Operator')
               ->whereMonth('Submit_Date','=',date('07'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -730,6 +735,7 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','[BPO1] - Operator')
             ->whereMonth('Submit_Date','=',date('07'))
             ->take(10)
             ->groupBy('Category_1')
@@ -829,6 +835,7 @@ class monthController extends Controller
     // top question
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','[BPO1] - Operator')
               ->whereMonth('Submit_Date','=',date('08'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -837,6 +844,7 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','[BPO1] - Operator')
             ->whereMonth('Submit_Date','=',date('08'))
             ->take(10)
             ->groupBy('Category_1')
@@ -931,6 +939,7 @@ class monthController extends Controller
     // top question
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','[BPO1] - Operator')
               ->whereMonth('Submit_Date','=',date('09'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -939,6 +948,7 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','[BPO1] - Operator')
             ->whereMonth('Submit_Date','=',date('09'))
             ->take(10)
             ->groupBy('Category_1')
@@ -1033,6 +1043,7 @@ class monthController extends Controller
     // top question
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','[BPO1] - Operator')
               ->whereMonth('Submit_Date','=',date('10'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -1041,6 +1052,7 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','[BPO1] - Operator')
             ->whereMonth('Submit_Date','=',date('10'))
             ->take(10)
             ->groupBy('Category_1')
@@ -1135,6 +1147,7 @@ class monthController extends Controller
     // top question
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','[BPO1] - Operator')
               ->whereMonth('Submit_Date','=',date('11'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -1143,6 +1156,7 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','[BPO1] - Operator')
             ->whereMonth('Submit_Date','=',date('11'))
             ->take(10)
             ->groupBy('Category_1')
@@ -1237,6 +1251,7 @@ class monthController extends Controller
     // top question
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','[BPO1] - Operator')
               ->whereMonth('Submit_Date','=',date('12'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -1245,6 +1260,7 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','[BPO1] - Operator')
             ->whereMonth('Submit_Date','=',date('12'))
             ->take(10)
             ->groupBy('Category_1')
