@@ -1,26 +1,26 @@
 <script>
-  var label_A = ['Handle','abandon'];
+var label_A = ['Present','Handle','abandon'];
+var data_prensent = <?php echo $present;?>;
+var data_handle = <?php echo $handle;?>;
+var data_abandon = <?php echo $abandon;?>;
 
-  var data_handle = <?php echo $handle;?>;
-  var data_abandon = <?php echo $abandon;?>;
-
-  var a = {
-      labels: label_A,
-      datasets:
-      [{
-          label: 'Call',
-          data: [
-                data_handle,
-                data_abandon],
-          backgroundColor:
-          [
-            'rgba(255, 99, 132, 1)',
-            'rgba(89, 158, 207, 1)',
-            'rgba(255, 206, 86, 1)',
-          ],
-      }],
-
-  };
+var a = {
+    labels: label_A,
+    datasets:
+    [{
+        label: 'Call',
+        data: [
+              data_handle,
+              data_prensent,
+              data_abandon],
+        backgroundColor:
+        [
+          'rgba(7,204,204, 1)',
+          'rgba(119,45,127, 1)',
+          'rgba(255,203,0, 1)'
+        ],
+    }],
+};
   // Call
 
   var label_B = ['Present'];
@@ -124,6 +124,56 @@
         ],
     }],
   };
+
+  var label_F = <?php echo $labelKcu;?>;
+  var data_kcu = <?php echo $kcu;?>;
+
+  var f = {
+    labels: label_F,
+    datasets:
+    [{
+        label: 'Top All KCU',
+        data: data_kcu,
+        backgroundColor:
+        [
+          'rgba(0,201,167, 1)',
+          'rgba(251,234,255, 1)',
+          'rgba(179,156,208, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(214,93,177, 1)',
+          'rgba(132,94,194, 1)',
+          'rgba(255,111,145, 1)',
+          'rgba(255,150,113, 1)',
+          'rgba(255,199,95, 1)',
+          'rgba(249,248,113, 1)',
+        ],
+    }],
+  }
+
+  var label_G = <?php echo $labelKcp;?>;
+  var data_kcp = <?php echo $kcp;?>;
+
+  var g = {
+    labels: label_G,
+    datasets:
+    [{
+        label: 'Top All KCP',
+        data: data_kcp,
+        backgroundColor:
+        [
+          'rgba(0,201,167, 1)',
+          'rgba(251,234,255, 1)',
+          'rgba(179,156,208, 1)',
+          'rgba(227,123,64, 1)',
+          'rgba(214,93,177, 1)',
+          'rgba(132,94,194, 1)',
+          'rgba(255,111,145, 1)',
+          'rgba(255,150,113, 1)',
+          'rgba(255,199,95, 1)',
+          'rgba(249,248,113, 1)',
+        ],
+    }],
+  }
 
   window.onload = function(){
     var ja = document.getElementById("callJanuary").getContext("2d");
@@ -272,6 +322,102 @@
             title: {
                 display: true,
                 text: 'Top Sub Question'
+            },
+            animation: {
+                duration: 3,
+                onComplete: function () {
+                    var chartInstance = this.chart,
+                        ctx = chartInstance.ctx;
+                    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+
+                    this.data.datasets.forEach(function (dataset, i) {
+                        var meta = chartInstance.controller.getDatasetMeta(i);
+                        meta.data.forEach(function (bar, index) {
+                            var data = dataset.data[index];
+                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                        });
+                    });
+                }
+            }
+        }
+    });
+
+    var jaf = document.getElementById("topKcuAll").getContext("2d");
+    var kcuF = new Chart(jaf, {
+        type: 'bar',
+        data: f,
+        options: {
+          scales: {
+             yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+             }],
+             xAxes: [{
+                     ticks: {
+                      fontSize: 10
+                     }
+                    }]
+            },
+            elements: {
+                rectangle: {
+                    borderSkipped: 'bottom'
+                }
+            },
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Top KCU'
+            },
+            animation: {
+                duration: 3,
+                onComplete: function () {
+                    var chartInstance = this.chart,
+                        ctx = chartInstance.ctx;
+                    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+
+                    this.data.datasets.forEach(function (dataset, i) {
+                        var meta = chartInstance.controller.getDatasetMeta(i);
+                        meta.data.forEach(function (bar, index) {
+                            var data = dataset.data[index];
+                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                        });
+                    });
+                }
+            }
+        }
+    });
+
+    var jag = document.getElementById("topKcpAll").getContext("2d");
+    var kcpg = new Chart(jag, {
+        type: 'bar',
+        data: g,
+        options: {
+          scales: {
+             yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+             }],
+             xAxes: [{
+                     ticks: {
+                      fontSize: 10
+                     }
+                    }]
+            },
+            elements: {
+                rectangle: {
+                    borderSkipped: 'bottom'
+                }
+            },
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Top KCP'
             },
             animation: {
                 duration: 3,
