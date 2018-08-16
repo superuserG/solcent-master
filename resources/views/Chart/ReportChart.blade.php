@@ -26,8 +26,8 @@
       labels:
         [
             'Presented',
-            'completed',
-            'in_progress'
+            'Completed',
+            'In-Progress'
         ]
 
 
