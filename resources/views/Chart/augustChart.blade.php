@@ -262,8 +262,8 @@ window.onload = function(){
       }
   });
 
-  var me = document.getElementById("topSubQuestionAug").getContext("2d");
-  var compareD = new Chart(me, {
+  var aue = document.getElementById("topSubQuestionAug").getContext("2d");
+  var compareD = new Chart(aue, {
       type: 'bar',
       data: e,
       options: {
@@ -309,5 +309,102 @@ window.onload = function(){
           }
       }
   });
+
+  var auf = document.getElementById("topKcuAll").getContext("2d");
+  var kcuF = new Chart(auf, {
+      type: 'bar',
+      data: f,
+      options: {
+        scales: {
+           yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+           }],
+           xAxes: [{
+                   ticks: {
+                    fontSize: 10
+                   }
+                  }]
+          },
+          elements: {
+              rectangle: {
+                  borderSkipped: 'bottom'
+              }
+          },
+          responsive: true,
+          title: {
+              display: true,
+              text: 'Top KCU'
+          },
+          animation: {
+              duration: 3,
+              onComplete: function () {
+                  var chartInstance = this.chart,
+                      ctx = chartInstance.ctx;
+                  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'bottom';
+
+                  this.data.datasets.forEach(function (dataset, i) {
+                      var meta = chartInstance.controller.getDatasetMeta(i);
+                      meta.data.forEach(function (bar, index) {
+                          var data = dataset.data[index];
+                          ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                      });
+                  });
+              }
+          }
+      }
+  });
+
+  var aug = document.getElementById("topKcpAll").getContext("2d");
+  var kcpg = new Chart(aug, {
+      type: 'bar',
+      data: g,
+      options: {
+        scales: {
+           yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+           }],
+           xAxes: [{
+                   ticks: {
+                    fontSize: 10
+                   }
+                  }]
+          },
+          elements: {
+              rectangle: {
+                  borderSkipped: 'bottom'
+              }
+          },
+          responsive: true,
+          title: {
+              display: true,
+              text: 'Top KCP'
+          },
+          animation: {
+              duration: 3,
+              onComplete: function () {
+                  var chartInstance = this.chart,
+                      ctx = chartInstance.ctx;
+                  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'bottom';
+
+                  this.data.datasets.forEach(function (dataset, i) {
+                      var meta = chartInstance.controller.getDatasetMeta(i);
+                      meta.data.forEach(function (bar, index) {
+                          var data = dataset.data[index];
+                          ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                      });
+                  });
+              }
+          }
+      }
+  });
+
 }
 </script>

@@ -166,7 +166,7 @@ var a = {
             responsive: true,
             title: {
                 display: true,
-                text: 'Calls and Tickets'
+                text: 'Call'
             }
         }
     });
@@ -232,7 +232,7 @@ var a = {
     });
 
     var jd = document.getElementById("topicJan").getContext("2d");
-    var compareD = new Chart(jd, {
+    var topicD = new Chart(jd, {
         type: 'bar',
         data: d,
         options: {
@@ -261,8 +261,8 @@ var a = {
         }
     });
 
-    var me = document.getElementById("topSubQuestionJan").getContext("2d");
-    var compareD = new Chart(me, {
+    var je = document.getElementById("topSubQuestionJan").getContext("2d");
+    var topicSubD = new Chart(je, {
         type: 'bar',
         data: e,
         options: {
