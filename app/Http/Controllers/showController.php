@@ -22,6 +22,7 @@ class showController extends Controller
      //Details
      $comp = DB::table('report_solcents')->where('Status','=','Completed')->Count();
      $prog = DB::table('report_solcents')->where('Status','!=','Completed')->Count();
+     $all = DB::table('report_solcents')->Count();
 
      //Report Ticket
     $presented = DB::table('report_solcents')
@@ -86,7 +87,7 @@ class showController extends Controller
             ->get()->toArray();
     $labelSite = array_column($labelSite, 'lblCabang');
 
-    return view('home',compact('comp','prog'))
+    return view('testHome',compact('comp','prog','all'))
         ->with('presented',json_encode($presented,JSON_NUMERIC_CHECK))
         ->with('completed',json_encode($completed,JSON_NUMERIC_CHECK))
         ->with('in_progress',json_encode($in_progress,JSON_NUMERIC_CHECK))

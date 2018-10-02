@@ -21,6 +21,8 @@
 
 Auth::routes();
 
+Route::get('/test','HomeController@test')->name('NewHome');
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function(){

@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
       return redirect()->route('index');
     }
+
+    public function test()
+    {
+      return view('testHome');
+    }
 }
