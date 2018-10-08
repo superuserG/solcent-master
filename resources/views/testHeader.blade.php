@@ -8,7 +8,7 @@
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
                             <div class="content">
-                                <a class="js-acc-btn" href="#">john doe</a>
+                                <a class="js-acc-btn" href="#">{{Auth::user()->name}}</a>
                             </div>
                             <div class="account-dropdown js-dropdown">
                                 <div class="account-dropdown__body">
@@ -22,8 +22,13 @@
                                     </div>
                                 </div>
                                 <div class="account-dropdown__footer">
-                                    <a href="#">
-                                        <i class="zmdi zmdi-power"></i>Logout</a>
+                                  <a href="{!! route('logout') !!}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();"
+                                    ><i class="zmdi zmdi-power"></i>Logout</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                                 </div>
                             </div>
                         </div>

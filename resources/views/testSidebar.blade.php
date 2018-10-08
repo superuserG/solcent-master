@@ -10,32 +10,26 @@
                         <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="index.html">Dashboard 1</a>
+                            <a href="{!! route('home') !!}">Home</a>
                         </li>
                         <li>
-                            <a href="index2.html">Dashboard 2</a>
-                        </li>
-                        <li>
-                            <a href="index3.html">Dashboard 3</a>
-                        </li>
-                        <li>
-                            <a href="index4.html">Dashboard 4</a>
+                            <a href={!! route('monthlyReport') !!}>Monthly</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="chart.html">
                         <i class="fas fa-chart-bar"></i>Charts</a>
-                </li>
+                </li> --}}
                 <li>
-                    <a href="table.html">
+                    <a href="{!! route('table') !!}">
                         <i class="fas fa-table"></i>Tables</a>
                 </li>
                 <li>
-                    <a href="form.html">
+                    <a href="{!! route('form') !!}">
                         <i class="far fa-check-square"></i>Forms</a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="#">
                         <i class="fas fa-calendar-alt"></i>Calendar</a>
                 </li>
@@ -57,8 +51,8 @@
                             <a href="forget-pass.html">Forget Password</a>
                         </li>
                     </ul>
-                </li>
-                <li class="has-sub">
+                </li> --}}
+                {{-- <li class="has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-desktop"></i>UI Elements</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -96,7 +90,7 @@
                             <a href="typo.html">Typography</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </nav>
     </div>

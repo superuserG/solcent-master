@@ -307,7 +307,8 @@ class showController extends Controller
             ->get()->toArray();
     $labelCabang = array_column($labelCabang, 'lblKcu');
 
-    return view('monthly')
+
+    return view('testMonthly', compact('post'))
      ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
      ->with('callFeb',json_encode($callFeb,JSON_NUMERIC_CHECK))
      ->with('callMar',json_encode($callMar,JSON_NUMERIC_CHECK))

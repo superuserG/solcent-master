@@ -2,15 +2,15 @@
 
 @section('content')
   <div class="section__content section__content--p30">
-      <div class="col-lg-12">
-        @if (Auth::User()->hasRole('admin'))
-          <h4 class="page-header">Dashboard</h4>
-        @else
-          <h4 class="page-header">Home Agent</h4>
-        @endif
-      </div>
-
       <div class="container-fluid">
+          <div class="col-lg-12">
+            @if (Auth::User()->hasRole('admin'))
+              <h4 class="page-header">Dashboard</h4>
+            @else
+              <h4 class="page-header">Home Agent</h4>
+            @endif
+          </div>
+
           <div class="row m-t-25">
               <div class="col-sm-6 col-lg-4">
                   <div class="overview-item overview-item--c1">
