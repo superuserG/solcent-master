@@ -19,9 +19,13 @@
         "vue": "^2.1.10"
     },
     "dependencies": {
+        "@fancyapps/fancybox": "^3.5.2",
         "chart.js": "^2.7.2",
+        "fancybox": "^3.0.1",
+        "font-awesome": "^4.7.0",
         "jquery-chained": "^2.0.0-beta.2",
         "npm": "^6.0.1",
-        "pivottable": "^2.20.0"
+        "pivottable": "^2.20.0",
+        "sweetalert2": "^7.28.8"
     }
 }

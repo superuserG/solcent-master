@@ -13,20 +13,12 @@ class typeSeeder extends Seeder
     public function run()
     {
       Type::create([
-        'name' => 'In-Progress',
-        'slug' => str_slug('in-progress')
+        'name' => 'Information',
+        'slug' => str_slug('information')
       ]);
       Type::create([
-        'name' => 'Completed',
-        'slug' => str_slug('completed')
-      ]);
-      Type::create([
-        'name' => 'Verified',
-        'slug' => str_slug('verified')
-      ]);
-      Type::create([
-        'name' => 'Escalation',
-        'slug' => str_slug('escalation')
+        'name' => 'Problem',
+        'slug' => str_slug('problem')
       ]);
     }
 }

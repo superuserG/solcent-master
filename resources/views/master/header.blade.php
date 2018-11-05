@@ -7,6 +7,9 @@
     </button>
     <a class="navbar-brand" href="{!! route('home') !!}">Solution Center V0.1</a>
 </div>
+{{-- <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+  <span class="sr-only">Toggle navigation</span>
+</a> --}}
 <!-- /.navbar-header -->
 
 <ul class="nav navbar-top-links navbar-right">
@@ -25,6 +28,10 @@
             </li>
             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
             </li>
+            @if(Auth::user()->role==2||Auth::user()->role==3)
+              <li><a href="{{url('/admin')}}"><i class="fa fa-address-card fa-fw" aria-hidden="true"></i>Admin Panel</a>
+              </li>
+            @endif
             <li class="divider"></li>
             <li><a href="{!! route('logout') !!}"
               onclick="event.preventDefault();

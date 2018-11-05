@@ -1,0 +1,155 @@
+.coverbook{
+  width: 150px;
+  height: 150px;
+}
+
+/* div.container {
+  width: 80%;
+} */
+.imgEditBook{
+  width: 200px;
+  height: 200px;
+}
+
+.img-edit-book{
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.editbookform
+{
+  width: 88vw;
+}
+.userpict
+{
+  width: 200px;
+  height: 200px;
+}
+.img-edit-user
+{
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.edituserform
+{
+  width: 88vw;
+}
+.imgEditUser
+{
+  width: 200px;
+  height: 200px;
+}
+
+.button-delete-user
+{
+  text-align: center;
+}
+
+.swal-overlay
+{
+  z-index: 999999;
+}
+.place-img-author
+{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.box-author
+{
+  width: 88vw;
+}
+
+.header-author-detail
+{
+  text-align: center;
+}
+
+.info-author-detail
+{
+  font-size: 16px;
+}
+
+.detail-book-author
+{
+  width: 150px;
+  height: 150px;
+}
+
+.body-author-detail
+{
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.profile-btn-admin
+{
+  margin: 5px;
+}
+
+.update-company-btn
+{
+  text-align: right;
+}
+
+.nav-menu-ul ul{
+  margin: 0px !important;
+}
+
+.place-img-book img{
+  width: 150px;
+  height: 150px;
+}
+
+.borrow-book-detail
+{
+  border: 1px solid black;
+}
+
+th, td
+{
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.mg-bot-top
+{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.borrow-book-place
+{
+  text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.qty-borrow
+{
+  width: 5vw;
+}
+
+.img-borrower td
+{
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+
+.img-borrower
+{
+  width: 100px;
+  height: 100px;
+}
+
+.image-for-book
+{
+  text-align: center;
+}

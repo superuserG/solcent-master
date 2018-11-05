@@ -18,11 +18,12 @@
 
 
 // Route::get('/category','HomeController@test')->name('category.view');
-
+Route::group(['middleware'=>'web'],function()
+{
 Auth::routes();
 
-Route::get('/test','HomeController@test')->name('NewHome');
-
+Route::group(['middleware'=>'auth'],function()
+{
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function(){
@@ -226,4 +227,27 @@ Route::middleware('auth')->group(function(){
 
   Route::get('/report/monthly/kanwil_XII','featKanwilController@Kanwil_XII')->name('kanwil.XII');
 
+  Route::post('checknip','NIPController@checknip')->name('checknip');
+  Route::get('form/{data}','showController@formemployee')->name('data.form');
+  Route::get('service','EtcController@service')->name('service');
+  Route::get('category/{category}','EtcController@category')->name('category');
+  Route::get('subcategory/{subcategory}','EtcController@subcategory')->name('subcategory');
+  Route::prefix('admin')->group(function()
+  {
+    Route::middleware(['role:2'])->group(function()
+    {
+      Route::get('/',function(){
+        return view('backend.home');})
+        ->name('admin.home');
+        Route::get('user/deleteduser','UserController@deleteduser')->name('admin.user.deleted');
+        Route::get('user/deleted/list','UserController@deletedlist')->name('admin.user.deletedlist');
+        Route::post('user/restoreuser/{id}', 'UserController@restore')->name('admin.user.restore');
+        Route::resource('user','UserController',['as'=>'admin']);
+
+
+      Route::get('user/manageuser/list','UserController@list')->name('backend.user.list');
+    });
+  });
+});
+});
 });

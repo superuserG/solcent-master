@@ -32,7 +32,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('01'))
+              ->whereMonth('created_at','=',date('01'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -40,7 +40,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('01'))
+            ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -56,7 +56,7 @@ class monthController extends Controller
 
     $ticket_jan = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('01'))
+          ->whereMonth('created_at','=',date('01'))
           ->get()->toArray();
     $ticket_jan = array_column($ticket_jan,'ticket');
 
@@ -64,7 +64,7 @@ class monthController extends Controller
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('01'))
+              ->whereMonth('created_at','=',date('01'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -73,7 +73,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('01'))
+            ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -83,7 +83,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('01'))
+              ->whereMonth('created_at','=',date('01'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -92,7 +92,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('01'))
+            ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -102,7 +102,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('01'))
+              ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -110,7 +110,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('01'))
+            ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -121,7 +121,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('01'))
+              ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -129,7 +129,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('01'))
+            ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')
@@ -179,7 +179,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('02'))
+              ->whereMonth('created_at','=',date('02'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -187,7 +187,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('02'))
+            ->whereMonth('created_at','=',date('02'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -203,14 +203,14 @@ class monthController extends Controller
 
     $ticket_feb = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('02'))
+          ->whereMonth('created_at','=',date('02'))
           ->get()->toArray();
     $ticket_feb = array_column($ticket_feb,'ticket');
 
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('02'))
+              ->whereMonth('created_at','=',date('02'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -219,7 +219,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('02'))
+            ->whereMonth('created_at','=',date('02'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -229,7 +229,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('02'))
+              ->whereMonth('created_at','=',date('02'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -238,7 +238,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('02'))
+            ->whereMonth('created_at','=',date('02'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -248,7 +248,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('02'))
+              ->whereMonth('created_at','=',date('02'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -256,7 +256,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('02'))
+            ->whereMonth('created_at','=',date('02'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -267,7 +267,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('02'))
+              ->whereMonth('created_at','=',date('02'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -275,7 +275,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('02'))
+            ->whereMonth('created_at','=',date('02'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')
@@ -324,7 +324,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('03'))
+              ->whereMonth('created_at','=',date('03'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -332,7 +332,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('03'))
+            ->whereMonth('created_at','=',date('03'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -348,14 +348,14 @@ class monthController extends Controller
 
     $ticket_mar = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('03'))
+          ->whereMonth('created_at','=',date('03'))
           ->get()->toArray();
     $ticket_mar = array_column($ticket_mar,'ticket');
 
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('03'))
+              ->whereMonth('created_at','=',date('03'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -364,7 +364,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('03'))
+            ->whereMonth('created_at','=',date('03'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -374,7 +374,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('03'))
+              ->whereMonth('created_at','=',date('03'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -383,7 +383,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('03'))
+            ->whereMonth('created_at','=',date('03'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -393,7 +393,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('03'))
+              ->whereMonth('created_at','=',date('03'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -401,7 +401,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('03'))
+            ->whereMonth('created_at','=',date('03'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -412,7 +412,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('03'))
+              ->whereMonth('created_at','=',date('03'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -420,7 +420,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('03'))
+            ->whereMonth('created_at','=',date('03'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')
@@ -469,7 +469,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('04'))
+              ->whereMonth('created_at','=',date('04'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -477,7 +477,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('04'))
+            ->whereMonth('created_at','=',date('04'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -493,14 +493,14 @@ class monthController extends Controller
 
     $ticket_apr = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('04'))
+          ->whereMonth('created_at','=',date('04'))
           ->get()->toArray();
     $ticket_apr = array_column($ticket_apr,'ticket');
 
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('04'))
+              ->whereMonth('created_at','=',date('04'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -509,7 +509,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('04'))
+            ->whereMonth('created_at','=',date('04'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -519,7 +519,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('04'))
+              ->whereMonth('created_at','=',date('04'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -528,7 +528,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('04'))
+            ->whereMonth('created_at','=',date('04'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -538,7 +538,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('04'))
+              ->whereMonth('created_at','=',date('04'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -546,7 +546,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('04'))
+            ->whereMonth('created_at','=',date('04'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -557,7 +557,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('04'))
+              ->whereMonth('created_at','=',date('04'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -565,7 +565,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('04'))
+            ->whereMonth('created_at','=',date('04'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')
@@ -613,7 +613,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('05'))
+              ->whereMonth('created_at','=',date('05'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -621,7 +621,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('05'))
+            ->whereMonth('created_at','=',date('05'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -637,14 +637,14 @@ class monthController extends Controller
 
     $ticket_may = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('05'))
+          ->whereMonth('created_at','=',date('05'))
           ->get()->toArray();
     $ticket_may = array_column($ticket_may,'ticket');
 
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('05'))
+              ->whereMonth('created_at','=',date('05'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -653,7 +653,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('05'))
+            ->whereMonth('created_at','=',date('05'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -663,7 +663,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('05'))
+              ->whereMonth('created_at','=',date('05'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -672,7 +672,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('05'))
+            ->whereMonth('created_at','=',date('05'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -682,7 +682,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('05'))
+              ->whereMonth('created_at','=',date('05'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -690,7 +690,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('05'))
+            ->whereMonth('created_at','=',date('05'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -701,7 +701,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('05'))
+              ->whereMonth('created_at','=',date('05'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -709,7 +709,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('05'))
+            ->whereMonth('created_at','=',date('05'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')
@@ -758,7 +758,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('06'))
+              ->whereMonth('created_at','=',date('06'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -766,7 +766,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('06'))
+            ->whereMonth('created_at','=',date('06'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -782,14 +782,14 @@ class monthController extends Controller
 
     $ticket_june = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('06'))
+          ->whereMonth('created_at','=',date('06'))
           ->get()->toArray();
     $ticket_june = array_column($ticket_june,'ticket');
 
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('06'))
+              ->whereMonth('created_at','=',date('06'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -798,7 +798,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('06'))
+            ->whereMonth('created_at','=',date('06'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -808,7 +808,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('06'))
+              ->whereMonth('created_at','=',date('06'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -817,7 +817,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('06'))
+            ->whereMonth('created_at','=',date('06'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -827,7 +827,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('06'))
+              ->whereMonth('created_at','=',date('06'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -835,7 +835,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('06'))
+            ->whereMonth('created_at','=',date('06'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -846,7 +846,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('06'))
+              ->whereMonth('created_at','=',date('06'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -854,7 +854,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('06'))
+            ->whereMonth('created_at','=',date('06'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')
@@ -902,7 +902,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('07'))
+              ->whereMonth('created_at','=',date('07'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -910,7 +910,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('07'))
+            ->whereMonth('created_at','=',date('07'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -920,7 +920,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('07'))
+              ->whereMonth('created_at','=',date('07'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -928,7 +928,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('07'))
+            ->whereMonth('created_at','=',date('07'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -939,7 +939,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('07'))
+              ->whereMonth('created_at','=',date('07'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -947,7 +947,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('07'))
+            ->whereMonth('created_at','=',date('07'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')
@@ -963,7 +963,7 @@ class monthController extends Controller
 
     $ticket_july = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('07'))
+          ->whereMonth('created_at','=',date('07'))
           ->get()->toArray();
     $ticket_july = array_column($ticket_july,'ticket');
 
@@ -971,7 +971,7 @@ class monthController extends Controller
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('07'))
+              ->whereMonth('created_at','=',date('07'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -980,7 +980,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('07'))
+            ->whereMonth('created_at','=',date('07'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -990,7 +990,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('07'))
+              ->whereMonth('created_at','=',date('07'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -999,7 +999,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('07'))
+            ->whereMonth('created_at','=',date('07'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -1048,7 +1048,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('08'))
+              ->whereMonth('created_at','=',date('08'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -1056,7 +1056,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('08'))
+            ->whereMonth('created_at','=',date('08'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -1072,7 +1072,7 @@ class monthController extends Controller
 
     $ticket_aug = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('08'))
+          ->whereMonth('created_at','=',date('08'))
           ->get()->toArray();
     $ticket_aug = array_column($ticket_aug,'ticket');
 
@@ -1080,7 +1080,7 @@ class monthController extends Controller
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('08'))
+              ->whereMonth('created_at','=',date('08'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -1089,7 +1089,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('08'))
+            ->whereMonth('created_at','=',date('08'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -1099,7 +1099,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('08'))
+              ->whereMonth('created_at','=',date('08'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -1108,7 +1108,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('08'))
+            ->whereMonth('created_at','=',date('08'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -1118,7 +1118,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('08'))
+              ->whereMonth('created_at','=',date('08'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -1126,7 +1126,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('08'))
+            ->whereMonth('created_at','=',date('08'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -1137,7 +1137,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('08'))
+              ->whereMonth('created_at','=',date('08'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -1145,7 +1145,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('08'))
+            ->whereMonth('created_at','=',date('08'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')
@@ -1193,7 +1193,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('09'))
+              ->whereMonth('created_at','=',date('09'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -1201,7 +1201,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('09'))
+            ->whereMonth('created_at','=',date('09'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -1217,7 +1217,7 @@ class monthController extends Controller
 
     $ticket_sep = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('09'))
+          ->whereMonth('created_at','=',date('09'))
           ->get()->toArray();
     $ticket_sep = array_column($ticket_sep,'ticket');
 
@@ -1225,7 +1225,7 @@ class monthController extends Controller
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('09'))
+              ->whereMonth('created_at','=',date('09'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -1234,7 +1234,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('09'))
+            ->whereMonth('created_at','=',date('09'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -1244,7 +1244,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('09'))
+              ->whereMonth('created_at','=',date('09'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -1253,7 +1253,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('09'))
+            ->whereMonth('created_at','=',date('09'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -1263,7 +1263,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('09'))
+              ->whereMonth('created_at','=',date('09'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -1271,7 +1271,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('09'))
+            ->whereMonth('created_at','=',date('09'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -1282,7 +1282,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('09'))
+              ->whereMonth('created_at','=',date('09'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -1290,7 +1290,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('09'))
+            ->whereMonth('created_at','=',date('09'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')
@@ -1338,7 +1338,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('10'))
+              ->whereMonth('created_at','=',date('10'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -1346,7 +1346,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('10'))
+            ->whereMonth('created_at','=',date('10'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -1362,7 +1362,7 @@ class monthController extends Controller
 
     $ticket_oct = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('10'))
+          ->whereMonth('created_at','=',date('10'))
           ->get()->toArray();
     $ticket_oct = array_column($ticket_oct,'ticket');
 
@@ -1370,7 +1370,7 @@ class monthController extends Controller
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('10'))
+              ->whereMonth('created_at','=',date('10'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -1379,7 +1379,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('10'))
+            ->whereMonth('created_at','=',date('10'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -1389,7 +1389,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('10'))
+              ->whereMonth('created_at','=',date('10'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -1398,7 +1398,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('10'))
+            ->whereMonth('created_at','=',date('10'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -1408,7 +1408,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('10'))
+              ->whereMonth('created_at','=',date('10'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -1416,7 +1416,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('10'))
+            ->whereMonth('created_at','=',date('10'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -1427,7 +1427,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('10'))
+              ->whereMonth('created_at','=',date('10'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -1435,7 +1435,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('10'))
+            ->whereMonth('created_at','=',date('10'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')
@@ -1483,7 +1483,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('11'))
+              ->whereMonth('created_at','=',date('11'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -1491,7 +1491,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('11'))
+            ->whereMonth('created_at','=',date('11'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -1507,7 +1507,7 @@ class monthController extends Controller
 
     $ticket_nov = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('11'))
+          ->whereMonth('created_at','=',date('11'))
           ->get()->toArray();
     $ticket_nov = array_column($ticket_nov,'ticket');
 
@@ -1515,7 +1515,7 @@ class monthController extends Controller
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('11'))
+              ->whereMonth('created_at','=',date('11'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -1524,7 +1524,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('11'))
+            ->whereMonth('created_at','=',date('11'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -1534,7 +1534,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('11'))
+              ->whereMonth('created_at','=',date('11'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -1543,7 +1543,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('11'))
+            ->whereMonth('created_at','=',date('11'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -1553,7 +1553,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('11'))
+              ->whereMonth('created_at','=',date('11'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -1561,7 +1561,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('11'))
+            ->whereMonth('created_at','=',date('11'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -1572,7 +1572,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('11'))
+              ->whereMonth('created_at','=',date('11'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -1580,7 +1580,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('11'))
+            ->whereMonth('created_at','=',date('11'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')
@@ -1628,7 +1628,7 @@ class monthController extends Controller
     //kanwil
     $kanwil = DB::table('report_solcents')
               ->select(array(DB::raw('count(Wilayah) as wilayah')))
-              ->whereMonth('Submit_Date','=',date('12'))
+              ->whereMonth('created_at','=',date('12'))
               ->groupBy('Wilayah')
               ->orderBy('wilayah','desc')
               ->get()->toArray();
@@ -1636,7 +1636,7 @@ class monthController extends Controller
 
     $labelKanwil = DB::table('report_solcents')
             ->select(array('Wilayah as lblKanwil', DB::raw('count(Wilayah) as wilayah')))
-            ->whereMonth('Submit_Date','=',date('12'))
+            ->whereMonth('created_at','=',date('12'))
             ->take(10)
             ->groupBy('Wilayah')
             ->orderBy('wilayah','desc')
@@ -1652,7 +1652,7 @@ class monthController extends Controller
 
     $ticket_des = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('12'))
+          ->whereMonth('created_at','=',date('12'))
           ->get()->toArray();
     $ticket_des = array_column($ticket_des,'ticket');
 
@@ -1660,7 +1660,7 @@ class monthController extends Controller
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
               ->where('Category_1','!=','[BPO1] - Operator')
-              ->whereMonth('Submit_Date','=',date('12'))
+              ->whereMonth('created_at','=',date('12'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -1669,7 +1669,7 @@ class monthController extends Controller
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
             ->where('Category_1','!=','[BPO1] - Operator')
-            ->whereMonth('Submit_Date','=',date('12'))
+            ->whereMonth('created_at','=',date('12'))
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -1679,7 +1679,7 @@ class monthController extends Controller
     $subQuestion = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_2) as Question')))
               ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-              ->whereMonth('Submit_Date','=',date('12'))
+              ->whereMonth('created_at','=',date('12'))
               ->groupBy('Category_2')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -1688,7 +1688,7 @@ class monthController extends Controller
     $cat2 = DB::table('report_solcents')
             ->select(array('Category_2 as Cat', DB::raw('count(Category_2) as result')))
             ->where('Category_2','!=','Unit Kerja Kantor Pusat Lainnya')
-            ->whereMonth('Submit_Date','=',date('12'))
+            ->whereMonth('created_at','=',date('12'))
             ->take(10)
             ->groupBy('Category_2')
             ->orderBy('Result','desc')
@@ -1698,7 +1698,7 @@ class monthController extends Controller
     //KCU
     $kcu = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site_Group) as kcu')))
-              ->whereMonth('Submit_Date','=',date('12'))
+              ->whereMonth('created_at','=',date('12'))
               ->groupBy('Site_Group','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
@@ -1706,7 +1706,7 @@ class monthController extends Controller
 
     $labelKcu = DB::table('report_solcents')
             ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
-            ->whereMonth('Submit_Date','=',date('12'))
+            ->whereMonth('created_at','=',date('12'))
             ->take(10)
             ->groupBy('Site_Group','Wilayah')
             ->orderBy('kcu','desc')
@@ -1717,7 +1717,7 @@ class monthController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
 
-              ->whereMonth('Submit_Date','=',date('12'))
+              ->whereMonth('created_at','=',date('12'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
               ->get()->toArray();
@@ -1725,7 +1725,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
-            ->whereMonth('Submit_Date','=',date('12'))
+            ->whereMonth('created_at','=',date('12'))
             ->take(10)
             ->groupBy('Site','Wilayah')
             ->orderBy('kcp','desc')

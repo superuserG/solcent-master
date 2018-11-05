@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-lg-6">
           <h2 class="page-header">
-              April Kanwil 6
+              April Kanwil 6 Page
           </h2>
       </div>
 

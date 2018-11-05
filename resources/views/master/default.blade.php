@@ -39,6 +39,11 @@
 	<script src="{!! asset('theme/vendor/datatables/js/jquery.dataTables.min.js') !!}"></script>
 	<script src="{!! asset('theme/vendor/datatables-plugins/dataTables.bootstrap.min.js') !!}"></script>
 	<script src="{!! asset('theme/vendor/datatables-responsive/dataTables.responsive.js') !!}"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+
 
 
 </head>
@@ -79,6 +84,8 @@
   <script src="{!! asset('theme/vendor/datatables-responsive/dataTables.responsive.js') !!}"></script>
 
 	<script type="{!! asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js') !!}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+
 
 	<script>
   $(document).ready(function() {

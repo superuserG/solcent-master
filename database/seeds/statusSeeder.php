@@ -13,12 +13,21 @@ class statusSeeder extends Seeder
     public function run()
     {
       Status::create([
-        'name' => 'Information',
-        'slug' => str_slug('information')
+        'name' => 'In-Progress',
+        'slug' => str_slug('in-progress')
       ]);
       Status::create([
-        'name' => 'Problem',
-        'slug' => str_slug('problem')
+        'name' => 'Completed',
+        'slug' => str_slug('completed')
       ]);
+      Status::create([
+        'name' => 'Verified',
+        'slug' => str_slug('verified')
+      ]);
+      Status::create([
+        'name' => 'Escalation',
+        'slug' => str_slug('escalation')
+      ]);
+
     }
 }

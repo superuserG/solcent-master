@@ -1,4 +1,5 @@
 @extends('master.default')
+{{-- @extends('master.lightLayout') --}}
 @section('content')
 @include('Chart.ReportChart')
 
@@ -7,7 +8,7 @@
         @if (Auth::User()->hasRole('admin'))
           <h2 class="page-header">Dashboard</h2>
         @else
-          <h2 class="page-header">Home Agent</h2>
+          <h2 class="page-header">Home</h2>
         @endif
       </div>
 

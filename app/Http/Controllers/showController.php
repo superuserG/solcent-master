@@ -14,6 +14,7 @@ use App\Kcu;
 use App\Kcp;
 use DB;
 use App\ReportSolcent;
+use App\Employee;
 
 class showController extends Controller
 {
@@ -22,7 +23,6 @@ class showController extends Controller
      //Details
      $comp = DB::table('report_solcents')->where('Status','=','Completed')->Count();
      $prog = DB::table('report_solcents')->where('Status','!=','Completed')->Count();
-     $all = DB::table('report_solcents')->Count();
 
      //Report Ticket
     $presented = DB::table('report_solcents')
@@ -87,7 +87,7 @@ class showController extends Controller
             ->get()->toArray();
     $labelSite = array_column($labelSite, 'lblCabang');
 
-    return view('testHome',compact('comp','prog','all'))
+    return view('home',compact('comp','prog'))
         ->with('presented',json_encode($presented,JSON_NUMERIC_CHECK))
         ->with('completed',json_encode($completed,JSON_NUMERIC_CHECK))
         ->with('in_progress',json_encode($in_progress,JSON_NUMERIC_CHECK))
@@ -105,13 +105,13 @@ class showController extends Controller
   public function showForm()
   {
     $posts = Post::all();
-    $kanwils = Kanwil::all();
+    // $kanwils = Kanwil::all();
     $types = Type::all();
     $statuses = Status::all();
     $categories = Category::all();
     $sub_categories = SubCategory::all();
-    $kcus = Kcu::all();
-    $kcps = Kcp::all();
+    // $kcus = Kcu::all();
+    // $kcps = Kcp::all();
 
     return view('form',compact('posts','kanwils','types','statuses','categories','sub_categories','kcus','kcps'));
   }
@@ -202,73 +202,73 @@ class showController extends Controller
 
     $ticket_jan = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('01'))
+          ->whereMonth('created_at','=',date('01'))
           ->get()->toArray();
     $ticket_jan = array_column($ticket_jan,'ticket');
 
     $ticket_feb = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('02'))
+          ->whereMonth('created_at','=',date('02'))
           ->get()->toArray();
     $ticket_feb = array_column($ticket_feb,'ticket');
 
     $ticket_mar = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('03'))
+          ->whereMonth('created_at','=',date('03'))
           ->get()->toArray();
     $ticket_mar = array_column($ticket_mar,'ticket');
 
     $ticket_apr = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('04'))
+          ->whereMonth('created_at','=',date('04'))
           ->get()->toArray();
     $ticket_apr = array_column($ticket_apr,'ticket');
 
     $ticket_mei = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('05'))
+          ->whereMonth('created_at','=',date('05'))
           ->get()->toArray();
     $ticket_mei = array_column($ticket_mei,'ticket');
 
     $ticket_jun = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('06'))
+          ->whereMonth('created_at','=',date('06'))
           ->get()->toArray();
     $ticket_jun = array_column($ticket_jun,'ticket');
 
     $ticket_jul = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('07'))
+          ->whereMonth('created_at','=',date('07'))
           ->get()->toArray();
     $ticket_jul = array_column($ticket_jul,'ticket');
 
     $ticket_aug = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('08'))
+          ->whereMonth('created_at','=',date('08'))
           ->get()->toArray();
     $ticket_aug = array_column($ticket_aug,'ticket');
 
     $ticket_sep = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('09'))
+          ->whereMonth('created_at','=',date('09'))
           ->get()->toArray();
     $ticket_sep = array_column($ticket_sep,'ticket');
 
     $ticket_okt = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('10'))
+          ->whereMonth('created_at','=',date('10'))
           ->get()->toArray();
     $ticket_okt = array_column($ticket_okt,'ticket');
 
     $ticket_nov = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('11'))
+          ->whereMonth('created_at','=',date('11'))
           ->get()->toArray();
     $ticket_nov = array_column($ticket_nov,'ticket');
 
     $ticket_des = DB::table('report_solcents')
           ->select(DB::raw('Count(WO_ID) as ticket'))
-          ->whereMonth('Submit_Date','=',date('12'))
+          ->whereMonth('created_at','=',date('12'))
           ->get()->toArray();
     $ticket_des = array_column($ticket_des,'ticket');
 
@@ -307,8 +307,7 @@ class showController extends Controller
             ->get()->toArray();
     $labelCabang = array_column($labelCabang, 'lblKcu');
 
-
-    return view('testMonthly', compact('post'))
+    return view('monthly')
      ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
      ->with('callFeb',json_encode($callFeb,JSON_NUMERIC_CHECK))
      ->with('callMar',json_encode($callMar,JSON_NUMERIC_CHECK))
@@ -350,5 +349,17 @@ class showController extends Controller
     return view('categoryView', compact('categories'));
   }
 
+  public function formemployee($id)
+  {
+    $employee = Employee::where('nip',$id)->first();
+    $empDomain = $employee->domain;
+    $empGuestname = $employee->guestname;
+    $empJobtitle = $employee->jobtitle;
+    $empKanwil = $employee->kanwil;
+    $empKcu = $employee->kcu;
+    $empKcuKcp = $employee->kcukcp;
 
+
+    return view('formemployee',compact('employee','empDomain','empGuestname','empJobtitle','empKanwil','empKcu','empKcuKcp'));
+  }
 }
