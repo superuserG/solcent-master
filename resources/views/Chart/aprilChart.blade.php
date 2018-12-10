@@ -267,8 +267,8 @@ var a = {
         }
     });
 
-    var ad = document.getElementById("topicApr").getContext("2d");
-    var topicD = new Chart(ad, {
+    var ad = document.getElementById("kanwilApr").getContext("2d");
+    var kanwilD = new Chart(ad, {
         type: 'bar',
         data: d,
         options: {
@@ -316,7 +316,7 @@ var a = {
     });
 
     var ae = document.getElementById("topSubQuestionApr").getContext("2d");
-    var kanwilD = new Chart(ae, {
+    var subQuestionE = new Chart(ae, {
         type: 'bar',
         data: e,
         options: {

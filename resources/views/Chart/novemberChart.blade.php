@@ -106,6 +106,41 @@ var a = {
         ],
     }],
   };
+
+  var label_F = <?php echo $labelKcu;?>;
+  var data_kcu = <?php echo $kcu;?>;
+
+  var f = {
+    labels: label_F,
+    datasets:
+    [{
+        label: 'Top All KCU',
+        data: data_kcu,
+        backgroundColor:
+        [
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
+        ],
+    }],
+  }
+
+  var label_G = <?php echo $labelKcp;?>;
+  var data_kcp = <?php echo $kcp;?>;
+
+  var g = {
+    labels: label_G,
+    datasets:
+    [{
+        label: 'Top All KCP',
+        data: data_kcp,
+        backgroundColor:
+        [
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
+          'rgba(51,77,92, 1)','rgba(69,178,157, 1)','rgba(239,201,76, 1)','rgba(226,122,63, 1)','rgba(223,90,73, 1)',
+        ],
+    }],
+  }
+  
 window.onload = function(){
   var noa = document.getElementById("callNov").getContext("2d");
   var callA = new Chart(noa, {
@@ -138,7 +173,7 @@ window.onload = function(){
   });
 
   var nob = document.getElementById("compareCallNov").getContext("2d");
-  var callA = new Chart(nob, {
+  var compareB = new Chart(nob, {
       type: 'bar',
       data: b,
       options: {
@@ -168,7 +203,7 @@ window.onload = function(){
   });
 
   var noc = document.getElementById("topQuestionNov").getContext("2d");
-  var callA = new Chart(noc, {
+  var topQuestionC = new Chart(noc, {
       type: 'bar',
       data: c,
       options: {
@@ -197,8 +232,8 @@ window.onload = function(){
       }
   });
 
-  var nod = document.getElementById("topicNov").getContext("2d");
-  var callA = new Chart(nod, {
+  var nod = document.getElementById("kanwilNov").getContext("2d");
+  var kanwilD = new Chart(nod, {
       type: 'bar',
       data: d,
       options: {
@@ -227,8 +262,8 @@ window.onload = function(){
       }
   });
 
-  var me = document.getElementById("topSubQuestionNov").getContext("2d");
-  var compareD = new Chart(me, {
+  var noe = document.getElementById("topSubQuestionNov").getContext("2d");
+  var subQuestionE = new Chart(noe, {
       type: 'bar',
       data: e,
       options: {
@@ -253,6 +288,102 @@ window.onload = function(){
           title: {
               display: true,
               text: 'Top Sub Question'
+          },
+          animation: {
+              duration: 3,
+              onComplete: function () {
+                  var chartInstance = this.chart,
+                      ctx = chartInstance.ctx;
+                  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'bottom';
+
+                  this.data.datasets.forEach(function (dataset, i) {
+                      var meta = chartInstance.controller.getDatasetMeta(i);
+                      meta.data.forEach(function (bar, index) {
+                          var data = dataset.data[index];
+                          ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                      });
+                  });
+              }
+          }
+      }
+  });
+
+  var nof = document.getElementById("topKcuAll").getContext("2d");
+  var kcuF = new Chart(nof, {
+      type: 'bar',
+      data: f,
+      options: {
+        scales: {
+           yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+           }],
+           xAxes: [{
+                   ticks: {
+                    fontSize: 10
+                   }
+                  }]
+          },
+          elements: {
+              rectangle: {
+                  borderSkipped: 'bottom'
+              }
+          },
+          responsive: true,
+          title: {
+              display: true,
+              text: 'Top KCU'
+          },
+          animation: {
+              duration: 3,
+              onComplete: function () {
+                  var chartInstance = this.chart,
+                      ctx = chartInstance.ctx;
+                  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'bottom';
+
+                  this.data.datasets.forEach(function (dataset, i) {
+                      var meta = chartInstance.controller.getDatasetMeta(i);
+                      meta.data.forEach(function (bar, index) {
+                          var data = dataset.data[index];
+                          ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                      });
+                  });
+              }
+          }
+      }
+  });
+
+  var nog = document.getElementById("topKcpAll").getContext("2d");
+  var kcpg = new Chart(nog, {
+      type: 'bar',
+      data: g,
+      options: {
+        scales: {
+           yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+           }],
+           xAxes: [{
+                   ticks: {
+                    fontSize: 10
+                   }
+                  }]
+          },
+          elements: {
+              rectangle: {
+                  borderSkipped: 'bottom'
+              }
+          },
+          responsive: true,
+          title: {
+              display: true,
+              text: 'Top KCP'
           },
           animation: {
               duration: 3,

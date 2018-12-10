@@ -66,7 +66,7 @@
     {{-- call --}}
 
     <div class="col-lg-6">
-        <div class="panel panel-default">
+      <div class="panel panel-default">
             <div class="panel-heading">
                 Compare Calls and Ticket
             </div>
@@ -114,7 +114,7 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-              <canvas id="topicJan" height="200" width="600"></canvas>
+              <canvas id="kanwilJan" height="200" width="600"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>

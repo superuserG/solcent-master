@@ -237,7 +237,7 @@ var a = {
     });
 
     var myc = document.getElementById("topQuestionMay").getContext("2d");
-    var compareC = new Chart(myc, {
+    var topQuestionC = new Chart(myc, {
         type: 'bar',
         data: c,
         options: {
@@ -284,8 +284,8 @@ var a = {
         }
     });
 
-    var myd = document.getElementById("topicMay").getContext("2d");
-    var compareD = new Chart(myd, {
+    var myd = document.getElementById("kanwilMay").getContext("2d");
+    var kanwilD = new Chart(myd, {
         type: 'bar',
         data: d,
         options: {
@@ -333,7 +333,7 @@ var a = {
     });
 
     var mye = document.getElementById("topSubQuestionMay").getContext("2d");
-    var compareD = new Chart(mye, {
+    var topSubQuestionD = new Chart(mye, {
         type: 'bar',
         data: e,
         options: {

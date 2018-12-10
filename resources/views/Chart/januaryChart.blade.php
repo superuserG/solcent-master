@@ -72,14 +72,14 @@ var a = {
   // Top question
 
   var label_D = <?php echo $labelKanwil;?>;
-  var data_topic = <?php echo $kanwil;?>;
+  var data_kanwil = <?php echo $kanwil;?>;
 
   var d = {
     labels: label_D,
     datasets:
     [{
         label: 'Top Kanwil',
-        data: data_topic,
+        data: data_kanwil,
         backgroundColor:
         [
           'rgba(127,45,91, 1)','rgba(	46, 0, 79, 1)','rgba(93, 96, 173, 1)','rgba(0, 0, 255, 1)','rgba(98,211,255, 1)',
@@ -87,7 +87,7 @@ var a = {
         ],
     }],
   };
-  //Top Topic
+  //Top Kanwil
 
   var label_E = <?php echo $cat2;?>;
   var data_topic = <?php echo $subQuestion;?>;
@@ -202,7 +202,7 @@ var a = {
     });
 
     var jc = document.getElementById("topQuestionJan").getContext("2d");
-    var compareC = new Chart(jc, {
+    var questionC = new Chart(jc, {
         type: 'bar',
         data: c,
         options: {
@@ -231,8 +231,8 @@ var a = {
         }
     });
 
-    var jd = document.getElementById("topicJan").getContext("2d");
-    var topicD = new Chart(jd, {
+    var jd = document.getElementById("kanwilJan").getContext("2d");
+    var kanwilD = new Chart(jd, {
         type: 'bar',
         data: d,
         options: {
@@ -262,7 +262,7 @@ var a = {
     });
 
     var je = document.getElementById("topSubQuestionJan").getContext("2d");
-    var topicSubD = new Chart(je, {
+    var subQuestionD = new Chart(je, {
         type: 'bar',
         data: e,
         options: {

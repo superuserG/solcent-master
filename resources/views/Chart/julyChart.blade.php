@@ -227,7 +227,7 @@ window.onload = function(){
 });
 
   var jlb = document.getElementById("compareCallJuly").getContext("2d");
-  var callA = new Chart(jlb, {
+  var compareB = new Chart(jlb, {
       type: 'bar',
       data: b,
       options: {
@@ -257,7 +257,7 @@ window.onload = function(){
   });
 
   var jlc = document.getElementById("topQuestionJul").getContext("2d");
-  var callA = new Chart(jlc, {
+  var topQuestionC = new Chart(jlc, {
       type: 'bar',
       data: c,
       options: {
@@ -304,8 +304,8 @@ window.onload = function(){
       }
   });
 
-  var jld = document.getElementById("topicJul").getContext("2d");
-  var callA = new Chart(jld, {
+  var jld = document.getElementById("kanwilJul").getContext("2d");
+  var kanwilD = new Chart(jld, {
       type: 'bar',
       data: d,
       options: {
@@ -352,8 +352,8 @@ window.onload = function(){
       }
   });
 
-  var me = document.getElementById("topSubQuestionJul").getContext("2d");
-  var compareD = new Chart(me, {
+  var jle = document.getElementById("topSubQuestionJul").getContext("2d");
+  var topSubQuestionD = new Chart(jle, {
       type: 'bar',
       data: e,
       options: {

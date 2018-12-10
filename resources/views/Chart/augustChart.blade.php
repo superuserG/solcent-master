@@ -173,7 +173,7 @@ window.onload = function(){
   });
 
   var aub = document.getElementById("compareCallAug").getContext("2d");
-  var callA = new Chart(aub, {
+  var compareB = new Chart(aub, {
       type: 'bar',
       data: b,
       options: {
@@ -203,7 +203,7 @@ window.onload = function(){
   });
 
   var auc = document.getElementById("topQuestionAug").getContext("2d");
-  var callA = new Chart(auc, {
+  var topQuestionC = new Chart(auc, {
       type: 'bar',
       data: c,
       options: {
@@ -232,8 +232,8 @@ window.onload = function(){
       }
   });
 
-  var aud = document.getElementById("topicAug").getContext("2d");
-  var callA = new Chart(aud, {
+  var aud = document.getElementById("kanwilAug").getContext("2d");
+  var kanwilD = new Chart(aud, {
       type: 'bar',
       data: d,
       options: {
@@ -263,7 +263,7 @@ window.onload = function(){
   });
 
   var aue = document.getElementById("topSubQuestionAug").getContext("2d");
-  var compareD = new Chart(aue, {
+  var topSubQuestionE = new Chart(aue, {
       type: 'bar',
       data: e,
       options: {

@@ -286,7 +286,7 @@ var a = {
         }
     });
 
-    var md = document.getElementById("topicMar").getContext("2d");
+    var md = document.getElementById("kanwilMar").getContext("2d");
     var compareD = new Chart(md, {
         type: 'bar',
         data: d,

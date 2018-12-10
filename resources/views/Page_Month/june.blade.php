@@ -114,7 +114,7 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-              <canvas id="topicJune" height="100" width="300"></canvas>
+              <canvas id="kanwilJune" height="100" width="300"></canvas>
             </div>
             <!-- /.panel-body -->
         </div>
@@ -146,6 +146,6 @@
             <!-- /.panel-body -->
         </div>
     </div>
-    
+
   </div>
 @endsection
