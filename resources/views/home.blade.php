@@ -4,7 +4,7 @@
 @include('Chart.ReportChart')
 
   <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-3">
         @if (Auth::User()->hasRole('admin'))
           <h2 class="page-header">Dashboard</h2>
         @else
@@ -13,26 +13,28 @@
       </div>
 
 
+<div class="timeline-title">
 <div class="col-sm-offset-3">
   <div class="row">
-    <div class="col-lg-4 col-md-7">
+    <div class="panel-body">
+    <div class="col-lg-3 col-md-7">
       <div class="panel panel-primary">
         <div class="panel-heading">
           <div class="row">
             <div class="col-xs-3">
-               <i class="fa fa-check-circle fa-5x"></i> <!--size gambar buble chat-->
+               <i class="fa fa-check-circle fa-3x"></i> <!--size gambar buble chat-->
             </div>
             <div class="col-xs-9 text-right">
               <div class="huge">
                 {{$comp}}
               </div>
               <div class="">
-                Completed
+                Ivanti
               </div>
             </div>
           </div>
         </div>
-        <a href="#">
+        <a href="tables">
           <div class="panel-footer">
             <span class="pull-left">View Details</span>
             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -42,19 +44,20 @@
       </div>
     </div>
 
-    <div class="col-lg-4 col-md-7">
+
+    <div class="col-lg-3 col-md-7">
       <div class="panel panel-green">
         <div class="panel-heading">
           <div class="row">
             <div class="col-xs-3">
-              <i class="fa fa-comments fa-5x"></i>
+              <i class="fa fa-comments fa-3x"></i>
             </div>
             <div class="col-xs-9 text-right">
               <div class="huge">
                 {{$prog}}
               </div>
               <div class="">
-                In Progress
+                Cisco
               </div>
             </div>
           </div>
@@ -68,38 +71,38 @@
         </a>
       </div>
     </div>
+
+    <div class="col-xs-push-1 col-lg-4 col-md-7 padl">
+            <div id="calls">
+              <canvas id="reportCalls" height="100" width="100"></canvas>
+            </div>
+    </div>
   </div>
 </div>
+</div>
+</div>
+  </div>
 
 <!--CONTENT-->
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-12">
             <div class="panel-body" id="calls">
-              <canvas id="reportQuestion" height="500" width="700"></canvas>
+              <canvas id="reportQuestion" height="200" width="650"></canvas>
             </div>
-    </div>
-    <!-- Report Question -->
+          </div>
 
+    <!-- question report -->
 
-  <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-12">
             <div class="panel-body" id="calls">
-              <canvas id="reportCalls" height="500" width="400"></canvas>
-            </div>
-    </div>
-    <!-- Report Ticket -->
-
-
-    <div class="col-lg-6">
-            <div class="panel-body" id="calls">
-              <canvas id="reportKanwil" height="500" width="600"></canvas>
+              <canvas id="reportKanwil" height="150" width="650"></canvas>
             </div>
     </div>
     <!-- Report Kanwil -->
 
-    <div class="col-lg-6">
+    <div class="col-lg-12">
             <div class="panel-body" id="calls">
-              <canvas id="reportCabang" height="500" width="600"></canvas>
+              <canvas id="reportCabang" height="150" width="650"></canvas>
             </div>
     </div>
     <!-- Report Cabang -->

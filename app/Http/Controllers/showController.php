@@ -35,10 +35,6 @@ class showController extends Controller
         ->get()->toArray();
     $completed = array_column($completed, 'completed');
 
-    $in_progress = ReportSolcent::select(DB::raw("count(WO_ID) as Abandon"))->where('Status','!=','Completed')
-        ->get()->toArray();
-    $in_progress = array_column($in_progress, 'Abandon');
-
     //Report Top Question
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
@@ -90,7 +86,7 @@ class showController extends Controller
     return view('home',compact('comp','prog'))
         ->with('presented',json_encode($presented,JSON_NUMERIC_CHECK))
         ->with('completed',json_encode($completed,JSON_NUMERIC_CHECK))
-        ->with('in_progress',json_encode($in_progress,JSON_NUMERIC_CHECK))
+        
         // ->with('label',json_encode($label,JSON_NUMERIC_CHECK))
         ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
         ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))

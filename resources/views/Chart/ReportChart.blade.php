@@ -1,33 +1,30 @@
 <script>
   // Home Chart
 // Pie Ticket
-  var label = ['2018'];
+  var labels = ['Inccoming', 'Komplit'];
   var data_presented = <?php echo $presented; ?>;
   var data_completed = <?php echo $completed; ?>;
-  var data_in_progress = <?php echo $in_progress; ?>;
   var pieChartData = {
       datasets:
       [{
-          data: [data_presented, data_completed, data_in_progress],
+          data: [data_presented, data_completed],
           backgroundColor:
           [
               'rgba(255, 99, 132, 1.0)',
               'rgba(89, 158, 207, 1.0)',
-              'rgba(255, 206, 86, 1.0)',
+          
           ],
           borderColor:
           [
             'rgba(255, 99, 132, 1.0)',
             'rgba(54, 162, 235, 1.0)',
-            'rgba(255, 206, 86, 1.0)',
+          
           ]
       }],
 
       labels:
         [
-            'Presented',
-            'Completed',
-            'In-Progress'
+            'Incoming','Completed'
         ]
 
 
@@ -92,7 +89,7 @@
       // Report Calls Home
       var ctx = document.getElementById("reportCalls").getContext("2d");
       var callsBar = new Chart(ctx, {
-          type: 'doughnut',
+          type: 'pie',
           data: pieChartData,
           options: {
               elements: {
@@ -105,7 +102,22 @@
               title: {
                   display: true,
                   text: 'Calls Report'
+              },
+              legend:{
+                display: false
+              },
+              plugins:{
+                labels:[
+                {
+                  render:'value'
+                },
+                {
+                  render:'label',
+                  position:'outside'
+                }
+                ]
               }
+              
           }
       });
 
@@ -124,7 +136,8 @@
                xAxes: [{
                        ticks: {
                         fontSize: 10
-                       }
+                       },
+                       
                       }]
               },
               elements: {
@@ -137,7 +150,7 @@
                   display: true,
                   text: 'Question Report'
               },
-              animation: {
+             animation: {
                   duration: 3,
                   onComplete: function () {
                       var chartInstance = this.chart,
