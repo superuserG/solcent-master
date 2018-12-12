@@ -17,7 +17,7 @@ public $keyType = "string";
 protected $fillable =
 [
   'WO_ID','NIP','Nama','Category_1','Category_2','Category_3','Summary','Notes',
-  'Resolution','Reference','Status','Type','Wilayah','Site_Group','Site','Assignee'
+  'Resolution','Reference','Status','Type','Wilayah','Site_Group','Site','Assignee','Cabang'
 ];
 
 protected $hidden =

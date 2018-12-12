@@ -1,4 +1,4 @@
-1<script>
+<script>
 var label_kcu = <?php echo $labelKcu;?>;
 var data_kcu = <?php echo $kcu;?>;
 

@@ -50,8 +50,8 @@ var dataKcp = {
 };
 
 window.onload = function(){
-  var me = document.getElementById("kcu8").getContext("2d");
-  var compareE = new Chart(me, {
+  var e = document.getElementById("kcu8").getContext("2d");
+  var compareE = new Chart(e, {
       type: 'bar',
       data: dataKcu,
       options: {
@@ -80,8 +80,8 @@ window.onload = function(){
       }
   });
 
-  var mf = document.getElementById("kcp8").getContext("2d");
-  var compareF = new Chart(mf, {
+  var f = document.getElementById("kcp8").getContext("2d");
+  var compareF = new Chart(f, {
       type: 'bar',
       data: dataKcp,
       options: {

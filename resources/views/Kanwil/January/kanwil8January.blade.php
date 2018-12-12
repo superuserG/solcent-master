@@ -1,7 +1,7 @@
 @extends('master.default')
 
 @section('content')
-  @include('Chart.kanwilChart.January.chartKanwil1')
+  @include('Chart.kanwilChart.January.chartKanwil8')
 
   <div class="row">
     <div class="row">

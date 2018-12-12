@@ -10,20 +10,20 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKp()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANTOR PUSAT')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANTOR PUSAT')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -59,20 +59,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil1()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL I')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANWIL I')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -81,6 +83,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL I')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -90,6 +93,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL I')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
@@ -108,20 +112,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil2()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL II')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANWIL II')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -130,6 +136,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL II')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -139,6 +146,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL II')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
@@ -157,20 +165,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil3()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL III')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANWIL III')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -179,6 +189,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL III')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -188,6 +199,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL III')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
@@ -206,20 +218,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil4()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL IV')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANWIL IV')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -228,6 +242,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL IV')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -237,6 +252,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL IV')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
@@ -255,20 +271,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil5()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL V')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANWIL V')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -277,6 +295,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL V')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -286,6 +305,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL V')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
@@ -304,20 +324,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil6()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL VI')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANWIL VI')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -326,6 +348,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL VI')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -335,6 +358,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL VI')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
@@ -353,20 +377,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil7()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL VII')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANWIL VII')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -375,6 +401,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL VII')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -384,6 +411,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL VII')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
@@ -402,20 +430,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil8()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL VIII')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANWIL VIII')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -424,6 +454,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL VIII')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -433,6 +464,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL VIII')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
@@ -451,20 +483,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil9()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL IX')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANWIL IX')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -473,6 +507,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL IX')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -482,6 +517,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL IX')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
@@ -500,20 +536,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil10()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL X')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANWIL X')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -522,6 +560,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL X')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -531,6 +570,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL X')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
@@ -549,20 +589,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil11()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL XI')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
             ->where('Wilayah','=','KANWIL XI')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -571,6 +613,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL XI')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -580,6 +623,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL XI')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
@@ -598,20 +642,22 @@ class kanwilJanuaryController extends Controller
   public function showJanuaryKanwil12()
   {
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
               ->where('Wilayah','=','KANWIL II')
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(site) as kcu')))
             ->where('Wilayah','=','KANWIL XII')
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -620,6 +666,7 @@ class kanwilJanuaryController extends Controller
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
               ->where('Wilayah','=','KANWIL XII')
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -629,6 +676,7 @@ class kanwilJanuaryController extends Controller
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
             ->where('Wilayah','=','KANWIL XII')
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')

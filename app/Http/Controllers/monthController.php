@@ -101,18 +101,20 @@ class monthController extends Controller
 
     //KCU
     $kcu = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site_Group) as kcu')))
+              ->select(array(DB::raw('count(Site) as kcu')))
+              ->where('Cabang','=','True')
               ->whereMonth('created_at','=',date('01'))
-              ->groupBy('Site_Group','Wilayah')
+              ->groupBy('Site','Wilayah')
               ->orderBy('kcu','desc')
               ->get()->toArray();
     $kcu = array_column($kcu, 'kcu');
 
     $labelKcu = DB::table('report_solcents')
-            ->select(array('Site_Group as lblKcu', DB::raw('count(Site_Group) as kcu')))
+            ->select(array('Site as lblKcu', DB::raw('count(Site) as kcu')))
+            ->where('Cabang','=','True')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
-            ->groupBy('Site_Group','Wilayah')
+            ->groupBy('Site','Wilayah')
             ->orderBy('kcu','desc')
             ->get()->toArray();
     $labelKcu = array_column($labelKcu, 'lblKcu');
@@ -120,7 +122,7 @@ class monthController extends Controller
     //KCP
     $kcp = DB::table('report_solcents')
               ->select(array(DB::raw('count(Site) as kcp')))
-
+              ->where('Cabang','=','False')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Site','Wilayah')
               ->orderBy('kcp','desc')
@@ -129,6 +131,7 @@ class monthController extends Controller
 
     $labelKcp = DB::table('report_solcents')
             ->select(array('Site as lblKcp', DB::raw('count(Site) as kcp')))
+            ->where('Cabang','=','False')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Site','Wilayah')
