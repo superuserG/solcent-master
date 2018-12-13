@@ -63,7 +63,8 @@ class monthController extends Controller
     // top question
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
-              ->where('Category_1','!=','[BPO1] - Operator')
+              ->where('Category_1','!=','Operator')
+              ->where('Category_1','!=','Keluhan/Kritik/Saran')
               ->whereMonth('created_at','=',date('01'))
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
@@ -72,7 +73,8 @@ class monthController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
-            ->where('Category_1','!=','[BPO1] - Operator')
+            ->where('Category_1','!=','Operator')
+            ->where('Category_1','!=','Keluhan/Kritik/Saran')
             ->whereMonth('created_at','=',date('01'))
             ->take(10)
             ->groupBy('Category_1')

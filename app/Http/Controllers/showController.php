@@ -38,6 +38,8 @@ class showController extends Controller
     //Report Top Question
     $question = DB::table('report_solcents')
               ->select(array(DB::raw('count(Category_1) as Question')))
+              ->where('Category_1','!=','Operator')
+              ->where('Category_1','!=','Keluhan/Kritik/Saran')
               ->groupBy('Category_1')
               ->orderBy('Question','desc')
               ->get()->toArray();
@@ -45,6 +47,8 @@ class showController extends Controller
 
     $cat = DB::table('report_solcents')
             ->select(array('Category_1 as Cat', DB::raw('count(Category_1) as result')))
+            ->where('Category_1','!=','Operator')
+            ->where('Category_1','!=','Keluhan/Kritik/Saran')
             ->take(10)
             ->groupBy('Category_1')
             ->orderBy('Result','desc')
@@ -69,16 +73,16 @@ class showController extends Controller
 
     //Report Top cabang
     $cabang = DB::table('report_solcents')
-              ->select(array(DB::raw('count(Site) as topSite')))
-              ->groupBy('Site')
+              ->select(array(DB::raw('count(Site_Group) as topSite')))
+              ->groupBy('Site_Group')
               ->orderBy('topSite','desc')
               ->get()->toArray();
     $cabang = array_column($cabang, 'topSite');
 
     $labelSite = DB::table('report_solcents')
-            ->select(array('Site as lblCabang', DB::raw('count(Site) as topSite')))
+            ->select(array('Site_Group as lblCabang', DB::raw('count(Site_Group) as topSite')))
             ->take(10)
-            ->groupBy('Site')
+            ->groupBy('Site_Group')
             ->orderBy('topSite','desc')
             ->get()->toArray();
     $labelSite = array_column($labelSite, 'lblCabang');
@@ -86,7 +90,7 @@ class showController extends Controller
     return view('home',compact('comp','prog'))
         ->with('presented',json_encode($presented,JSON_NUMERIC_CHECK))
         ->with('completed',json_encode($completed,JSON_NUMERIC_CHECK))
-        
+
         // ->with('label',json_encode($label,JSON_NUMERIC_CHECK))
         ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
         ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))
@@ -124,7 +128,7 @@ class showController extends Controller
     //compate data ticket dan call
     $calljan = DB::table('report_calls')
           ->select('presentedCall as call')
-          ->where('months','=','Januari')
+          ->where('months','=','January')
           ->get()->toArray();
     $calljan = array_column($calljan,'call');
 
@@ -136,7 +140,7 @@ class showController extends Controller
 
     $callMar = DB::table('report_calls')
           ->select('presentedCall as call')
-          ->where('months','=','Maret')
+          ->where('months','=','March')
           ->get()->toArray();
     $callMar = array_column($callMar,'call');
 
@@ -148,7 +152,7 @@ class showController extends Controller
 
     $callMei = DB::table('report_calls')
           ->select('presentedCall as call')
-          ->where('months','=','Mei')
+          ->where('months','=','May')
           ->get()->toArray();
     $callMei = array_column($callMei,'call');
 
