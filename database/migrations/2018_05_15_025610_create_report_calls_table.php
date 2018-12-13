@@ -15,6 +15,7 @@ class CreateReportCallsTable extends Migration
     {
         Schema::create('report_calls', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('Team');
             $table->string('months');
             $table->integer('year');
             $table->integer('presentedCall');

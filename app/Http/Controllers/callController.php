@@ -41,12 +41,14 @@ class callController extends Controller
     {
         $request->validate(
         [
+          'Team'=>'required',
           'presented' => 'required',
           'handled' => 'required',
           'abandoned' => 'required',
           'month' => 'required',
           'year' => 'required',
         ],[
+          'Team.required'=>'Team must be filled!',
           'presented.required'=>'presented must be filled!',
           'handled.required'=>'handled must be filled!',
           'abandoned.unique'=>'handled must be filled',
@@ -56,6 +58,7 @@ class callController extends Controller
       );
 
       $call = ReportCall::create([
+          'Team'=>$request->Team,
           'presentedCall' => $request->presented,
           'handledCall' => $request->handled,
           'abandonedCall' => $request->abandoned,
@@ -107,12 +110,14 @@ class callController extends Controller
     {
       $request->validate(
         [
+            'Team'=>'required',
             'presented' => 'required',
             'handled' => 'required',
             'abandoned' => 'required',
             'month' => 'required',
             'year' => 'required',
           ],[
+            'Team.required'=>'Team must be filled!',
             'presented.required'=>'presented must be filled!',
             'handled.required'=>'handled must be filled!',
             'abandoned.unique'=>'handled must be filled',
@@ -122,6 +127,7 @@ class callController extends Controller
       );
 
       $call = ReportCall::where('id',$id)->first();
+      $call->Team = $request->Team;
       $call->presentedCall = $request->presented;
       $call->handledCall = $request->handled;
       $call->abandonedCall = $request->abandoned;

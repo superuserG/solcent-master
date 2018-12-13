@@ -12,21 +12,25 @@
     <form class="form-horizontal">
       <div class="box-body">
         <div class="form-group">
-          <label for="inputName" class="col-sm-2 control-label">Call Presented</label>
+          <label for="inputTeam" class="col-sm-2 control-label">Team</label>
           <div class="col-sm-10">
-            <input name="presented" class="form-control" id="inputPresent" placeholder="presented calls" type="text" value="{{$call->presentedCall}}" required>
+            <select name="Team" class="selectize" id=inputTeam required>
+              <option value="{{$call->Team}}">{{$call->Team}}</option>
+              <option value="Solution Center">Solution Center</option>
+              <option value="Tax Amnesty">Tax Amnesty</option>
+              <option value="Kredit">Kredit</option>
+            </select>
           </div>
         </div>
         <div class="form-group">
-          <label for="inputEmail" class="col-sm-2 control-label">Call Handled</label>
+          <label for="inputYear" class="col-sm-2 control-label">Year</label>
           <div class="col-sm-10">
-            <input name="handled" class="form-control" id="inputHandle" placeholder="Handled calls" type="text" value="{{$call->handledCall}}" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputEmail" class="col-sm-2 control-label">Call Abandoned</label>
-          <div class="col-sm-10">
-            <input name="abandoned" class="form-control" id="inputAbandon" placeholder="Abandoned calls" type="text" value="{{$call->abandonedCall}}" required>
+            <select name="year" class="selectize" id=inputYear required>
+              <option value="{{$call->year}}">{{$call->year}}</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+            </select>
           </div>
         </div>
         <div class="form-group">
@@ -50,14 +54,21 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="inputYear" class="col-sm-2 control-label">Year</label>
+          <label for="inputName" class="col-sm-2 control-label">Call Presented</label>
           <div class="col-sm-10">
-            <select name="year" class="selectize" id=inputYear required>
-              <option value="{{$call->year}}">{{$call->year}}</option>
-              <option value="2018">2018</option>
-              <option value="2019">2019</option>
-              <option value="2020">2020</option>
-            </select>
+            <input name="presented" class="form-control" id="inputPresent" placeholder="presented calls" type="text" value="{{$call->presentedCall}}" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail" class="col-sm-2 control-label">Call Handled</label>
+          <div class="col-sm-10">
+            <input name="handled" class="form-control" id="inputHandle" placeholder="Handled calls" type="text" value="{{$call->handledCall}}" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail" class="col-sm-2 control-label">Call Abandoned</label>
+          <div class="col-sm-10">
+            <input name="abandoned" class="form-control" id="inputAbandon" placeholder="Abandoned calls" type="text" value="{{$call->abandonedCall}}" required>
           </div>
         </div>
       <!-- /.box-body -->
