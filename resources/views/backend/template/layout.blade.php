@@ -276,6 +276,8 @@ desired effect
         <!-- Optionally, you can add icons to the links -->
         <li class="{{request()->route()->getName()==='admin.home'?'active':''}}"><a href="{{route('admin.home')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         {{-- <li><a href="{{route('admin.book.index')}}"><i class="fa fa-book"></i> <span>Book</span></a></li> --}}
+        <li class="{{request()->route()->getName()==='admin.call.index'?'active':''}}"><a href="{!! route('admin.call.index') !!}"><i class="fa fa-link"></i> <span>Call Cisco</span></a></li>
+
         <li class="treeview">
           <a href="#"><i class="fa fa-book"></i> <span>User</span>
             <span class="pull-right-container">
@@ -287,18 +289,7 @@ desired effect
             <li class="{{request()->route()->getName()==='admin.user.deleted'?'active':''}}"><a href="{{route('admin.user.deleted')}}">Deleted User</a></li>
           </ul>
         </li>
-        {{-- <li><a href="{{route('admin.author.index')}}"><i class="fa fa-user"></i> <span>Author</span></a></li> --}}
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Author</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            {{-- <li><a href="{{route('admin.author.index')}}">Manage Authors</a></li>
-            <li><a href="{{route('admin.author.deleted')}}">Deleted Authors</a></li> --}}
-          </ul>
-        </li>
+
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Settings</span>
             <span class="pull-right-container">

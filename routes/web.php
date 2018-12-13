@@ -243,9 +243,15 @@ Route::middleware('auth')->group(function(){
         Route::get('user/deleted/list','UserController@deletedlist')->name('admin.user.deletedlist');
         Route::post('user/restoreuser/{id}', 'UserController@restore')->name('admin.user.restore');
         Route::resource('user','UserController',['as'=>'admin']);
+        Route::get('user/manageuser/list','UserController@list')->name('backend.user.list');
 
 
-      Route::get('user/manageuser/list','UserController@list')->name('backend.user.list');
+        Route::resource('call','callController',['as'=>'admin']);
+        Route::get('call/manageCall/list','callController@list')->name('backend.call.list');
+
+
+
+
     });
   });
 });

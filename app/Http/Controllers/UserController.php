@@ -157,17 +157,17 @@ class UserController extends Controller
     public function list()
     {
       $user = User::where('iduser','!=',Auth::user()->iduser)->get();
-    return DataTables::of($user)
-    ->addColumn('action',function($user)
-    {
-      $userid = $user->iduser;
-      $username = $user->name;
-      return view('backend.user.action.user')->with(compact('userid','username'));
-    })
-    ->escapeColumns([])
-    ->addIndexColumn()
-    ->make(true);
-    }
+        return DataTables::of($user)
+        ->addColumn('action',function($user)
+        {
+          $userid = $user->iduser;
+          $username = $user->name;
+          return view('backend.user.action.user')->with(compact('userid','username'));
+        })
+        ->escapeColumns([])
+        ->addIndexColumn()
+        ->make(true);
+      }
 
     public function restore($id)
     {
