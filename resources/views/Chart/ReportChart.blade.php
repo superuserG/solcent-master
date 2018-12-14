@@ -89,6 +89,7 @@
       // Report Calls Home
       var ctx = document.getElementById("reportCalls").getContext("2d");
       var callsBar = new Chart(ctx, {
+          
           type: 'pie',
           data: pieChartData,
           options: {
@@ -105,17 +106,6 @@
               },
               legend:{
                 display: false
-              },
-              plugins:{
-                labels:[
-                {
-                  render:'value'
-                },
-                {
-                  render:'label',
-                  position:'outside'
-                }
-                ]
               }
               
           }

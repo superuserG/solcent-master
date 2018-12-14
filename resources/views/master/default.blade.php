@@ -20,9 +20,6 @@
 	<!-- custom css -->
 	<link rel="stylesheet" href="{!!asset('theme/dist/css/sb-admin-2.css')!!}">
 
-	<!-- Morris Charts CSS -->
-	<link href="{!! asset('theme/vendor/morrisjs/morris.css') !!}" rel="stylesheet">
-
 	<!-- Custom Fonts -->
 	<link href="{!! asset('theme/vendor/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet" type="text/css">
 
@@ -35,6 +32,9 @@
 	<script src="{!! asset('https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js') !!}"></script>
 	<script src="{!! asset('http://code.jquery.com/jquery-latest.min.js') !!}"></script>
 	<script src="{!! asset('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js') !!}" charset=utf-8></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
 
 	<script src="{!! asset('theme/vendor/datatables/js/jquery.dataTables.min.js') !!}"></script>
 	<script src="{!! asset('theme/vendor/datatables-plugins/dataTables.bootstrap.min.js') !!}"></script>
@@ -69,11 +69,6 @@
 
   <!-- Metis Menu Plugin JavaScript -->
   <script src="{!! asset('theme/vendor/metisMenu/metisMenu.min.js') !!}"></script>
-
-  <!-- Morris Charts JavaScript -->
-  <script src="{!! asset('theme/vendor/raphael/raphael.min.js') !!}"></script>
-  <script src="{!! asset('theme/vendor/morrisjs/morris.min.js') !!}"></script>
-  <script src="{!! asset('theme/data/morris-data.js') !!}"></script>
 
   <!-- Custom Theme JavaScript -->
   <script src="{!! asset('theme/dist/js/sb-admin-2.js') !!}"></script>

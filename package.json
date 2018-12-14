@@ -21,7 +21,6 @@
     "dependencies": {
         "@fancyapps/fancybox": "^3.5.2",
         "chart.js": "^2.7.2",
-        "chartjs-plugin-labels": "^1.1.0",
         "fancybox": "^3.0.1",
         "font-awesome": "^4.7.0",
         "jquery-chained": "^2.0.0-beta.2",
