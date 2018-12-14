@@ -225,8 +225,6 @@ Route::middleware('auth')->group(function(){
   Route::get('/report/monthly/December/Kanwil-11','kanwilDecemberController@showDecemberKanwil11')->name('month.December.kan11');
   Route::get('/report/monthly/December/Kanwil-12','kanwilDecemberController@showDecemberKanwil12')->name('month.December.kan12');
 
-  Route::get('/report/monthly/kanwil_XII','featKanwilController@Kanwil_XII')->name('kanwil.XII');
-
   Route::post('checknip','NIPController@checknip')->name('checknip');
   Route::get('form/{data}','showController@formemployee')->name('data.form');
   Route::get('service','EtcController@service')->name('service');
@@ -234,7 +232,7 @@ Route::middleware('auth')->group(function(){
   Route::get('subcategory/{subcategory}','EtcController@subcategory')->name('subcategory');
   Route::prefix('admin')->group(function()
   {
-    Route::middleware(['role:2'])->group(function()
+    Route::middleware(['role:admin'])->group(function()
     {
       Route::get('/',function(){
         return view('backend.home');})

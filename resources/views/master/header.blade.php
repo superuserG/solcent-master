@@ -28,7 +28,7 @@
             </li>
             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
             </li>
-            @if(Auth::user()->role==2||Auth::user()->role==3)
+            @if(Auth::user()->role=='admin'||Auth::user()->role=='super admin')
               <li><a href="{{url('/admin')}}"><i class="fa fa-address-card fa-fw" aria-hidden="true"></i>Admin Panel</a>
               </li>
             @endif

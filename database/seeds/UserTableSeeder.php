@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
           'name'=>'Admin',
           'email'=>'admin@solcent.com',
           'password'=>bcrypt('admin'),
-          'role'=>'2',
+          'role'=>'admin',
         ]);
 
         User::create([
@@ -26,7 +26,7 @@ class UserTableSeeder extends Seeder
           'name'=>'User 1',
           'email'=>'user1@solcent.com',
           'password'=>bcrypt('123456'),
-          'role'=>'1',
+          'role'=>'user',
         ]);
     }
 }
