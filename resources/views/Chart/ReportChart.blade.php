@@ -1,30 +1,29 @@
 <script>
   // Home Chart
 // Pie Ticket
-  var labels = ['Inccoming', 'Komplit'];
-  var data_presented = <?php echo $presented; ?>;
-  var data_completed = <?php echo $completed; ?>;
+  var data_ivanti = <?php echo $ivanti; ?>;
+  var data_cisco = <?php echo $cisco; ?>;
   var pieChartData = {
       datasets:
       [{
-          data: [data_presented, data_completed],
+          data: [data_ivanti, data_cisco],
           backgroundColor:
           [
               'rgba(255, 99, 132, 1.0)',
               'rgba(89, 158, 207, 1.0)',
-          
+
           ],
           borderColor:
           [
             'rgba(255, 99, 132, 1.0)',
             'rgba(54, 162, 235, 1.0)',
-          
+
           ]
       }],
 
       labels:
         [
-            'Incoming','Completed'
+            'Ticket','Call'
         ]
 
 
@@ -89,7 +88,7 @@
       // Report Calls Home
       var ctx = document.getElementById("reportCalls").getContext("2d");
       var callsBar = new Chart(ctx, {
-          
+
           type: 'pie',
           data: pieChartData,
           options: {
@@ -107,7 +106,7 @@
               legend:{
                 display: false
               }
-              
+
           }
       });
 
@@ -127,7 +126,7 @@
                        ticks: {
                         fontSize: 10
                        },
-                       
+
                       }]
               },
               elements: {

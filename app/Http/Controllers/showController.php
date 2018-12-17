@@ -15,25 +15,26 @@ use App\Kcp;
 use DB;
 use App\ReportSolcent;
 use App\Employee;
+use App\ReportCall;
 
 class showController extends Controller
 {
   public function showHome()
   {
      //Details
-     $comp = DB::table('report_solcents')->where('Status','=','Completed')->Count();
-     $prog = DB::table('report_solcents')->where('Status','!=','Completed')->Count();
+     $ticket = DB::table('report_solcents')->Count();
+     $call = DB::table('report_calls')->Sum('presentedCall');
 
      //Report Ticket
-    $presented = DB::table('report_solcents')
-        ->select(DB::raw('Count(WO_ID) as present'))
+    $ivanti = DB::table('report_solcents')
+        ->select(DB::raw('Count(WO_ID) as ticket'))
         ->get()->toArray();
-    $presented = array_column($presented, 'present');
+    $ivanti = array_column($ivanti, 'ticket');
 
-    $completed = ReportSolcent::select(DB::raw("count(WO_ID) as completed"))
-        ->where('Status','=','Completed')
+    $cisco = DB::table('report_calls')
+        ->select(DB::raw('Sum(presentedCall) as x'))
         ->get()->toArray();
-    $completed = array_column($completed, 'completed');
+    $cisco = array_column($cisco, 'x');
 
     //Report Top Question
     $question = DB::table('report_solcents')
@@ -87,10 +88,9 @@ class showController extends Controller
             ->get()->toArray();
     $labelSite = array_column($labelSite, 'lblCabang');
 
-    return view('home',compact('comp','prog'))
-        ->with('presented',json_encode($presented,JSON_NUMERIC_CHECK))
-        ->with('completed',json_encode($completed,JSON_NUMERIC_CHECK))
-
+    return view('home',compact('ticket','call'))
+        ->with('ivanti',json_encode($ivanti,JSON_NUMERIC_CHECK))
+        ->with('cisco',json_encode($cisco,JSON_NUMERIC_CHECK))
         // ->with('label',json_encode($label,JSON_NUMERIC_CHECK))
         ->with('question',json_encode($question,JSON_NUMERIC_CHECK))
         ->with('cat',json_encode($cat,JSON_NUMERIC_CHECK))

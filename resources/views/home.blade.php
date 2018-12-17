@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-xs-9 text-right">
                       <div class="huge">
-                        {{$comp}}
+                        {{$ticket}}
                       </div>
                       <div class="">
                         Ivanti
@@ -41,11 +41,13 @@
                 </a> -->
               </div>
             </div>
-            <div class="col-xs-push-3 col-lg-2 col-md-2">
-                    <div id="calls">
-                      <canvas id="reportCalls" height="200" width="200"></canvas>
-                    </div>
-            </div>
+
+          <div class="col-xs-push-3 col-lg-2 col-md-2">
+                  <div id="calls">
+                    <canvas id="reportCalls" height="200" width="200"></canvas>
+                  </div>
+          </div>
+
           <div class="navbar-text col-xs-push-4 col-lg-2 col-md-7">
             <div class="panel panel-green">
               <div class="panel-heading">
@@ -55,7 +57,7 @@
                   </div>
                   <div class="col-xs-9 text-right">
                     <div class="huge">
-                      {{$prog}}
+                      {{$call}}
                     </div>
                     <div class="">
                       Cisco

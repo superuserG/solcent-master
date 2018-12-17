@@ -3,6 +3,6 @@
     <span class="fa fa-info"> </span>
   </div>
 </a>
-<div class="btn btn-danger" onclick="deleteUser('{{$id}}'')">
+<div class="btn btn-danger" onclick="deleteCall('{{$id}}')">
   <span class="fa fa-remove"> </span>
 </div>

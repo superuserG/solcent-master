@@ -72,15 +72,11 @@
           </div>
         </div>
       <!-- /.box-body -->
-      {{-- <div class="col-md-12 button-delete-user">
-        <div class="btn btn-danger remove-user" onclick="deleteUser('{{$user->iduser}}','{{$user->username}}')">
-          <span class="fa fa-remove"> Delete User </span>
-        </div>
-      </div> --}}
-      <!-- /.box-footer -->
       <div class="box-footer">
         <button type="submit" class="btn btn-info pull-right">Update Call</button>
       </div>
+      <!-- /.box-footer -->
+
     </form>
     {{Form::close()}}
   </div>

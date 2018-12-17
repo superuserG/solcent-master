@@ -5,27 +5,27 @@
 @section('content')
 
   <div class="content-wrapper">
-        @if(Session::has('message'))
+      @if(Session::has('message'))
         <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-        @endif
+      @endif
 
-        <div class="flash-message">
+      <div class="flash-message">
         @foreach (['danger', 'warning', 'success', 'info'] as $msg)
           @if(Session::has('alert-' . $msg))
           <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}</p>
           @endif
         @endforeach
         @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+        @endif
       </div>
-      {{Form::open(['route'=>'admin.call.store','class'=>'form-horizontal'])}}
+  {{Form::open(['route'=>'admin.call.store','class'=>'form-horizontal'])}}
     <div class="box box-info">
       <div class="box-header with-border">
         <h3 class="box-title">Add Call Form</h3>
@@ -94,12 +94,6 @@
               <input name="abandoned" class="form-control" id="inputAbandon" placeholder="Abandoned calls" type="text" required>
             </div>
           </div>
-          {{-- <div class="form-group">
-            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-            <div class="col-sm-10">
-              <input name="password" class="form-control" id="inputPassword" placeholder="Password" type="password">
-            </div>
-          </div> --}}
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
@@ -109,14 +103,14 @@
       </form>
     </div>
   {{Form::close()}}
-          <section class="content-header">
-            <h1>
-              User Call Management
-            </h1>
+    <section class="content-header">
+      <h1>
+        User Call Management
+      </h1>
 
-          </section>
-          <section class="content container-fluid">
-        <table id="tableCall" class="tbl-call">
+    </section>
+    <section class="content container-fluid">
+      <table id="tableCall" class="tbl-call">
         <thead>
           <tr>
             <th>No.</th>
@@ -129,8 +123,8 @@
             <th>Action</th>
           </tr>
         </thead>
-        </table>
-          </section>
+      </table>
+    </section>
         </div>
       @endsection
       @section('script')
@@ -156,54 +150,11 @@
             });
           });
 
-          // function deleteUser(id,name)
-          //     {
-          //       var token = '{{csrf_token()}}';
-          //       swal(
-          //       {
-          //         title: "Are you sure?",
-          //         text: "Once deleted, you will not be able to recover this imaginary file!",
-          //         icon: "warning",
-          //         content: "input",
-          //         buttons: true,
-          //         dangerMode: true,
-          //       })
-          //       .then((deletereason) => {
-          //         console.log(deletereason);
-          //         if(deletereason=="")
-          //         {
-          //           swal('Reason must be filled!');
-          //           return false;
-          //         }
-          //         else if(deletereason==null)
-          //         {
-          //           return false;
-          //         }
-          //         else
-          //         {
-          //           $.post("{{url('/')}}/admin/user/"+id,
-          //           {
-          //             '_token':token,
-          //             '_method':'DELETE',
-          //             'deletereason': deletereason,
-          //           },
-          //           function(data, status)
-          //           {
-          //             if(data=="success")
-          //             {
-          //                 location.reload();
-          //             }
-          //           });
-          //         }
-          //       })
-          //     }
-
               function deleteCall(id)
               {
                 swal(
                 {
                   title: 'Are You sure?',
-                  input: 'text',
                   showCancelButton: true,
                   confirmButtonText: 'Ok',
                   showLoaderOnConfirm: true,
