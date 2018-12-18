@@ -6,24 +6,19 @@
   var pieChartData = {
       datasets:
       [{
-          data: [data_ivanti, data_cisco],
+          data: [data_cisco, data_ivanti],
           backgroundColor:
           [
-              'rgba(255, 99, 132, 1.0)',
+              'rgba(113, 193, 113, 1.0)',
               'rgba(89, 158, 207, 1.0)',
 
           ],
-          borderColor:
-          [
-            'rgba(255, 99, 132, 1.0)',
-            'rgba(54, 162, 235, 1.0)',
-
-          ]
+          
       }],
 
       labels:
         [
-            'Ticket','Call'
+            'Cisco','Ivanti'
         ]
 
 
@@ -92,6 +87,14 @@
           type: 'pie',
           data: pieChartData,
           options: {
+            plugins:{
+              datalabels:{
+                formatter: function(value, context){
+                  return context.chart.data.labels[context.dataIndex]
+                },
+                color:'white'
+              }
+            },
               elements: {
                   rectangle: {
                       borderColor: 'rgb(0, 255, 0)',
@@ -100,7 +103,7 @@
               },
               responsive: true,
               title: {
-                  display: true,
+                  display: false,
                   text: 'Calls Report'
               },
               legend:{
@@ -116,6 +119,15 @@
           type: 'bar',
           data: questionChartData,
           options: {
+            plugins:{
+              datalabels:{
+                color: function (context){
+                  return context.hovered ? "white":"black";
+                },
+                anchor:'end',
+                align:'top'
+              }
+            },
             scales: {
                yAxes: [{
                   ticks: {
@@ -139,24 +151,6 @@
                   display: true,
                   text: 'Question Report'
               },
-             animation: {
-                  duration: 3,
-                  onComplete: function () {
-                      var chartInstance = this.chart,
-                          ctx = chartInstance.ctx;
-                      ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-                      ctx.textAlign = 'center';
-                      ctx.textBaseline = 'bottom';
-
-                      this.data.datasets.forEach(function (dataset, i) {
-                          var meta = chartInstance.controller.getDatasetMeta(i);
-                          meta.data.forEach(function (bar, index) {
-                              var data = dataset.data[index];
-                              ctx.fillText(data, bar._model.x, bar._model.y - 5);
-                          });
-                      });
-                  }
-              }
           }
       });
 
@@ -166,6 +160,12 @@
           type: 'bar',
           data: kanwilChartData,
           options: {
+            plugins:{
+              datalabels:{
+                anchor:'end',
+                align:'top'
+              }
+            },
             scales: {
              yAxes: [{
                 ticks: {
@@ -189,24 +189,6 @@
                   display: true,
                   text: 'Kanwil Report'
               },
-              animation: {
-                  duration: 3,
-                  onComplete: function () {
-                      var chartInstance = this.chart,
-                          ctx = chartInstance.ctx;
-                      ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-                      ctx.textAlign = 'center';
-                      ctx.textBaseline = 'bottom';
-
-                      this.data.datasets.forEach(function (dataset, i) {
-                          var meta = chartInstance.controller.getDatasetMeta(i);
-                          meta.data.forEach(function (bar, index) {
-                              var data = dataset.data[index];
-                              ctx.fillText(data, bar._model.x, bar._model.y - 5);
-                          });
-                      });
-                  }
-              }
           }
       });
 
@@ -216,6 +198,12 @@
           type: 'bar',
           data: cabangChartData,
           options: {
+            plugins:{
+              datalabels:{
+                anchor:'end',
+                align:'top'
+              }
+            },
             scales: {
                yAxes: [{
                   ticks: {
@@ -239,24 +227,6 @@
                   display: true,
                   text: 'Cabang Report'
               },
-              animation: {
-                  duration: 3,
-                  onComplete: function () {
-                      var chartInstance = this.chart,
-                          ctx = chartInstance.ctx;
-                      ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-                      ctx.textAlign = 'center';
-                      ctx.textBaseline = 'bottom';
-
-                      this.data.datasets.forEach(function (dataset, i) {
-                          var meta = chartInstance.controller.getDatasetMeta(i);
-                          meta.data.forEach(function (bar, index) {
-                              var data = dataset.data[index];
-                              ctx.fillText(data, bar._model.x, bar._model.y - 5);
-                          });
-                      });
-                  }
-              }
           }
       });
 

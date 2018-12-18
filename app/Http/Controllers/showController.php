@@ -16,11 +16,15 @@ use DB;
 use App\ReportSolcent;
 use App\Employee;
 use App\ReportCall;
+use Carbon\Carbon;
 
 class showController extends Controller
 {
   public function showHome()
   {
+    // time
+    $mytime = Carbon::now()->format('jS F Y');
+
      //Details
      $ticket = DB::table('report_solcents')->Count();
      $call = DB::table('report_calls')->Sum('presentedCall');
@@ -88,7 +92,7 @@ class showController extends Controller
             ->get()->toArray();
     $labelSite = array_column($labelSite, 'lblCabang');
 
-    return view('home',compact('ticket','call'))
+    return view('home',compact('ticket','call','mytime'))
         ->with('ivanti',json_encode($ivanti,JSON_NUMERIC_CHECK))
         ->with('cisco',json_encode($cisco,JSON_NUMERIC_CHECK))
         // ->with('label',json_encode($label,JSON_NUMERIC_CHECK))
@@ -99,7 +103,6 @@ class showController extends Controller
         ->with('cabang',json_encode($cabang,JSON_NUMERIC_CHECK))
         ->with('labelSite',json_encode($labelSite,JSON_NUMERIC_CHECK))
         ;
-
   }
 
   public function showForm()

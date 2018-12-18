@@ -10,7 +10,7 @@
   <meta name="description" content="">
 
   <meta name="author" content="">
-	<title>test dashboard</title>
+	<title>Dashboard</title>
 
 	<!-- bootstrap css -->
 	<link rel="stylesheet" href="{!! asset('theme/vendor/bootstrap/css/bootstrap.min.css')!!}">
@@ -33,7 +33,7 @@
 	<script src="{!! asset('http://code.jquery.com/jquery-latest.min.js') !!}"></script>
 	<script src="{!! asset('//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js') !!}" charset=utf-8></script>
 
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>
+<!-- datalabel -->
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
 
 	<script src="{!! asset('theme/vendor/datatables/js/jquery.dataTables.min.js') !!}"></script>

@@ -8,14 +8,16 @@
         @if (Auth::User()->hasRole('admin'))
           <h1 class="page-header">Dashboard</h1>
         @else
-          <h1 class="page-header">Home</h1>
+          <h1 class="page-header">Home</h1><h4>{{$mytime}}</h4>
+
         @endif
       </div>
 
     <div class="timeline-title">
       <div class="col-sm-12">
         <div class="row">
-          <div class="navbar-text col-xs-push-2 col-lg-2 col-md-7">
+<!-- ivanti -->
+          <div class="navbar-text col-xs-push-2 col-lg-3 col-md-7">
               <div class="panel panel-primary">
                 <div class="panel-heading">
                   <div class="row">
@@ -26,7 +28,7 @@
                       <div class="huge">
                         {{$ticket}}
                       </div>
-                      <div class="">
+                      <div class="huge">
                         Ivanti
                       </div>
                     </div>
@@ -41,14 +43,14 @@
                 </a> -->
               </div>
             </div>
-
-          <div class="col-xs-push-3 col-lg-2 col-md-2">
+<!-- pie -->
+          <div class="col-xs-push-2 col-lg-2 col-md-2">
                   <div id="calls">
                     <canvas id="reportCalls" height="200" width="200"></canvas>
                   </div>
           </div>
-
-          <div class="navbar-text col-xs-push-4 col-lg-2 col-md-7">
+<!-- cisco -->
+          <div class="navbar-text col-xs-push-2 col-lg-3 col-md-7">
             <div class="panel panel-green">
               <div class="panel-heading">
                 <div class="row">
@@ -59,7 +61,7 @@
                     <div class="huge">
                       {{$call}}
                     </div>
-                    <div class="">
+                    <div class="huge">
                       Cisco
                     </div>
                   </div>

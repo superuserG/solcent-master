@@ -14,7 +14,8 @@
         "laravelcollective/html": "5.5.0",
         "spatie/laravel-permission": "^2.12",
         "webpatser/laravel-uuid": "3.0",
-        "yajra/laravel-datatables-oracle": "^8.9"
+        "yajra/laravel-datatables-oracle": "^8.9",
+		"nesbot/carbon": "^1.33"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -56,6 +57,7 @@
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+		"minimum-stability": "dev"
     }
 }
