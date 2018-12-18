@@ -13,19 +13,19 @@ class monthController extends Controller
     //call
     $present = DB::table('report_calls')
           ->select('presentedCall as presented')
-          ->where('months','=','Januari')
+          ->where('months','=','January')
           ->get()->toArray();
     $present = array_column($present,'presented');
 
     $handle = DB::table('report_calls')
           ->select('handledCall as handled')
-          ->where('months','=','Januari')
+          ->where('months','=','January')
           ->get()->toArray();
     $handle = array_column($handle,'handled');
 
     $abandon = DB::table('report_calls')
           ->select('abandonedCall as abandoned')
-          ->where('months','=','Januari')
+          ->where('months','=','January')
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
 
@@ -49,8 +49,8 @@ class monthController extends Controller
 
     // compare
     $calljan = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','Januari')
+          ->select('handledCall as call')
+          ->where('months','=','January')
           ->get()->toArray();
     $calljan = array_column($calljan,'call');
 
@@ -201,7 +201,7 @@ class monthController extends Controller
 
     // compare
     $callFeb = DB::table('report_calls')
-          ->select('presentedCall as call')
+          ->select('handledCall as call')
           ->where('months','=','February')
           ->get()->toArray();
     $callFeb = array_column($callFeb,'call');
@@ -310,19 +310,19 @@ class monthController extends Controller
     //call
     $present = DB::table('report_calls')
           ->select('presentedCall as presented')
-          ->where('months','=','Maret')
+          ->where('months','=','March')
           ->get()->toArray();
     $present = array_column($present,'presented');
 
     $handle = DB::table('report_calls')
           ->select('handledCall as handled')
-          ->where('months','=','Maret')
+          ->where('months','=','March')
           ->get()->toArray();
     $handle = array_column($handle,'handled');
 
     $abandon = DB::table('report_calls')
           ->select('abandonedCall as abandoned')
-          ->where('months','=','Maret')
+          ->where('months','=','March')
           ->get()->toArray();
     $abandon = array_column($abandon,'abandoned');
 
@@ -346,8 +346,8 @@ class monthController extends Controller
 
     // compare
     $callMar = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','Maret')
+          ->select('handledCall as call')
+          ->where('months','=','March')
           ->get()->toArray();
     $callMar = array_column($callMar,'call');
 
@@ -491,7 +491,7 @@ class monthController extends Controller
 
     // compare
     $callApr = DB::table('report_calls')
-          ->select('presentedCall as call')
+          ->select('handledCall as call')
           ->where('months','=','April')
           ->get()->toArray();
     $callApr = array_column($callApr,'call');
@@ -635,7 +635,7 @@ class monthController extends Controller
 
     //compare
     $callMay = DB::table('report_calls')
-          ->select('presentedCall as call')
+          ->select('handledCall as call')
           ->where('months','=','May')
           ->get()->toArray();
     $callMay = array_column($callMay,'call');
@@ -780,7 +780,7 @@ class monthController extends Controller
 
     //compare
     $callJune = DB::table('report_calls')
-          ->select('presentedCall as call')
+          ->select('handledCall as call')
           ->where('months','=','June')
           ->get()->toArray();
     $callJune = array_column($callJune,'call');
@@ -961,7 +961,7 @@ class monthController extends Controller
 
     // compare
     $callJuly = DB::table('report_calls')
-          ->select('presentedCall as call')
+          ->select('handledCall as call')
           ->where('months','=','July')
           ->get()->toArray();
     $callJuly = array_column($callJuly,'call');
@@ -1070,7 +1070,7 @@ class monthController extends Controller
 
     // compare
     $callAug = DB::table('report_calls')
-          ->select('presentedCall as call')
+          ->select('handledCall as call')
           ->where('months','=','August')
           ->get()->toArray();
     $callAug = array_column($callAug,'call');
@@ -1215,7 +1215,7 @@ class monthController extends Controller
 
     // compare
     $callsep = DB::table('report_calls')
-          ->select('presentedCall as call')
+          ->select('handledCall as call')
           ->where('months','=','September')
           ->get()->toArray();
     $callsep = array_column($callsep,'call');
@@ -1360,7 +1360,7 @@ class monthController extends Controller
 
     // compare
     $callOct = DB::table('report_calls')
-          ->select('presentedCall as call')
+          ->select('handledCall as call')
           ->where('months','=','October')
           ->get()->toArray();
     $callOct = array_column($callOct,'call');
@@ -1505,7 +1505,7 @@ class monthController extends Controller
 
     // compare
     $callNov = DB::table('report_calls')
-          ->select('presentedCall as call')
+          ->select('handledCall as call')
           ->where('months','=','November')
           ->get()->toArray();
     $callNov = array_column($callNov,'call');
@@ -1650,7 +1650,7 @@ class monthController extends Controller
 
     // compare
     $callDes = DB::table('report_calls')
-          ->select('presentedCall as call')
+          ->select('handledCall as call')
           ->where('months','=','December')
           ->get()->toArray();
     $callDes = array_column($callDes,'call');

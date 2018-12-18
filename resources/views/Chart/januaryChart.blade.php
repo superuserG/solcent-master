@@ -23,13 +23,12 @@ var a = {
 };
   // Call
 
-  var label_B = ['Present'];
+
   var data_call_present = <?php echo $calljan;?>;
   var data_ticket = <?php echo $ticket_jan;?>;
 
 
   var b = {
-      labels: label_B,
       datasets:
       [{
           label: 'Call',
