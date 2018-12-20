@@ -23,7 +23,7 @@ class showController extends Controller
   public function showHome()
   {
     // time
-    $mytime = Carbon::now()->format('jS F Y');
+    $mytime = Carbon::now()->format('Y');
 
      //Details
      $ticket = DB::table('report_solcents')->Count();

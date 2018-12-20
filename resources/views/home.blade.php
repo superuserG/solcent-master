@@ -6,9 +6,9 @@
   <div class="row">
       <div class="col-lg-12">
         @if (Auth::User()->hasRole('admin'))
-          <h1 class="page-header">Dashboard</h1>
+          <h2 class="page-header">Dashboard</h2>
         @else
-          <h1 class="page-header">Home</h1><h4>{{$mytime}}</h4>
+          <h2 class="page-header">Dashboard of {{$mytime}}</h2>
 
         @endif
       </div>

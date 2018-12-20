@@ -121,9 +121,6 @@
           options: {
             plugins:{
               datalabels:{
-                color: function (context){
-                  return context.hovered ? "white":"black";
-                },
                 anchor:'end',
                 align:'top'
               }
