@@ -8,17 +8,19 @@ use DB;
 
 class backendController extends Controller
 {
-  public function call(){
+  public function showAdmin(){
 
     $handled = DB::table('report_calls')
           ->select(array(DB::raw('sum(handledCall) as handled')))
           ->groupBy('months')
+          ->orderBy('id')
           ->get()->toArray();
     $handled = array_column($handled,'handled');
 
     $abandoned = DB::table('report_calls')
           ->select(array(DB::raw('sum(abandonedCall) as abandoned')))
           ->groupBy('months')
+          ->orderBy('id')          
           ->get()->toArray();
     $abandoned = array_column($abandoned,'abandoned');
 

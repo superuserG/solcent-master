@@ -234,9 +234,10 @@ Route::middleware('auth')->group(function(){
   {
     Route::middleware(['role:admin'])->group(function()
     {
-      Route::get('/',function(){
-        return view('backend.home');})
-        ->name('admin.home');
+      Route::get('/','backendController@showAdmin')->name('admin.home');
+      // Route::get('/',function(){
+      //   return view('backend.home');})
+      //   ->name('admin.home');
         Route::get('user/deleteduser','UserController@deleteduser')->name('admin.user.deleted');
         Route::get('user/deleted/list','UserController@deletedlist')->name('admin.user.deletedlist');
         Route::post('user/restoreuser/{id}', 'UserController@restore')->name('admin.user.restore');

@@ -3,6 +3,7 @@
   <title>Home Admin Solcent</title>
 @endsection
 @section('content')
+
   @include('Chart.adminChart.homeAdminChart')
 
   <div class="content-wrapper">
