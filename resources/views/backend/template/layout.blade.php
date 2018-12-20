@@ -363,6 +363,7 @@ desired effect
 <script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"></script>
+<script src="{!! asset('http://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js') !!}" charset=utf-8></script>
 
 
 
