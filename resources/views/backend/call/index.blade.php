@@ -105,7 +105,7 @@
   {{Form::close()}}
     <section class="content-header">
       <h1>
-        User Call Management
+        Call <small>| Call Management</small>
       </h1>
 
     </section>
