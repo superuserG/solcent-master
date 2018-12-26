@@ -18,8 +18,11 @@
           ],
           borderColor:
           [
-            'rgba(255,0,0, 1)'
+            'rgba(127,255,0, 1)'
           ],
+          pointHoverBorderColor:[
+            'rgba(255,0,0, 1)'
+          ]
         },
         {
           label: 'Abandoned',
@@ -29,7 +32,7 @@
           ],
           borderColor:
           [
-            'rgba(127,255,0, 1)'
+            'rgba(255,0,0, 1)'
           ],
 
         },
