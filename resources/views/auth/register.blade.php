@@ -25,6 +25,14 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="nip" class="col-md-4 control-label">NIP</label>
+
+                            <div class="col-md-6">
+                                <input id="nip" type="number" class="form-control" name="nip" required>
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
@@ -72,6 +80,28 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="password-confirm" class="col-md-4 control-label">Kanwil</label>
+
+                          <div class="col-md-6">
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="KCU" class="col-md-4 control-label">KCU</label>
+
+                            <div class="col-md-6">
+                                <input id="KCU"  class="form-control" name="KCU" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="KCUKCP" class="col-md-4 control-label">KCUKCP</label>
+
+                            <div class="col-md-6">
+                                <input id="KCUKCP"  class="form-control" name="KCUKCP" required>
                             </div>
                         </div>
 

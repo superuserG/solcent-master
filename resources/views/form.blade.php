@@ -62,7 +62,6 @@
                     <div class="form-group">
                         <label class="col-lg-3">NIP</label>
                         <input class="form-control" placeholder="NIP here" name="NIP" id="NIP" onkeyup="checkNIP()" style="width:350px" value="{{old('NIP')}}" required>
-
                     </div>
                     <div class="form-group font-red" id="nipFailed" hidden>
                       <label class="col-lg-12">NIP Tidak Sesuai</label>

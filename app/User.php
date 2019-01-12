@@ -24,7 +24,7 @@ class User extends Authenticatable
      public $keyType="string";
 
      protected $fillable = [
-        'name', 'email', 'password','username','role','iduser'
+        'name', 'email', 'password','username','role','iduser','nip','kanwil','kcu','kcp'
     ];
 
     /**
