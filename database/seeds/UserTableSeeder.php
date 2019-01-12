@@ -16,7 +16,9 @@ class UserTableSeeder extends Seeder
         User::create([
           'iduser'=>Uuid::generate(4),
           'name'=>'Admin',
+          'nip'=>'2222222',
           'email'=>'admin@solcent.com',
+          'profilepicture'=>'admin.jpg',
           'password'=>bcrypt('admin'),
           'role'=>'admin',
         ]);
@@ -24,7 +26,9 @@ class UserTableSeeder extends Seeder
         User::create([
           'iduser'=>Uuid::generate(4),
           'name'=>'User 1',
+          'nip'=>'3333333',
           'email'=>'user1@solcent.com',
+          'profilepicture'=>'admin.jpg',
           'password'=>bcrypt('123456'),
           'role'=>'user',
         ]);

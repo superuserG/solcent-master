@@ -48,6 +48,30 @@
             </select>
           </div>
         </div>
+        <div class="form-group">
+          <label for="nip" class="col-sm-2 control-label">NIP</label>
+          <div class="col-sm-10">
+            <input name="nip" class="form-control" id="nip" value="{{$user->nip}}" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="kanwil" class="col-sm-2 control-label">Kanwil</label>
+          <div class="col-sm-10">
+            <input name="kanwil" class="form-control" id="kanwil" value="{{$user->kanwil}}" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="kcu" class="col-sm-2 control-label">KCU</label>
+          <div class="col-sm-10">
+            <input name="kcu" class="form-control" id="kcu" value="{{$user->kcu}}" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="kcukcp" class="col-sm-2 control-label">KCUKUP</label>
+          <div class="col-sm-10">
+            <input name="kcukcp" class="form-control" id="kcukcp" value="{{$user->kcukcp}}" disabled>
+          </div>
+        </div>
       <!-- /.box-body -->
       {{-- <div class="col-md-12 button-delete-user">
         <div class="btn btn-danger remove-user" onclick="deleteUser('{{$user->iduser}}','{{$user->username}}')">

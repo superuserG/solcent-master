@@ -25,20 +25,22 @@
                               <th>Reference</th>
                               <th>Submit Date</th>
                               <th>Completed Date</th>
+                              <th>Action</th>
                           </tr>
                       </thead>
                       <tbody>
                         @foreach ($post as $key => $value)
                           <tr>
-                            <td><a href="{!! route('detail.post', $value) !!}">{{$value->Summary}}</a></td>
+                            <td>{{$value->Summary}}</td>
                             <td>{{$value->Notes}}</td>
                             <td>{{$value->Resolution}}</td>
+                            <td>{{$value->Reference}}</td>
                             <td>{{$value->created_at}}</td>
                             <td>{{$value->updated_at}}</td>
                             <td>
-                              <a href="{!! route('edit.post', $value) !!}"class="show-modal btn btn-warning btn-sm" data-id="{{$value->id}}" data-title="{{$value->title}}"
-                              > <i class="glyphicon glyphicon-pencil"> </i></a>
-                              <a href="#" class="edit-modal btn btn-info btn-sm" data-id="{{$value->id}}" data-title="{{$value->title}}"
+                              {{-- <a href="{!! route('edit.post', $value) !!}"class="show-modal btn btn-warning btn-sm" data-id="{{$value->id}}" data-title="{{$value->title}}"
+                              > <i class="glyphicon glyphicon-pencil"> </i></a> --}}
+                              <a href="#" class="edit-modal btn btn-info btn-sm" data-id="{{$value->id}}" data-question="{{$value->Notes}}" data-resolution="{{$value->Resolution}}" data-reference="{{$value->Reference}}" data-summary="{{$value->Summary}}"
                               > <i class="fa fa-eye"> </i></a>
                             </td>
                           </tr>
@@ -60,6 +62,7 @@
   <!-- /.row -->
 
 
+
       {{-- Modal --}}
   {{-- Edit function --}}
   <div id="myModal" class="modal fade" role="dialog">
@@ -77,7 +80,12 @@
                 <input type="text" class="form-control" id="fid" readonly>
               </div>
             </div>
-
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="id">Title</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="summary" readonly>
+              </div>
+            </div>
             <div class="form-group">
               <label class="control-label col-sm-2" for="question">Question</label>
               <div class="col-sm-10">
