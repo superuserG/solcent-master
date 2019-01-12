@@ -50,11 +50,6 @@ class UserController extends Controller
         'email' => 'required|email|max:255|unique:users',
         'role'=>'required',
         'password' => 'required',
-        'nip'=>'required',
-        'kanwil'=>'required',
-        'kcu'=>'required',
-        'kcukcp'=>'required',
-
       ],
       [
         'name.required'=>'Name must be filled!',
@@ -71,12 +66,7 @@ class UserController extends Controller
         'name'=>$request->name,
         'email'=>$request->email,
         'role'=>$request->role,
-        'password'=>bcrypt($request->password),
-        'nip'=>$request->nip,
-        'kanwil'=>$request->kanwil,
-        'kcu'=>$request->kcu,
-        'kcukcp'=>$request->kcukcp,
-        'profilepicture'=>'admin.jpg'
+        'password'=>bcrypt($request->password)
       ]);
 
       if($user)

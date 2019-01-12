@@ -18,7 +18,6 @@ use Uuid;
 use Session;
 use Redirect;
 use Flash;
-use Auth;
 
 class CRUDController extends Controller
 {
@@ -159,12 +158,5 @@ class CRUDController extends Controller
       ]);
 
       return redirect()->route('table');
-    }
-
-    public function profile()
-    {
-      $user = Auth::user();
-
-      return view('profile',compact('user'));
     }
 }

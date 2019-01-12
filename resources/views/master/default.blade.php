@@ -102,9 +102,8 @@
 		$('.form-horizontal').show();
 		$('#fid').val($(this).data('id'));
 		$('#question').val($(this).data('question'));
-		$('#r').val($(this).data('resolution'));
-		$('#f').val($(this).data('reference'));
-		$('#summary').val($(this).data('summary'));
+		$('#r').val($(this).data('res'));
+		$('#f').val($(this).data('ref'));
 		$('#myModal').modal('show');
 	});
 

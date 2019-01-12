@@ -275,7 +275,7 @@ desired effect
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="{{request()->route()->getName()==='admin.home'?'active':''}}"><a href="{{route('admin.home')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li class="{{request()->route()->getName()==='admin.ticket.index'?'active':''}}"><a href="#"><i class="fa fa-ticket"></i> <span>Ticket</span></a></li>
+        <li class="{{request()->route()->getName()==='admin.ticket.index'?'active':''}}"><a href="{!! route('admin.ticket.index') !!}"><i class="fa fa-ticket"></i> <span>Ticket</span></a></li>
         {{-- <li><a href="{{route('admin.book.index')}}"><i class="fa fa-book"></i> <span>Book</span></a></li> --}}
         <li class="{{request()->route()->getName()==='admin.call.index'?'active':''}}"><a href="{!! route('admin.call.index') !!}"><i class="fa fa-phone"></i> <span>Call</span></a></li>
 

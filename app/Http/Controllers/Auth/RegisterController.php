@@ -69,12 +69,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'role'=>'user',
-            'nip' => $data['nip'],
-            'kanwil' => $data['kanwil'],
-            'kcu' => $data['kcu'],
-            'kcukcp' => $data['kcukcp'],
-            'profilepicture'=>'admin.jpg',
+            'username' => $data['username'],
         ]);
     }
 }

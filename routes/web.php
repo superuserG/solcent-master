@@ -247,7 +247,7 @@ Route::middleware('auth')->group(function(){
 
         Route::resource('call','callController',['as'=>'admin']);
         Route::get('call/manageCall/list','callController@list')->name('backend.call.list');
-        Route::get('profile','CRUDController@profile')->name('profile');
+
 
 
 

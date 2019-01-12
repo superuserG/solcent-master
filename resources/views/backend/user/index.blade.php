@@ -63,30 +63,6 @@
               <input name="password" class="form-control" id="inputPassword" placeholder="Password" type="password">
             </div>
           </div>
-          <div class="form-group">
-            <label for="nip" class="col-sm-2 control-label">NIP</label>
-            <div class="col-sm-10">
-              <input name="nip" class="form-control" id="nip" required type="number">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="kanwil" class="col-sm-2 control-label">Kanwil</label>
-            <div class="col-sm-10">
-              <input name="kanwil" class="form-control" id="kanwil" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="kcu" class="col-sm-2 control-label">kcu</label>
-            <div class="col-sm-10">
-              <input name="kcu" class="form-control" id="kcu" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="kcukcp" class="col-sm-2 control-label">kcukcp</label>
-            <div class="col-sm-10">
-              <input name="kcukcp" class="form-control" id="kcukcp" required>
-            </div>
-          </div>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
