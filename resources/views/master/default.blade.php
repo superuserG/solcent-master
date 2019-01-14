@@ -97,7 +97,7 @@
 		$('.actionBtn').addClass('btn-success');
 		$('.actionBtn').removeClass('btn-danger');
 		$('.actionBtn').addClass('Edit');
-		$('.modal-title').text('Post Edit');
+		$('.modal-title').text('View Detail');
 		$('.deleteContent').hide();
 		$('.form-horizontal').show();
 		$('#fid').val($(this).data('id'));

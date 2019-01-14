@@ -19,18 +19,20 @@
                   <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                       <thead>
                           <tr>
-                              <th>Title</th>
-                              <th>Question</th>
-                              <th>Answer</th>
-                              <th>Reference</th>
-                              <th>Submit Date</th>
-                              <th>Completed Date</th>
-                              <th>Action</th>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Question</th>
+                            <th>Answer</th>
+                            <th>Reference</th>
+                            <th>Submit Date</th>
+                            <th>Completed Date</th>
+                            <th>Action</th>
                           </tr>
                       </thead>
                       <tbody>
                         @foreach ($post as $key => $value)
                           <tr>
+                            <td>{{$value->WO_ID}}</td>
                             <td>{{$value->Summary}}</td>
                             <td>{{$value->Notes}}</td>
                             <td>{{$value->Resolution}}</td>
@@ -40,7 +42,7 @@
                             <td>
                               {{-- <a href="{!! route('edit.post', $value) !!}"class="show-modal btn btn-warning btn-sm" data-id="{{$value->id}}" data-title="{{$value->title}}"
                               > <i class="glyphicon glyphicon-pencil"> </i></a> --}}
-                              <a href="#" class="edit-modal btn btn-info btn-sm" data-id="{{$value->id}}" data-question="{{$value->Notes}}" data-resolution="{{$value->Resolution}}" data-reference="{{$value->Reference}}" data-summary="{{$value->Summary}}"
+                              <a href="#" class="edit-modal btn btn-info btn-sm" data-id="{{$value->WO_ID}}" data-question="{{$value->Notes}}" data-resolution="{{$value->Resolution}}" data-reference="{{$value->Reference}}" data-summary="{{$value->Summary}}"
                               > <i class="fa fa-eye"> </i></a>
                             </td>
                           </tr>
@@ -89,7 +91,7 @@
             <div class="form-group">
               <label class="control-label col-sm-2" for="question">Question</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="question" id="question" readonly>
+                <textarea type="text" class="form-control" name="question" id="question" readonly></textarea>
               </div>
             </div>
 
@@ -101,7 +103,7 @@
             </div>
 
             <div class="form-group">
-              <label class="control-label col-sm-2" for="ref">referensi</label>
+              <label class="control-label col-sm-2" for="ref">Referensi</label>
               <div class="col-sm-10">
                 <textarea type="name" class="form-control" name="ref" id="f" readonly></textarea>
               </div>
@@ -109,14 +111,10 @@
           </form>
           {{-- delete --}}
           <div class="deletecontent">
-            Hello World <span class="title"></span>
             <span class="hidden id"></span>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn actionBtn" data-dismiss="modal">
-            <span id="footer_action_button" class="glyphicon"></span>
-          </button>
           <button type="button" class="btn btn-warning" data-dismiss="modal">
             <span class="glyphicon glyphicon"></span> close
           </button>
