@@ -20,6 +20,9 @@ class UserTableSeeder extends Seeder
           'email'=>'admin@solcent.com',
           'profilepicture'=>'admin.jpg',
           'password'=>bcrypt('admin'),
+          'kanwil'=>'Kantor Pusat',
+          'kcu'=>'Kantor Pusat',
+          'kcukcp'=>'Kantor Pusat',
           'role'=>'admin',
         ]);
 
@@ -30,6 +33,9 @@ class UserTableSeeder extends Seeder
           'email'=>'user1@solcent.com',
           'profilepicture'=>'admin.jpg',
           'password'=>bcrypt('123456'),
+          'kanwil'=>'Kantor Pusat',
+          'kcu'=>'Kantor Pusat',
+          'kcukcp'=>'Kantor Pusat',
           'role'=>'user',
         ]);
     }
