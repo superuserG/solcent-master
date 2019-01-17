@@ -1,6 +1,6 @@
 @extends('backend.template.layout')
 @section('title')
-  <title>Home Admin Solcent</title>
+  <title>Suspended user</title>
 @endsection
 @section('content')
 
@@ -29,7 +29,7 @@
         <section class="content-header">
           <h1>
             User
-            <small>| Deleted User Management</small>
+            <small>| Suspended User Management</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>

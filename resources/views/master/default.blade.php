@@ -10,7 +10,7 @@
   <meta name="description" content="">
 
   <meta name="author" content="">
-	<title>Dashboard</title>
+	@yield('title')
 
 	<!-- bootstrap css -->
 	<link rel="stylesheet" href="{!! asset('theme/vendor/bootstrap/css/bootstrap.min.css')!!}">

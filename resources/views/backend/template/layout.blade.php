@@ -108,7 +108,7 @@ desired effect
 
                 <p>
                   {{Auth::User()->name}}
-                  
+
                 </p>
               </li>
               <!-- Menu Body -->
@@ -164,21 +164,8 @@ desired effect
         </div>
       </div>
 
-      <!-- search form (Optional) -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-              </button>
-            </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="{{request()->route()->getName()==='admin.home'?'active':''}}"><a href="{{route('admin.home')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         {{-- <li><a href="{{route('admin.book.index')}}"><i class="fa fa-book"></i> <span>Book</span></a></li> --}}
@@ -192,7 +179,7 @@ desired effect
           </a>
           <ul class="treeview-menu">
             <li class="{{request()->route()->getName()==='admin.user.index'?'active':''}}"><a href="{{route('admin.user.index')}}">Manage User</a></li>
-            <li class="{{request()->route()->getName()==='admin.user.deleted'?'active':''}}"><a href="{{route('admin.user.deleted')}}">Deleted User</a></li>
+            <li class="{{request()->route()->getName()==='admin.user.deleted'?'active':''}}"><a href="{{route('admin.user.deleted')}}">Suspended User</a></li>
           </ul>
         </li>
 
