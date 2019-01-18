@@ -1,6 +1,7 @@
 @extends('master.default')
 @section('title')
 <title>Work Page</title>
+@endsection
 @section('content')
   <style>
   .font-red
@@ -10,6 +11,7 @@
   </style>
   <div class="row">
       <div class="col-lg-12">
+        <h2 class="page-header">Work Page</h2>
       </div>
       <!-- /.col-lg-12 -->
   </div>
@@ -17,7 +19,7 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <div class="panel panel-default">
+
         @if(Session::has('message'))
         <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
         @endif
@@ -37,9 +39,7 @@
     </div>
 @endif
       </div>
-          <div class="panel-heading">
-            Form
-          </div>
+
           <div class="panel-body">
             <div class="row">
               <form class="" action="{!! route('create.post') !!}" method="POST">

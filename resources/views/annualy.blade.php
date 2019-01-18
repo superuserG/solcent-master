@@ -1,6 +1,7 @@
 @extends('master.default')
 @section('title')
 <title>Annual</title>
+@endsection
 @section('content')
 
 @include('Chart.AnnualyChart')

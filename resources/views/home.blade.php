@@ -1,6 +1,7 @@
 @extends('master.default')
 @section('title')
 <title>Home</title>
+@endsection
 @section('content')
 @include('Chart.ReportChart')
 
