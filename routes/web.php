@@ -243,13 +243,20 @@ Route::middleware('auth')->group(function(){
         Route::post('user/restoreuser/{id}', 'UserController@restore')->name('admin.user.restore');
         Route::resource('user','UserController',['as'=>'admin']);
         Route::get('user/manageuser/list','UserController@list')->name('backend.user.list');
+        Route::resource('service','ServiceController',['as'=>'admin']);
+        Route::resource('category','CategoryController',['as'=>'admin']);
+        Route::resource('subcategory','SubCategoryController',['as'=>'admin']);
+        Route::get('service/manageservice/list','ServiceController@list')->name('backend.service.list');
+        Route::get('category/managecategory/list','CategoryController@list')->name('backend.category.list');
+        Route::get('subcategory/managesubcategory/list','SubCategoryController@list')->name('backend.subcategory.list');
+
 
 
         Route::resource('call','callController',['as'=>'admin']);
         Route::get('call/manageCall/list','callController@list')->name('backend.call.list');
         Route::get('profile','CRUDController@profile')->name('profile');
-
-
+        Route::put('updateprofile','CRUDController@updateprofile')->name('updateprofile');
+        Route::get('ticket','CRUDController@show')->name('ticket');
 
     });
   });

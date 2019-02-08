@@ -167,4 +167,18 @@ class CRUDController extends Controller
 
       return view('profile',compact('user'));
     }
+
+    public function updateprofile(Request $request)
+    {
+      if ($request->hasFile('profilepicture')) {
+          $user = Auth::user();
+          $image = $request->file('profilepicture');
+          $name = time().'.'.$image->getClientOriginalExtension();
+          $destinationPath = public_path('/image/users');
+          $image->move($destinationPath, $name);
+          $user->profilepicture= $name;
+          $user->save();
+          return back()->with('success','Image Upload successfully');
+      }
+    }
 }

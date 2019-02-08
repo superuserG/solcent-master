@@ -8,10 +8,14 @@ class Category extends Model
 {
     protected $table = "categories";
 
-    protected $fillable = ['name','slug'];
+    protected $fillable = ['service_id','name','slug'];
 
     public function SubCategory()
     {
       return $this->hasMany('App\SubCategory');
+    }
+    public function Service()
+    {
+      return $this->belongsTo('App\Service');
     }
 }

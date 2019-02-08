@@ -3,7 +3,7 @@
   <select class="selectize" id="subcategory" name="subcategory" required>
     <option value="">--CHOOSE SUBCATEGORY--</option>
     @foreach ($subcategories as $subcategory)
-      <option value="{{$subcategory->id.'||'.$subcategory->name}}">{{$subcategory->name}}</option>
+      <option value="{{$subcategory->id.'||'.$subcategory->subcatname}}">{{$subcategory->subcatname}}</option>
     @endforeach
   </select>
 </div>

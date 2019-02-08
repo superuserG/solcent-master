@@ -280,6 +280,19 @@ desired effect
         <li class="{{request()->route()->getName()==='admin.call.index'?'active':''}}"><a href="{!! route('admin.call.index') !!}"><i class="fa fa-phone"></i> <span>Call</span></a></li>
 
         <li class="treeview">
+          <a href="#"><i class="fa fa-bandcamp"></i> <span>Service Management</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{request()->route()->getName()==='admin.service.index'?'active':''}}"><a href="{{route('admin.service.index')}}">Service</a></li>
+            <li class="{{request()->route()->getName()==='admin.category.index'?'active':''}}"><a href="{{route('admin.category.index')}}">Category</a></li>
+            <li class="{{request()->route()->getName()==='admin.subcategory.index'?'active':''}}"><a href="{{route('admin.subcategory.index')}}">Sub Category</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
           <a href="#"><i class="fa fa-book"></i> <span>User</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>

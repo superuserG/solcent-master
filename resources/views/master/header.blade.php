@@ -15,7 +15,7 @@
 <ul class="nav navbar-top-links navbar-right">
 
     <!-- /.dropdown -->
-    <img id="images" style="width:30px; border: 2px solid ;  border-radius: 25px;" src="{{asset('image/users/'.Auth::user()->profilepicture)}}" />
+    <img id="images" style="width:30px; border-radius: 50px;" src="{{asset('image/users/'.Auth::user()->profilepicture)}}" />
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>

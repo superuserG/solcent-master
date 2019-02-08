@@ -14,14 +14,17 @@
         {{-- <img id="images" style="width:100px; border: 2px solid ;  border-radius: 25px;" src="{{asset('image/users/'.Auth::user()->profilepicture)}}" /> --}}
       {{-- </div> --}}
       <div class="col-md-12">
-        <div class="col-md-5">
-        <form class="" >
+        {{Form::open(['route' => 'updateprofile', 'method'=>'put', 'files' => true])}}
           {{ csrf_field() }}
-          <img id="images" style="width:100px; border: 2px solid ;  border-radius: 25px;" src="{{asset('image/users/'.Auth::user()->profilepicture)}}" />
-          <div class="form-group">
-            <label class="col-lg-3">Change Profile</label>
-            <input type="file" name="profilepicture" class="form-control">
+          <div class="image-profile col-md-2">
+            <img id="images" style="width:100px; border: 2px solid ;  border-radius: 25px;" src="{{asset('image/users/'.Auth::user()->profilepicture)}}" />
+            <div class="form-group">
+              <label class="col-lg-3">Change Profile</label>
+              <input type="file" name="profilepicture" class="form-control" onchange="readURL(this);">
+            </div>
+            <img id="blah" src="#" alt="your image" style="width:100px; border: 2px solid ;  border-radius: 25px; "/>
           </div>
+          <div class="image-profile col-md-5">
             <div class="form-group">
                 <label class="col-lg-3">Name</label>
                 <input class="form-control" name="name" id="name" style="width:350px" value={{$user->name}} disabled required>
@@ -61,8 +64,23 @@
         <div class="box-footer">
           <button type="submit" class="btn btn-info pull-right">Update User</button>
         </div>
-      </form>
+        {{Form::close()}}
     </div>
   </div>
+<script>
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
 @endsection
