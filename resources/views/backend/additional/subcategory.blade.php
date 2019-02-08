@@ -99,6 +99,7 @@
         <script>
         $(document).ready( function () {
           // $("#categoryBE").hide();
+          $('#categoryBE').load('{{url("categoryColumn")}}/0');
         });
 
         $(function()
