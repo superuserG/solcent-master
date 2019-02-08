@@ -228,6 +228,7 @@ Route::middleware('auth')->group(function(){
   Route::post('checknip','NIPController@checknip')->name('checknip');
   Route::get('form/{data}','showController@formemployee')->name('data.form');
   Route::get('service','EtcController@service')->name('service');
+  Route::get('categoryColumn/{category}','EtcController@categoryColumn')->name('category.column');
   Route::get('category/{category}','EtcController@category')->name('category');
   Route::get('subcategory/{subcategory}','EtcController@subcategory')->name('subcategory');
   Route::prefix('admin')->group(function()

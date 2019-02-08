@@ -23,6 +23,12 @@ class EtcController extends Controller
       return view('etc.category')->with(compact('categories'));
     }
 
+    public function categoryColumn($id)
+    {
+      $categories = Category::where('service_id',$id)->get();
+      return view('backend.additional.categoryColumn')->with(compact('categories'));
+    }
+
     public function subcategory($id)
     {
       $subcategories = SubCategory::where('category_id',$id)->get();

@@ -19,9 +19,10 @@ class SubCategoryController extends Controller
     public function index()
     {
         //
+        $services = Service::get();
         $subcategories = SubCategory::get();
         $categories = Category::get();
-        return view('backend.additional.subcategory')->with(compact('subcategories','categories'));
+        return view('backend.additional.subcategory')->with(compact('subcategories','categories','services'));
     }
 
     /**

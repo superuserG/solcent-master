@@ -34,8 +34,19 @@
       <!-- form start -->
       <form class="form-horizontal">
         <div class="box-body">
-          <div class="form-group">
-            <label for="inputCategory" class="col-sm-2 control-label">Category</label>
+          <div class="form-group" id="serviceBE">
+            <label for="inputServe" class="col-sm-2 control-label">Service</label>
+            <div class="col-sm-10">
+              <select name="service" class="serviceSelectize" id=inputService required>
+                <option value="">--Choose Service--</option>
+                @foreach ($services as $service)
+                  <option value="{{$service->id}}">{{$service->service}}</option>
+                @endforeach
+              </select>
+            </div>
+          </div>
+          <div class="form-group" id="categoryBE">
+            {{-- <label for="inputCategory" class="col-sm-2 control-label">Category</label>
             <div class="col-sm-10">
               <select name="category" class="selectize" id=inputCategory required>
                 <option value="">--Choose Category--</option>
@@ -43,7 +54,7 @@
                   <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
               </select>
-            </div>
+            </div> --}}
           </div>
           <div class="form-group">
             <label for="inputSubCategory" class="col-sm-2 control-label">Sub Category</label>
@@ -86,6 +97,10 @@
       @endsection
       @section('script')
         <script>
+        $(document).ready( function () {
+          // $("#categoryBE").hide();
+        });
+
         $(function()
           {
             $('#tableSubCategory').DataTable({
@@ -180,5 +195,21 @@
                   });
                 })
               }
+
+              var category = $('.serviceSelectize').selectize(
+              {
+                onChange: function(value)
+                {
+                  // alert(value);
+                  // var id = $('#address-city').val();
+                  var id = value.split('||');
+                  // $('#districtdiv').load('{{url("admin/district")}}/'+id[0]);
+                  $('#categoryBE').load('{{url("categoryColumn")}}/'+id[0]);
+                  // $('#categoryBE').show();
+                  // $('#subcategorydiv').hide();
+                  // $('#districtdiv').html('');
+                  // $('#villagediv').html('');
+                }
+              });
         </script>
       @endsection
