@@ -1,5 +1,7 @@
 @extends('master.default')
-
+@section('title')
+<title>Annual</title>
+@endsection
 @section('content')
 
 @include('Chart.AnnualyChart')
@@ -15,46 +17,45 @@
   <div class="col-lg-6">
       <div class="panel panel-default">
           <div class="panel-heading">
-              Annualy Calls Chart
+              Tickets
           </div>
           <!-- /.panel-heading -->
           <div class="panel-body" id="calls">
-            <canvas id="annualCalls" height="400" width="600"></canvas>
+            <canvas id="ticketAnnualy" height="400" width="600"></canvas>
           </div>
           <!-- /.panel-body -->
       </div>
-  </div>
-  {{-- Monthly Calls Chart --}}
+    </div>
 
-   <div class="col-lg-6">
-      <div class="panel panel-default">
-          <div class="panel-heading">
-              Annualy Kanwil Chart
-          </div>
-          <!-- /.panel-heading -->
-          <div class="panel-body" id="calls">
-            <canvas id="annualKanwil" height="400" width="600"></canvas>
-          </div>
-          <!-- /.panel-body -->
-      </div>
-  </div>
-  {{-- report compare call report dan jumlah ticket --}}
-
-   <div class="col-lg-6">
+  <div class="col-lg-6">
       <div class="panel panel-default">
           <div class="panel-heading">
               FAQ Chart
           </div>
           <!-- /.panel-heading -->
           <div class="panel-body" id="calls">
-            <canvas id="annualQuestion" height="400" width="600"></canvas>
+            <canvas id="call" height="400" width="600"></canvas>
+          </div>
+          <!-- /.panel-body -->
+      </div>
+    </div>
+
+  <div class="col-lg-12">
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              Detail Tickets
+          </div>
+          <!-- /.panel-heading -->
+          <div class="panel-body">
+            <canvas id="detailAnnualy" height="200" width="600"></canvas>
           </div>
           <!-- /.panel-body -->
       </div>
   </div>
-  {{-- top pertanyaan bulan ini --}}
 
-   <div class="col-lg-6">
+
+
+   {{-- <div class="col-lg-6">
       <div class="panel panel-default">
           <div class="panel-heading">
               Annualy Cabang Chart
@@ -65,8 +66,8 @@
           </div>
           <!-- /.panel-body -->
       </div>
-  </div>
-  {{-- report top pertanyaan dari category 2 --}}
+  </div> --}}
+
 </div>
 
 @endsection

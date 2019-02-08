@@ -1,6 +1,6 @@
 @extends('backend.template.layout')
 @section('title')
-  <title>Home Admin Solcent</title>
+  <title>Suspended user</title>
 @endsection
 @section('content')
 
@@ -29,7 +29,7 @@
         <section class="content-header">
           <h1>
             User
-            <small>User Management</small>
+            <small>| Suspended User Management</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -78,7 +78,7 @@
             swal(
             {
               title: "Are you sure?",
-              text: "You are able to delete this book after you restore",
+              text: "You are going to restore this user",
               icon: "warning",
               buttons: true,
               dangerMode: true,

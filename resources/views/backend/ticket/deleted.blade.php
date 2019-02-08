@@ -1,6 +1,6 @@
 @extends('backend.template.layout')
 @section('title')
-  <title>Call</title>
+  <title>Home Admin Solcent</title>
 @endsection
 @section('content')
 

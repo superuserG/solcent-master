@@ -10,7 +10,7 @@
   <meta name="description" content="">
 
   <meta name="author" content="">
-	<title>Dashboard</title>
+	@yield('title')
 
 	<!-- bootstrap css -->
 	<link rel="stylesheet" href="{!! asset('theme/vendor/bootstrap/css/bootstrap.min.css')!!}">
@@ -34,14 +34,13 @@
 	<script src="{!! asset('http://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js') !!}" charset=utf-8></script>
 
 <!-- datalabel -->
-	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script>
 
 	<script src="{!! asset('theme/vendor/datatables/js/jquery.dataTables.min.js') !!}"></script>
 	<script src="{!! asset('theme/vendor/datatables-plugins/dataTables.bootstrap.min.js') !!}"></script>
 	<script src="{!! asset('theme/vendor/datatables-responsive/dataTables.responsive.js') !!}"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 
@@ -97,7 +96,7 @@
 		$('.actionBtn').addClass('btn-success');
 		$('.actionBtn').removeClass('btn-danger');
 		$('.actionBtn').addClass('Edit');
-		$('.modal-title').text('Post Edit');
+		$('.modal-title').text('View Detail');
 		$('.deleteContent').hide();
 		$('.form-horizontal').show();
 		$('#fid').val($(this).data('id'));

@@ -30,7 +30,7 @@
                 <input class="form-control" name="name" id="name" style="width:350px" value={{$user->name}} disabled required>
             </div>
             <div class="form-group">
-                <label class="col-lg-3">nip</label>
+                <label class="col-lg-3">NIP</label>
                 <input class="form-control" name="nip" id="nip" style="width:350px" value={{$user->nip}} disabled required>
             </div>
             <div class="form-group">
@@ -48,15 +48,11 @@
                 <input class="form-control" name="kanwil" id="kanwil" style="width:350px" value={{$user->kanwil}} disabled required>
             </div>
             <div class="form-group">
-                <label class="col-lg-3">kcu</label>
+                <label class="col-lg-3">KCU</label>
                 <input class="form-control" name="kcu" id="kanwil" style="width:350px" value={{$user->kcu}} disabled required>
             </div>
             <div class="form-group">
-                <label class="col-lg-3">kcu</label>
-                <input class="form-control" name="kcu" id="kcu" style="width:350px" value={{$user->kcu}} disabled required>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-3">kcukcp</label>
+                <label class="col-lg-3">KCU/KCP</label>
                 <input class="form-control" name="kcukcp" id="kcukcp" style="width:350px" value={{$user->kcukcp}} disabled required>
             </div>
           </div>

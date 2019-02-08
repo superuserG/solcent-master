@@ -1,6 +1,6 @@
 @extends('backend.template.layout')
 @section('title')
-  <title>Home Admin Solcent</title>
+  <title>Manage user</title>
 @endsection
 @section('content')
 
@@ -76,13 +76,13 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="kcu" class="col-sm-2 control-label">kcu</label>
+            <label for="kcu" class="col-sm-2 control-label">KCU</label>
             <div class="col-sm-10">
               <input name="kcu" class="form-control" id="kcu" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="kcukcp" class="col-sm-2 control-label">kcukcp</label>
+            <label for="kcukcp" class="col-sm-2 control-label">KCU/KCP</label>
             <div class="col-sm-10">
               <input name="kcukcp" class="form-control" id="kcukcp" required>
             </div>

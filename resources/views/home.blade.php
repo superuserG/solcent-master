@@ -1,5 +1,7 @@
 @extends('master.default')
-{{-- @extends('master.lightLayout') --}}
+@section('title')
+<title>Home</title>
+@endsection
 @section('content')
 @include('Chart.ReportChart')
 

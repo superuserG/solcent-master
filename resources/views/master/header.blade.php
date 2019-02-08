@@ -5,7 +5,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="{!! route('home') !!}">Solution Center V0.1</a>
+    <a class="navbar-brand" href="{!! route('home') !!}">Helpdesk Solution Center</a>
 </div>
 {{-- <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
   <span class="sr-only">Toggle navigation</span>
@@ -24,16 +24,14 @@
           @guest
               <li><a href="{{ route('login') }}"><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
           @else
-            <li><a href="{{route('profile')}}"><i class="fa fa-user fa-fw"></i> {{Auth::user()->name}} </a>
-            </li>
-            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+            <li><a href="{{route('profile')}}"><i class="fa fa-user fa-fw"></i> Profile {{Auth::user()->name}} </a>
             </li>
             @if(Auth::user()->role=='admin'||Auth::user()->role=='super admin')
-              <li><a href="{{url('/admin')}}"><i class="fa fa-address-card fa-fw" aria-hidden="true"></i>Admin Panel</a>
+              <li><a href="{{url('/admin')}}"><i class="fa fa-address-card fa-fw" aria-hidden="true"></i> Admin Panel</a>
               </li>
             @endif
             <li class="divider"></li>
-            <li><a href="{!! route('logout') !!}"
+            <li class="pull-right"><a href="{!! route('logout') !!}"
               onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();"
               ><i></i>Logout</a>

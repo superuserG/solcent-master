@@ -1,7 +1,7 @@
 
   <div class="box box-info edituserform">
     <div class="box-header with-border">
-      <h3 class="box-title">Update Call Form</h3>
+      <h3 class="box-title">Edit Call Form</h3>
     </div>
     {{Form::open(['route'=>['admin.call.update',$call->id],'method'=>'put','class'=>'form-horizontal','files'=>'true'])}}
     <!-- /.box-header -->

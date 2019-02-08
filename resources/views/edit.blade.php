@@ -1,5 +1,7 @@
 @extends('master.default')
-
+@section('title')
+<title>Edit</title>
+@endsection
 @section('content')
   <div class="row">
       <div class="col-lg-12">

@@ -35,11 +35,11 @@
             <select name="role" class="selectize" id=inputRole required>
               <option value="{{$user->role}}">
                 @if($user->role==1)
-                  USER
+                  Current: USER
                 @elseif($user->role==2)
-                  ADMIN
+                  Current: ADMIN
                 @else
-                  SUPER ADMIN
+                  Current:SUPER ADMIN
                 @endif
               </option>
               <option value="1">User</option>
