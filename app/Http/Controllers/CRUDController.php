@@ -161,7 +161,7 @@ class CRUDController extends Controller
       return redirect()->route('table');
     }
 
-    public function profile()
+    public function profileUser()
     {
       $user = Auth::user();
 

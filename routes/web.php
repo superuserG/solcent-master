@@ -255,11 +255,11 @@ Route::middleware('auth')->group(function(){
 
         Route::resource('call','callController',['as'=>'admin']);
         Route::get('call/manageCall/list','callController@list')->name('backend.call.list');
-        Route::get('profile','CRUDController@profile')->name('profile');
-        Route::put('updateprofile','CRUDController@updateprofile')->name('updateprofile');
         Route::get('ticket','CRUDController@show')->name('ticket');
 
     });
+    Route::get('profile','CRUDController@profileUser')->name('profile');
+    Route::put('updateprofile','CRUDController@updateprofile')->name('updateprofile');
   });
 });
 });
