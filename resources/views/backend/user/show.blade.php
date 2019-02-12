@@ -34,9 +34,9 @@
           <div class="col-sm-10">
             <select name="role" class="selectize" id=inputRole required>
               <option value="{{$user->role}}">
-                @if($user->role==1)
+                @if($user->role=="user")
                   Current: USER
-                @elseif($user->role==2)
+                @elseif($user->role=="admin")
                   Current: ADMIN
                 @else
                   Current:SUPER ADMIN

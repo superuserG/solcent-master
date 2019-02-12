@@ -233,7 +233,7 @@ Route::middleware('auth')->group(function(){
   Route::get('subcategory/{subcategory}','EtcController@subcategory')->name('subcategory');
   Route::prefix('admin')->group(function()
   {
-    Route::middleware(['role:2'])->group(function()
+    Route::middleware(['role:admin'])->group(function()
     {
       Route::get('/','backendController@showAdmin')->name('admin.home');
       // Route::get('/',function(){

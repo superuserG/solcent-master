@@ -23,7 +23,7 @@ class UserTableSeeder extends Seeder
           'kanwil'=>'Kantor Pusat',
           'kcu'=>'Kantor Pusat',
           'kcukcp'=>'Kantor Pusat',
-          'role'=>'2',
+          'role'=>'admin',
         ]);
 
         User::create([
@@ -36,7 +36,7 @@ class UserTableSeeder extends Seeder
           'kanwil'=>'Kantor Pusat',
           'kcu'=>'Kantor Pusat',
           'kcukcp'=>'Kantor Pusat',
-          'role'=>'1',
+          'role'=>'user',
         ]);
     }
 }

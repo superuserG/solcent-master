@@ -136,14 +136,14 @@ class UserController extends Controller
         $user = User::where('iduser',$id)->first();
         if($request->role == 1)
         {
-          $user->role = 1;
+          $user->role = 'user';
         }else if($request->role == 2)
         {
-          $user->role = 2;
+          $user->role = 'admin';
         }
         else if($request->role == 3)
         {
-          $user->role = 3;
+          $user->role = 'super admin';
         }
         $user->save();
         if($user){
