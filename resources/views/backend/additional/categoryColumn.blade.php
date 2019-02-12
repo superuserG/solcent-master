@@ -1,7 +1,7 @@
 <label for="inputCategory" class="col-sm-2 control-label">Category</label>
 <div class="col-sm-10">
   <select class="" id="inputCategory" name="category" required>
-    <option value="">--CHOOSE CATEGORY--</option>
+    <option value="">--Choose Category--</option>
     @foreach ($categories as $category)
       <option value="{{$category->id}}">{{$category->name}}</option>
     @endforeach
