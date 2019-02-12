@@ -22,7 +22,7 @@
               <label class="col-lg-3">Change Profile</label>
               <input type="file" name="profilepicture" class="form-control" onchange="readURL(this);">
             </div>
-            <img id="blah" src="#" alt="your image"
+            <img id="blah" src="#" alt=""
             {{-- style="width:100px; border: 2px solid ;  border-radius: 25px; " --}}
             />
           </div>
