@@ -1,4 +1,4 @@
-@if(Auth::user()->role=='user')
+@if(Auth::user()->role==1)
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
@@ -40,7 +40,7 @@
   </div>
     <!-- /.navbar-static-side -->
 
-@elseif (Auth::user()->role=='admin')
+@elseif (Auth::user()->role==2)
   <div class="navbar-default sidebar" role="navigation">
       <div class="sidebar-nav navbar-collapse">
           <ul class="nav" id="side-menu">

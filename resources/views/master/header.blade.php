@@ -26,7 +26,7 @@
           @else
             <li><a href="{{route('profile')}}"><i class="fa fa-user fa-fw"></i> Profile {{Auth::user()->name}} </a>
             </li>
-            @if(Auth::user()->role=='admin'||Auth::user()->role=='super admin')
+            @if(Auth::user()->role==2||Auth::user()->role==3)
               <li><a href="{{url('/admin')}}"><i class="fa fa-address-card fa-fw" aria-hidden="true"></i> Admin Panel</a>
               </li>
             @endif
