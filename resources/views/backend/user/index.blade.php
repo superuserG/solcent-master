@@ -51,9 +51,9 @@
             <div class="col-sm-10">
               <select name="role" class="selectize" id=inputRole required>
                 <option value="">--Choose Role--</option>
-                <option value="1">User</option>
-                <option value="2">Admin</option>
-                <option value="3">Super Admin</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+                <option value="super admin">Super Admin</option>
               </select>
             </div>
           </div>
