@@ -79,19 +79,19 @@
           <div class="form-group">
             <label for="inputName" class="col-sm-2 control-label">Call Presented</label>
             <div class="col-sm-10">
-              <input name="presented" class="form-control" id="inputPresent" placeholder="presented calls" type="text" required>
+              <input name="presented" class="form-control" id="inputPresent" placeholder="Number Only" type="number" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputEmail" class="col-sm-2 control-label">Call Handled</label>
             <div class="col-sm-10">
-              <input name="handled" class="form-control" id="inputHandle" placeholder="Handled calls" type="text" required>
+              <input name="handled" class="form-control" id="inputHandle" placeholder="Number Only" type="number" required>
             </div>
           </div>
           <div class="form-group">
             <label for="inputEmail" class="col-sm-2 control-label">Call Abandoned</label>
             <div class="col-sm-10">
-              <input name="abandoned" class="form-control" id="inputAbandon" placeholder="Abandoned calls" type="text" required>
+              <input name="abandoned" class="form-control" id="inputAbandon" placeholder="Number Only" type="number" required>
             </div>
           </div>
         </div>
