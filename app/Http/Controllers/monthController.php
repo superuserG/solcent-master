@@ -152,7 +152,7 @@ class monthController extends Controller
     ->with('kanwil',json_encode($kanwil,JSON_NUMERIC_CHECK))
     ->with('labelKanwil',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
     ->with('cat2',json_encode($cat2,JSON_NUMERIC_CHECK))
-    ->with('subQuestion',json_encode($labelKanwil,JSON_NUMERIC_CHECK))
+    ->with('subQuestion',json_encode($subQuestion,JSON_NUMERIC_CHECK))
     ->with('kcu',json_encode($kcu,JSON_NUMERIC_CHECK))
     ->with('labelKcu',json_encode($labelKcu,JSON_NUMERIC_CHECK))
     ->with('kcp',json_encode($kcp,JSON_NUMERIC_CHECK))

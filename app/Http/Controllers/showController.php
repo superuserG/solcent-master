@@ -129,77 +129,12 @@ class showController extends Controller
   public function showMonthly()
   {
     //compate data ticket dan call
-    $calljan = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','January')
+    $calls = DB::table('report_calls')
+          ->select(DB::raw('sum(presentedCall) as calls'))
+          ->groupBy('months')
+          ->orderBy('id')
           ->get()->toArray();
-    $calljan = array_column($calljan,'call');
-
-    $callFeb = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','February')
-          ->get()->toArray();
-    $callFeb = array_column($callFeb,'call');
-
-    $callMar = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','March')
-          ->get()->toArray();
-    $callMar = array_column($callMar,'call');
-
-    $callApr = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','April')
-          ->get()->toArray();
-    $callApr = array_column($callApr,'call');
-
-    $callMei = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','May')
-          ->get()->toArray();
-    $callMei = array_column($callMei,'call');
-
-    $callJun = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','June')
-          ->get()->toArray();
-    $callJun = array_column($callJun,'call');
-
-    $callJul = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','July')
-          ->get()->toArray();
-    $callJul = array_column($callJul,'call');
-
-    $callAug = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','August')
-          ->get()->toArray();
-    $callAug = array_column($callAug,'call');
-
-    $callSep = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','September')
-          ->get()->toArray();
-    $callSep = array_column($callSep,'call');
-
-    $callOct = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','October')
-          ->get()->toArray();
-    $callOct = array_column($callOct,'call');
-
-    $callNov = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','November')
-          ->get()->toArray();
-    $callNov = array_column($callNov,'call');
-
-    $callDec = DB::table('report_calls')
-          ->select('presentedCall as call')
-          ->where('months','=','December')
-          ->get()->toArray();
-    $callDec = array_column($callDec,'call');
+    $calls = array_column($calls,'calls');
 
     /////////////////////////////////////////////////////////////////////
 
@@ -311,18 +246,7 @@ class showController extends Controller
     $labelCabang = array_column($labelCabang, 'lblKcu');
 
     return view('monthly')
-     ->with('calljan',json_encode($calljan,JSON_NUMERIC_CHECK))
-     ->with('callFeb',json_encode($callFeb,JSON_NUMERIC_CHECK))
-     ->with('callMar',json_encode($callMar,JSON_NUMERIC_CHECK))
-     ->with('callApr',json_encode($callApr,JSON_NUMERIC_CHECK))
-     ->with('callMei',json_encode($callMei,JSON_NUMERIC_CHECK))
-     ->with('callJun',json_encode($callJun,JSON_NUMERIC_CHECK))
-     ->with('callJul',json_encode($callJul,JSON_NUMERIC_CHECK))
-     ->with('callAug',json_encode($callAug,JSON_NUMERIC_CHECK))
-     ->with('callSep',json_encode($callSep,JSON_NUMERIC_CHECK))
-     ->with('callOct',json_encode($callOct,JSON_NUMERIC_CHECK))
-     ->with('callNov',json_encode($callNov,JSON_NUMERIC_CHECK))
-     ->with('callDec',json_encode($callDec,JSON_NUMERIC_CHECK))
+     ->with('calls',json_encode($calls,JSON_NUMERIC_CHECK))
      ->with('ticket_jan',json_encode($ticket_jan,JSON_NUMERIC_CHECK))
      ->with('ticket_feb',json_encode($ticket_feb,JSON_NUMERIC_CHECK))
      ->with('ticket_mar',json_encode($ticket_mar,JSON_NUMERIC_CHECK))

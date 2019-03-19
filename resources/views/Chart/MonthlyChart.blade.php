@@ -22,18 +22,7 @@
       }],
   };
 
-  var calljan = <?php echo $calljan;?>;
-  var callFeb = <?php echo $callFeb;?>;
-  var callMar = <?php echo $callMar;?>;
-  var callApr = <?php echo $callApr;?>;
-  var callMei = <?php echo $callMei;?>;
-  var callJun = <?php echo $callJun;?>;
-  var callJul = <?php echo $callJul;?>;
-  var callAug = <?php echo $callAug;?>;
-  var callSep = <?php echo $callSep;?>;
-  var callOct = <?php echo $callOct;?>;
-  var callNov = <?php echo $callNov;?>;
-  var callDec = <?php echo $callDec;?>;
+  var calls = <?php echo $calls;?>;
 
   var ticket_jan = <?php echo $ticket_jan;?>;
   var ticket_feb = <?php echo $ticket_feb;?>;
@@ -53,7 +42,7 @@
       datasets:
       [{
           label: 'Call',
-          data: [calljan, callFeb, callMar, callApr, callMei, callJun, callJul, callAug, callSep, callOct, callNov, callDec],
+          data: calls,
           backgroundColor:
           [
               'rgba(227,123,64, 1)','rgba(227,123,64, 1)','rgba(227,123,64, 1)','rgba(227,123,64, 1)',
@@ -98,7 +87,7 @@
       datasets:
       [{
           label: 'Call',
-          data: [calljan, callFeb, callMar, callApr, callMei, callJun, callJul, callAug, callSep, callOct, callNov, callDec],
+          data: calls,
           backgroundColor:
           [
             'rgba(227,123,64, 1)','rgba(227,123,64, 1)','rgba(227,123,64, 1)','rgba(227,123,64, 1)',
