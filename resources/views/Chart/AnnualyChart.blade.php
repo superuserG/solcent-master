@@ -53,15 +53,6 @@
         'rgba(0,0,255, 0.5)',
 
       ]
-    },
-    {
-      label: 'Call Handled',
-      data: handled_data,
-      backgroundColor:
-      [
-        'rgba(0,128,0, 0.5)',
-        'rgba(0,128,0, 0.5)'
-      ]
     }]
   };
 
@@ -70,21 +61,11 @@
     labels: year,
     datasets:
     [{
-      label: 'Handled',
-      data: call_data,
+      label: 'Call Handled',
+      data: handled_data,
       backgroundColor:
       [
-        'rgba(0,0,128, 0.5)',
-        'rgba(0,0,255, 0.5)',
-        'rgba(0,128,0, 0.5)'
-      ]
-    },{
-      label: 'Handled',
-      data: call_data,
-      backgroundColor:
-      [
-        'rgba(0,0,128, 0.5)',
-        'rgba(0,0,255, 0.5)',
+        'rgba(0,128,0, 0.5)',
         'rgba(0,128,0, 0.5)'
       ]
     },
@@ -195,7 +176,7 @@
         responsive: true,
         title: {
           display: true,
-          text: 'Kanwil tickets Report'
+          text: 'Calls Annualy'
         }
       }
     });

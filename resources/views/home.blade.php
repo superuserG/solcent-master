@@ -31,7 +31,7 @@
                         {{$ticket}}
                       </div>
                       <div class="huge">
-                        Ivanti
+                        Ticket
                       </div>
                     </div>
                   </div>
