@@ -24,25 +24,6 @@ class CRUDController extends Controller
 {
     public function store(Request $request)
     {
-      // $this->validate(request(),[
-      //     'domain' => 'required',
-      //     'title' => 'required',
-      //     'question' => 'required',
-      //     'res' => 'required',
-      //   ]);
-      // Post::create([
-      //   'formID' => request('formID'),
-      //   'agentName' => request('agentName'),
-      //   'domain' => request('domain'),
-      //   'guestName' => request('guestName'),
-      //   'jobTitle' => request('jobTitle'),
-      //   'status'=> request('status'),
-      //   'cat_1'=> request('cat_1'),
-      //   'cat_2'=> request('cat_2'),
-      //   'title'=> request('title'),
-      //   'question'=> request('question'),
-      // ]);
-      // return redirect()->route('form');
 
       $request->validate(
         [
@@ -56,19 +37,7 @@ class CRUDController extends Controller
         'question.required'=>'Question must be filled!',
       ]
       );
-      // dd($request->category);
-      // if($request->category==null)
-      // {
-      //   $topic = explode ("||", $request->topic);
-      //   $category[1] = NULL;
-      //   $subcategory[1] = NULL;
-      // }
-      // elseif($request->subcategory==null)
-      // {
-      //   $topic = explode ("||", $request->topic);
-      //   $category = explode ("||", $request->category);
-      //   $subcategory[1] = NULL;
-      // }
+
       $service = explode("||", $request->service);
       $category = explode ("||", $request->category);
       $subcategory = explode ("||", $request->subcategory);

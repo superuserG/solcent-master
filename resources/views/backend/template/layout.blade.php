@@ -197,11 +197,11 @@ desired effect
         </li>
 
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Settings</span>
+          {{-- <a href="#"><i class="fa fa-link"></i> <span>Settings</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
-          </a>
+          </a> --}}
           <ul class="treeview-menu">
             {{-- <li><a href="{{route('admin.contact.index')}}">Contact</a></li>
             <li><a href="{{route('admin.company.index')}}">Company</a></li>
@@ -211,11 +211,11 @@ desired effect
         {{-- <li><a href="{{route('admin.user.index')}}"><i class="fa fa-user"></i> <span>User</span></a></li>
         <li><a href="{{route('admin.borrowlog.index')}}"><i class="fa fa-history"></i> <span>Borrowing History</span></a></li> --}}
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+          {{-- <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
-          </a>
+          </a> --}}
           <ul class="treeview-menu">
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>

@@ -121,7 +121,7 @@ class showController extends Controller
 
   public function showTable()
   {
-    $post = ReportSolcent::all()->take(2500);
+    $post = ReportSolcent::all();
 
     return view('tables',compact('post'));
   }
